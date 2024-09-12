@@ -4,74 +4,76 @@
     </div>
 </div>
 
+
+
+
 <div class="menu">
-    <div class="menu-item active">
+
+    <div class="menu-item" [class.active]="tipoDocumento === 3" (click)="cambiarTipo(3)">
         <div class="menu-icon"></div>
-        <span>DECRETO DEPARTAMENTAL</span>
+        <span class="font-weight-normal">LEY DEPARTAMENTAL</span>
     </div>
-    <div class="menu-item">
+
+    <div class="menu-item" [class.active]="tipoDocumento === 4" (click)="cambiarTipo(4)">
         <div class="menu-icon"></div>
-        <span>ESTATUTO DEPARTAMENTAL</span>
+        <span class="font-weight-normal">ESTATUTO DEPARTAMENTAL</span>
     </div>
-    <div class="menu-item">
+
+    <div class="menu-item" [class.active]="tipoDocumento === 1" (click)="cambiarTipo(1)">
         <div class="menu-icon"></div>
-        <span>LEY DEPARTAMENTAL</span>
+        <span class="font-weight-normal">DECRETOS DEPARTAMENTAL</span>
     </div>
-    <div class="menu-item">
+    <div class="menu-item" [class.active]="tipoDocumento === 2" (click)="cambiarTipo(2)">
         <div class="menu-icon"></div>
-        <span>RESOLUCIÓN ADMINISTRATIVA</span>
+        <span class="font-weight-normal">DECRETOS GOBERNATIVO</span>
+    </div>
+    <div class="menu-item" [class.active]="tipoDocumento === 5" (click)="cambiarTipo(5)">
+        <div class="menu-icon"></div>
+        <span class="font-weight-normal">RESOLUCIÓN DEPARTAMENTAL</span>
+    </div>
+    <div class="menu-item" [class.active]="tipoDocumento === 6" (click)="cambiarTipo(6)">
+        <div class="menu-icon"></div>
+        <span class="font-weight-normal">RESOLUCIÓN ADMINISTRATIVA</span>
     </div>
 </div>
 
+
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-6 d-flex pb-4 pt-5">
+        <input type="text" class="form-control" [(ngModel)]="this.search">
+        <button type="button" class="btn btn-info ml-lg-2" (click)="buscar()"><i class="fa fa-search"></i>
+            BUSCAR</button>
+    </div>
+</div>
+
+
+
+
 <div class="container">
-    <div class="card">
-        <div class="row justify-content-center">
-            <div class="image-container">
-                <img src="../../../../assets/img/logogaceta.jpg" alt="Leyes y decretos">
+    <div class="grid-card"
+        *ngFor="let doc of documentos | paginate: { itemsPerPage: this.limite, currentPage: this.page, totalItems: this.totalItems }">
+        <div class="card gaceta">
+            <div class="row justify-content-center">
+                <div class="image-container">
+                    <img src="../../../../assets/img/logogaceta.jpg" alt="Leyes y decretos">
+                </div>
             </div>
-        </div>
 
-        <h2>DECRETO DEPARTAMENTAL N° 6182 DE 03 DE SEPTIEMBRE DE 2024</h2>
-        <p>Resumen: Otorgar Personalidad Jurídica a la entidad civil sin fines de lucro denominada "ASOCIACIÓN DE
-            MUJERES PRODUCTORAS DE PAPA..."</p>
-        <ul>
-            <li><strong>Fecha Publicación:</strong> 03/09/2024</li>
-            <li><strong>Fecha Emisión:</strong> 03/09/2024</li>
-            <li><strong>Número Documento:</strong> 6182/2024</li>
-        </ul>
-        <button>Descargar</button>
-    </div>
-
-    <div class="card">
-        <div class="row justify-content-center">
-            <div class="image-container">
-                <img src="../../../../assets/img/logogaceta.jpg" alt="Leyes y decretos">
-            </div>
+            <h2 class="font-weight-bold">{{ doc.titulo }}</h2>
+            <p class="font-weight-normal"><strong>Resumen:</strong> {{ doc.resumen }}"</p>
+            <ul>
+                <li class="font-weight-normal"><strong>Fecha Publicación:</strong>{{ doc.fechaaprobacion }}</li>
+                <li class="font-weight-normal"><strong>Fecha Emisión:</strong> {{ doc.fechapromulgacion }}</li>
+                <li class="font-weight-normal"><strong>Número Documento:</strong> {{ doc.numerodocumento }}</li>
+            </ul>
+            <a [href]="doc.archivo">Descargar</a>
         </div>
-        <h2>DECRETO DEPARTAMENTAL N° 6178 DE 03 DE SEPTIEMBRE DE 2024</h2>
-        <p>Resumen: Otorgar Personalidad Jurídica a la entidad civil sin fines de lucro denominada "ASOCIACIÓN DE
-            COMERCIANTES DE Q'UWAS..."</p>
-        <ul>
-            <li><strong>Fecha Publicación:</strong> 03/09/2024</li>
-            <li><strong>Fecha Emisión:</strong> 03/09/2024</li>
-            <li><strong>Número Documento:</strong> 6178/2024</li>
-        </ul>
-        <button>Descargar</button>
     </div>
+</div>
 
-    <div class="card">
-        <div class="row justify-content-center">
-            <div class="image-container">
-                <img src="../../../../assets/img/logogaceta.jpg" alt="Leyes y decretos">
-            </div>
-        </div>
-        <h2>DECRETO GUBERNATIVO DEPARTAMENTAL N° 1087 DE 03 DE SEPTIEMBRE DE 2024</h2>
-        <p>Resumen: Condecorar a la "ASOCIACIÓN MIXTA DE FRATERNIDADES FOLKLÓRICAS VINTO"...</p>
-        <ul>
-            <li><strong>Fecha Publicación:</strong> 03/09/2024</li>
-            <li><strong>Fecha Emisión:</strong> 03/09/2024</li>
-            <li><strong>Número Documento:</strong> 1087/2024</li>
-        </ul>
-        <button>Descargar</button>
-    </div>
+<!-- Paginación con ngx-pagination -->
+<div class="pagination">
+    <!-- Control de paginación -->
+    <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="this.pageChanged($event)">
+    </pagination-controls>
 </div>

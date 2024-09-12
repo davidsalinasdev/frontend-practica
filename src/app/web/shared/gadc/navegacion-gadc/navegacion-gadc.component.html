@@ -1,10 +1,15 @@
 <!-- <header class="fixed-top2"> -->
 <header class="">
-  <div class="logo">
-    <img src="./../../../../../assets/img/logo3.png" alt="Logo Cochabamba">
-  </div>
+  <a [routerLink]="['/web/inicio']">
+    <div class="logo">
+      <img src="./../../../../../assets/img/logo3.png" alt="Logo Cochabamba">
+    </div>
+  </a>
   <nav class="">
     <ul class="menu">
+      <li>
+        <a [routerLink]="[ '/web/inicio' ]" routerLinkActive="active">Inicio</a>
+      </li>
       <li class="dropdown">
         <a href="#servicio-al-ciudadano">Servicio al Ciudadano</a>
         <ul class="dropdown-content">
@@ -36,7 +41,7 @@
           <li><a href="#sugerencia">Sugerencia</a></li>
           <li><a href="#rendicion-cuentas">Rendición de Cuentas</a></li>
           <li><a href="#convocatorias">Convocatorias</a></li>
-          <li><a href="#auditorias">Auditorías</a></li>
+          <li><a [routerLink]="[ '/web/auditoria' ]">Auditorías</a></li>
         </ul>
       </li>
       <li class="iconos">

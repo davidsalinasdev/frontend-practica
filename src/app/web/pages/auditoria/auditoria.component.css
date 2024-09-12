@@ -40,11 +40,11 @@
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
     /* 4 columnas con un ancho mínimo de 300px y flexible */
     gap: 20px;
     padding: 20px;
-    max-width: 1600px;
+    /* max-width: 1600px; */
 }
 
 @media(max-width: 1350px) {
@@ -113,28 +113,20 @@ a:hover {
 }
 
 .image-container {
-    width: 100px;
+    width: 80px;
     /* Ancho y altura iguales para hacer el contenedor cuadrado */
-    height: 100px;
+    height: auto;
     overflow: hidden;
     /* Ocultar cualquier parte de la imagen que sobresalga del contenedor */
     border-radius: 50%;
     /* Hacer que el contenedor sea circular */
 }
 
-.image-container img {
-    width: 100%;
-    /* Hacer que la imagen ocupe todo el ancho del contenedor */
-    height: 100%;
-    /* Ajustar la imagen para que llene todo el contenedor */
-    object-fit: cover;
-    /* Asegurar que la imagen mantenga su proporción dentro del círculo */
+.image-container svg {
+    fill: rgb(0, 127, 198) !important;
+    /* Cambia "red" por el color que desees */
 }
 
-.gaceta p {
+.auditoria p {
     font-size: 1rem;
-}
-
-.gaceta ul li {
-    font-size: 0.9rem;
 }

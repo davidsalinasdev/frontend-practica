@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { WebLayoutComponent } from './layout/web-layout/web-layout.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { GacetaComponent } from './pages/gaceta/gaceta.component';
+import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
     // Definiendo rutas hijas de este modulo
     children: [ // ruta hija depende del padre
       { path: 'inicio', component: InicioComponent }, // Path inicial
-      { path: 'gaceta', component: GacetaComponent }, // Path inicial
+      { path: 'gaceta', component: GacetaComponent },
+      { path: 'auditoria', component: AuditoriaComponent },
       { path: '**', redirectTo: 'fullscreen' } // Es la primera ruta que se muestra para este MODULO.
     ]
   } // Path inicial

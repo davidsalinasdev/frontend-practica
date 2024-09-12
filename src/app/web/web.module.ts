@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { WebRoutingModule } from './web-routing.module';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
+
 // Modulo SHARED
 import { SharedModule } from './shared/shared.module';
 
@@ -19,6 +22,8 @@ import { PilargestionGadcComponent } from './components/components-gadc/pilarges
 import { GobiernoGadcComponent } from './components/components-gadc/gobierno-gadc/gobierno-gadc.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { GacetaComponent } from './pages/gaceta/gaceta.component';
+import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
+
 
 
 @NgModule({
@@ -31,12 +36,15 @@ import { GacetaComponent } from './pages/gaceta/gaceta.component';
     PilargestionGadcComponent,
     GobiernoGadcComponent,
     ChatComponent,
-    GacetaComponent
+    GacetaComponent,
+    AuditoriaComponent
   ],
   imports: [
     CommonModule,
     WebRoutingModule,
-    SharedModule
+    SharedModule,
+    NgxPaginationModule,
+    FormsModule
   ]
 })
 export class WebModule { }

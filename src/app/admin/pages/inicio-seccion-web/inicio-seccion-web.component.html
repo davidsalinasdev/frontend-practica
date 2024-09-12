@@ -1,0 +1,79 @@
+<!-- Seciones datos generales de la pagina WEB -->
+<div class="row">
+
+  <div class="header-web col-12">
+    <h2 class="header-web__titulo text-left">Imagenes principales</h2>
+  </div>
+
+  <div class="col-12">
+    <div class="row">
+      <div class="col-12 col-md-5">
+        <div class="form-group">
+          <label>Subir Imagenes</label>
+          <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+            <div class="form-control" data-trigger="fileinput">
+              <i class="fa fa-file fileinput-exists"></i>
+              <span class="fileinput-filename"></span>
+            </div>
+            <span class="input-group-addon btn btn-secondary btn-file">
+              <span class="fileinput-new">Selecionar imagen</span>
+              <span class="fileinput-exists">Cambiar</span>
+              <input type="file" name="...">
+            </span>
+            <a href="#" class="input-group-addon btn btn-secondary fileinput-exists"
+              data-dismiss="fileinput">Eliminar</a>
+          </div>
+          <div class="subir-img-main mt-3">
+            <button type="button" class="btn btn-primary">Subir imagen</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-7">
+
+        <form #formDirectiveInicio="ngForm" [formGroup]="this.formularioInicio"
+          (ngSubmit)="submitInicio(formDirectiveInicio)">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Lista de imagenes</h4>
+              <h6 class="card-subtitle">Solo se permite 5 imagenes principales</h6>
+              <div class="table-responsive border">
+                <table class="table color-table inverse-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Imagen</th>
+                      <th>Path</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Nigam</td>
+                      <td>Eichmann</td>
+                      <td>Sonu</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Deshmukh</td>
+                      <td>Prohaska</td>
+                      <td>Genelia</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Roshan</td>
+                      <td>Rogahn</td>
+                      <td>Hritik</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>

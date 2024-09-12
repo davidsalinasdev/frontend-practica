@@ -1,0 +1,123 @@
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-item.active {
+    background-color: rgb(10, 131, 201);
+    color: white;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.menu-icon {
+    height: 24px;
+    width: 24px;
+    margin-bottom: 5px;
+    /* background-image: url('icon.png'); */
+    /* Agrega tu icono aquí */
+    background-size: cover;
+}
+
+.menu-item span {
+    font-size: 14px;
+    color: #333;
+}
+
+.menu-item.active span {
+    color: white;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+    margin: 0 auto 10px;
+    /* background-image: url('icon.png'); */
+    /* Aquí puedes poner el ícono */
+    background-size: cover;
+    background-position: center;
+}
+
+h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 14px;
+}
+
+button {
+    background-color: rgb(10, 131, 201);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.leyes_decretos{
+    font-size: 2.5rem;
+    color: whitesmoke;
+    padding: 15px 0px;
+}
+.fondo-header{
+    background-color: rgb(10, 131, 201)
+}
+
+.image-container {
+    width: 100px;
+    /* Ancho y altura iguales para hacer el contenedor cuadrado */
+    height: 100px;
+    overflow: hidden;
+    /* Ocultar cualquier parte de la imagen que sobresalga del contenedor */
+    border-radius: 50%;
+    /* Hacer que el contenedor sea circular */
+}
+
+.image-container img {
+    width: 100%;
+    /* Hacer que la imagen ocupe todo el ancho del contenedor */
+    height: 100%;
+    /* Ajustar la imagen para que llene todo el contenedor */
+    object-fit: cover;
+    /* Asegurar que la imagen mantenga su proporción dentro del círculo */
+}

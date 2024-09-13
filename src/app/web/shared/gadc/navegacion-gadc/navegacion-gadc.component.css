@@ -71,7 +71,7 @@ nav {
   border-radius: 5px;
   padding: 0.5em 1em;
   text-transform: uppercase;
-  font-size: 1rem !important;
+  font-size: 0.96rem !important;
   font-weight: 400;
   transition: background 0.3s, color 0.3s;
 }
@@ -115,9 +115,9 @@ nav {
   display: block;
 }
 
-.iconos a {
+/* .iconos a {
   margin: 0 0.5em;
-}
+} */
 
 
 /* Estilos del menú de hamburguesa */
@@ -194,8 +194,8 @@ nav {
   visibility: hidden;
   /* Oculto por defecto */
   width: 150px;
-  background-color: #fff ;
-  color:  #555;
+  background-color: #fff;
+  color: #555;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
@@ -236,3 +236,11 @@ nav {
   visibility: visible;
   opacity: 1;
 }
+
+.text-pause {
+  color: rgb(0, 127, 198);
+}
+
+/* .servicio-al-ciudadano {
+  font-family: "Open Sans", sans-serif;
+} */

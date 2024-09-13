@@ -4,9 +4,6 @@
     </div>
 </div>
 
-
-
-
 <div class="menu">
 
     <div class="menu-item" [class.active]="tipoDocumento === 3" (click)="cambiarTipo(3)">
@@ -37,7 +34,6 @@
     </div>
 </div>
 
-
 <div class="row justify-content-center">
     <div class="col-12 col-lg-6 d-flex pb-4 pt-5">
         <input type="text" class="form-control" [(ngModel)]="this.search">
@@ -45,9 +41,6 @@
             BUSCAR</button>
     </div>
 </div>
-
-
-
 
 <div class="container">
     <div class="grid-card"
@@ -77,3 +70,5 @@
     <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="this.pageChanged($event)">
     </pagination-controls>
 </div>
+
+<app-footer-gadc [ngClass]="{'footer-gaceta': this.opcionGaceta}"></app-footer-gadc>

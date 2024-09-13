@@ -1,49 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { GacetaService } from '../../services/gaceta.service';
+import { AuditoriaService } from '../../services/auditoria.service';
 
 @Component({
-  selector: 'app-gaceta',
-  templateUrl: './gaceta.component.html',
-  styleUrl: './gaceta.component.css'
+  selector: 'app-convocatorias',
+  templateUrl: './convocatorias.component.html',
+  styleUrl: './convocatorias.component.css'
 })
-export class GacetaComponent implements OnInit {
+export class ConvocatoriasComponent implements OnInit {
 
-  tipoDocumento: number = 3;  // Tipo de documento por defecto
   documentos: any[] = [];
   totalItems: number = 0; // Total de elementos
-  limite: number = 12; // Número de elementos por página
+  limite: number = 9; // Número de elementos por página
   page: number = 1; // Página actual
   search: string = ''; // Filtro de búsqueda, si es necesario
   buscador: string = ''; // Filtro de búsqueda, si es necesario
+  opcionAuditoria: boolean = false;
 
-  opcionGaceta: boolean = false;
-
-  constructor(private gacetaServices: GacetaService) { }
+  constructor(private auditoriaServices: AuditoriaService) { }
 
   ngOnInit(): void {
     this.obtenerDocumentos();
   }
 
   obtenerDocumentos(): void {
-    this.gacetaServices.obtenerDocumentos(this.limite, this.page, this.tipoDocumento, this.search)
+    this.auditoriaServices.obtenerDocumentos(this.limite, this.page, this.search)
       .subscribe(response => {
-
-        this.opcionGaceta = false;
-
+        // console.log(response);
         this.documentos = response.data.data;
         this.totalItems = response.data.total;  // Total de documentos
 
+        this.opcionAuditoria = false;
         if (this.documentos.length === 0) {
-          this.opcionGaceta = true;
+          this.opcionAuditoria = true;
         }
 
       });
-  }
-
-  cambiarTipo(tipo: number): void {
-    this.tipoDocumento = tipo;
-    this.page = 1;  // Reiniciar a la primera página
-    this.obtenerDocumentos();
   }
 
   pageChanged(event: number): void {

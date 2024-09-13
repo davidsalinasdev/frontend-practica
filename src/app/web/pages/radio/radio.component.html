@@ -13,16 +13,35 @@
                 <img class="img-fluid" src="../../../../assets/img/logoradio.png" alt="Radio Logo">
             </div>
             <div class="radio-btn p-3">
-                <div class="btn-radio-online border">
-                    <i class="mdi mdi-play font-20"></i>
-                    REPRODUCIR RADIO EN LÍNEA
-                </div>
+                <!-- Botón de reproducir -->
+
+                <a (click)="this.toggleRadio()">
+
+                    <ng-container *ngIf="radioService.playing; else showIcon">
+                        <!-- Botón de detener -->
+                        <div class="btn-radio-online border">
+                            <i class="fas fa-pause"></i>
+                            <img src="../../../../assets/img/gifoficial.gif" alt="Reproduciendo"
+                                style="width: 40px; height: auto;">
+                            DETENER RADIO EN LINEA
+                        </div>
+                    </ng-container>
+                    <ng-template #showIcon>
+                        <div class="btn-radio-online border">
+                            <i class="fas fa-play"></i>
+                            REPRODUCIR RADIO EN LÍNEA
+                        </div>
+                    </ng-template>
+
+
+
+                </a>
+
             </div>
         </div>
     </div>
 
+
 </div>
 
-
-
-<app-footer-gadc></app-footer-gadc>
+<app-footer-gadc class="footer-radio"></app-footer-gadc>

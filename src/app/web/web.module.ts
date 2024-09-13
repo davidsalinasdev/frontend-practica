@@ -24,6 +24,7 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { GacetaComponent } from './pages/gaceta/gaceta.component';
 import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
 import { RadioComponent } from './pages/radio/radio.component';
+import { ConvocatoriasComponent } from './pages/convocatorias/convocatorias.component';
 
 
 
@@ -39,7 +40,8 @@ import { RadioComponent } from './pages/radio/radio.component';
     ChatComponent,
     GacetaComponent,
     AuditoriaComponent,
-    RadioComponent
+    RadioComponent,
+    ConvocatoriasComponent
   ],
   imports: [
     CommonModule,

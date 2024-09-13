@@ -2,7 +2,8 @@
 <header class="">
   <a [routerLink]="['/web/inicio']">
     <div class="logo">
-      <img src="./../../../../../assets/img/logo3.png" alt="Logo Cochabamba">
+      <!-- <img src="./../../../../../assets/img/logo3.png" alt="Logo Cochabamba"> -->
+      <img src="" alt="Logo Cochabamba">
     </div>
   </a>
   <nav class="">
@@ -11,7 +12,7 @@
         <a [routerLink]="[ '/web/inicio' ]" routerLinkActive="active">Inicio</a>
       </li>
       <li class="dropdown">
-        <a href="#servicio-al-ciudadano">Servicio al Ciudadano</a>
+        <a class="servicio-al-ciudadano">Servicio al Ciudadano</a>
         <ul class="dropdown-content">
           <li><a href="#seguimiento-tramites">Seguimiento de Trámites</a></li>
           <li><a href="#calcula-impuesto">Calcula tu Impuesto</a></li>
@@ -55,14 +56,21 @@
         <a (click)="toggleRadio()" class="radio-button">
           <!-- Cambia el ícono o imagen dependiendo del estado -->
           <ng-container *ngIf="radioService.playing; else showIcon">
+
             <img src="../../../../../assets/img/gifoficial.gif" alt="Reproduciendo" style="width: 30px; height: auto;">
             <!-- Tooltip que permanece visible mientras la radio esté reproduciendo -->
-            <span class="tooltip-text visible">Detener radio en linea</span>
+
+            <span class="tooltip-text visible">
+              <i class="fas fa-pause text-pause"></i>
+              Detener radio en linea
+            </span>
           </ng-container>
           <ng-template #showIcon>
             <i class="mdi mdi-radio"></i>
             <!-- Tooltip que aparece solo en hover cuando la radio está detenida -->
-            <span class="tooltip-text">Reproducir radio</span>
+            <span class="tooltip-text">
+              <!-- <i class="fas fa-play"></i> -->
+              Reproducir radio</span>
           </ng-template>
         </a>
 

@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class RadioService {
 
-  private audio = new Audio('https://live.turadiotv.com/8110/stream');
+  // private audio = new Audio('https://live.turadiotv.com/8110/stream');
+  private audio = new Audio('https://kexp-mp3-128.streamguys1.com/kexp128.mp3');
   private isPlaying = false;
 
   constructor() {

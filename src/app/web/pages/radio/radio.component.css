@@ -1,5 +1,6 @@
 .fondo-header {
-    background-color: rgb(10, 131, 201)
+    background-color: rgb(10, 131, 201);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(154, 128, 158, 0.46);
 }
 
 .gobernacion-radio {
@@ -57,4 +58,18 @@
     padding: 10px 20px;
     text-align: center;
     cursor: pointer;
+}
+
+.radio-btn div i {
+    font-size: 1.7rem;
+}
+
+@media(min-width: 900px) {
+    .footer-radio {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1030;
+    }
 }

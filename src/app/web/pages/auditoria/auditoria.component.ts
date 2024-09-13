@@ -14,6 +14,7 @@ export class AuditoriaComponent implements OnInit {
   page: number = 1; // Página actual
   search: string = ''; // Filtro de búsqueda, si es necesario
   buscador: string = ''; // Filtro de búsqueda, si es necesario
+  opcionAuditoria: boolean = false;
 
   constructor(private auditoriaServices: AuditoriaService) { }
 
@@ -24,9 +25,15 @@ export class AuditoriaComponent implements OnInit {
   obtenerDocumentos(): void {
     this.auditoriaServices.obtenerDocumentos(this.limite, this.page, this.search)
       .subscribe(response => {
-        console.log(response);
+        // console.log(response);
         this.documentos = response.data.data;
         this.totalItems = response.data.total;  // Total de documentos
+
+        this.opcionAuditoria = false;
+        if (this.documentos.length === 0) {
+          this.opcionAuditoria = true;
+        }
+
       });
   }
 

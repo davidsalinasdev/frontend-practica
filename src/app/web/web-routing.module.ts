@@ -6,6 +6,7 @@ import { WebLayoutComponent } from './layout/web-layout/web-layout.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { GacetaComponent } from './pages/gaceta/gaceta.component';
 import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
+import { RadioComponent } from './pages/radio/radio.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: 'inicio', component: InicioComponent }, // Path inicial
       { path: 'gaceta', component: GacetaComponent },
       { path: 'auditoria', component: AuditoriaComponent },
+      { path: 'radio', component: RadioComponent },
       { path: '**', redirectTo: 'fullscreen' } // Es la primera ruta que se muestra para este MODULO.
     ]
   } // Path inicial

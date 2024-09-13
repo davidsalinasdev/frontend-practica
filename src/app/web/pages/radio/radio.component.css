@@ -1,0 +1,60 @@
+.fondo-header {
+    background-color: rgb(10, 131, 201)
+}
+
+.gobernacion-radio {
+    font-size: 2.5rem;
+    color: whitesmoke;
+    padding: 15px 0px;
+}
+
+.titulo-radio {
+    font-size: 1.5rem;
+}
+
+.card-header--fondo {
+    background-color: rgb(10, 131, 201);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.card-body__fondo {
+    background-image: url('../../../../assets/img/logoradio.png');
+    background-size: cover;
+    height: 200px;
+    background-repeat: no-repeat;
+
+}
+
+.radio-container {
+    max-width: 450px;
+    border: 1px solid rgb(201, 202, 204);
+    border-radius: 5px;
+}
+
+.radio-header {
+    font-size: 1.5rem;
+    background: linear-gradient(60deg, rgb(102, 206, 246), rgb(10, 131, 201));
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.radio-btn {
+    border: none;
+}
+
+.btn-radio-online {
+
+    color: rgb(10, 131, 201);
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 25px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+}

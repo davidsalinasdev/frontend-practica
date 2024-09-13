@@ -23,6 +23,7 @@ import { GobiernoGadcComponent } from './components/components-gadc/gobierno-gad
 import { ChatComponent } from './pages/chat/chat.component';
 import { GacetaComponent } from './pages/gaceta/gaceta.component';
 import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
+import { RadioComponent } from './pages/radio/radio.component';
 
 
 
@@ -37,7 +38,8 @@ import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
     GobiernoGadcComponent,
     ChatComponent,
     GacetaComponent,
-    AuditoriaComponent
+    AuditoriaComponent,
+    RadioComponent
   ],
   imports: [
     CommonModule,

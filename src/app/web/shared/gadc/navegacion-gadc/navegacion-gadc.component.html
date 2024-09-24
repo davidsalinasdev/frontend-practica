@@ -2,8 +2,8 @@
 <header class="">
   <a [routerLink]="['/web/inicio']">
     <div class="logo">
-      <!-- <img src="./../../../../../assets/img/logo3.png" alt="Logo Cochabamba"> -->
-      <img src="" alt="Logo Cochabamba">
+      <img src="./../../../../../assets/img/logo3.png" alt="Logo Cochabamba">
+      <!-- <img src="" alt="Logo Cochabamba"> -->
     </div>
   </a>
   <nav class="">
@@ -28,7 +28,7 @@
           <li><a href="#gobernacion-tv">Gobernación TV</a></li>
           <li><a [routerLink]="[ '/web/radio' ]">Gobernación Radio</a></li>
           <li><a href="#semanario-digital">Semanario Digital</a></li>
-          <li><a href="#mediateca">Mediateca</a></li>
+          <li><a [routerLink]="[ '/web/mediateka' ]">Mediateca</a></li>
           <li><a href="#jaku">JAKU</a></li>
         </ul>
       </li>
@@ -38,10 +38,10 @@
       <li class="dropdown">
         <a href="#transparencia">Transparencia</a>
         <ul class="dropdown-content">
-          <li><a href="#denuncia">Denuncia</a></li>
-          <li><a href="#sugerencia">Sugerencia</a></li>
-          <li><a href="#rendicion-cuentas">Rendición de Cuentas</a></li>
-          <li><a href="#convocatorias">Convocatorias</a></li>
+          <li><a [routerLink]="[ '/web/denuncias' ]">Denuncia</a></li>
+          <li><a [routerLink]="[ '/web/sugerencias' ]">Sugerencia</a></li>
+          <li><a [routerLink]="[ '/web/rendicion-cuentas' ]">Rendición de Cuentas</a></li>
+          <li><a [routerLink]="[ '/web/convocatorias' ]">Convocatorias</a></li>
           <li><a [routerLink]="[ '/web/auditoria' ]">Auditorías</a></li>
         </ul>
       </li>

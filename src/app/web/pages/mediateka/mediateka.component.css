@@ -1,0 +1,68 @@
+.leyes_decretos {
+    font-size: 2.5rem;
+    color: whitesmoke;
+    padding: 15px 0px;
+}
+
+.fondo-header {
+    background-color: rgb(10, 131, 201);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(154, 128, 158, 0.46);
+}
+
+/* Estilo de la galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.media-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.media-item:hover {
+    transform: translateY(-5px);
+}
+
+.media-item img,
+.media-item video {
+    width: 100%;
+    height: auto;
+}
+
+.media-info {
+    padding: 15px;
+}
+
+.media-info h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #0a74da;
+}
+
+.media-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.view-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0a74da;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.view-more:hover {
+    background-color: #005bb5;
+}

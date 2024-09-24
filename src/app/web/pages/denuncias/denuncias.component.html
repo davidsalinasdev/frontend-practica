@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="fondo-header col-12">
+        <h2 class="text-center sugerencias-text text-uppercase">Denuncias</h2>
+    </div>
+</div>
+
+<div class="container mt-4 mb-4">
+
+    <form #formDirective="ngForm" [formGroup]="this.formulario" (ngSubmit)="submit(formDirective)">
+        <div class="row justify-content-center">
+            <h3>HAGA SU DENUNCIA MEDIANTE EL SIGUIENTE FORMULARIO</h3>
+            <div class="col-12 col-md-9 mt-3">
+
+                <div class="alert alert-success" [ngClass]="{'alerta': this.opcionAlerta}" role="alert">
+                    Su denuncia se envió correctamente!
+                </div>
+
+                <!-- Nombres -->
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre completo"
+                        formControlName="nombre">
+                    <!-- Validacion -->
+                    <!-- Preguntamos si es invalido y si esta sucio o a sido tocado -->
+                    <div *ngIf="this.nombre?.invalid && (this.nombre?.dirty || this.nombre?.touched)">
+                        <!-- Errores con expresiones regulares -->
+                        <div *ngIf="this.nombre?.hasError('required')" class="animated fadeIn fast text-danger font-14"
+                            id="">
+                            Este campo es requerido.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- celuar -->
+                <div class="form-group">
+                    <label for="celular">Nro. de celular</label>
+                    <input type="text" class="form-control" id="celular" placeholder="Ingrese su nro. de celular"
+                        formControlName="celular">
+                    <!-- Validacion -->
+                    <!-- Preguntamos si es invalido y si esta sucio o a sido tocado -->
+                    <div *ngIf="this.celular?.invalid && (this.celular?.dirty || this.celular?.touched)">
+                        <!-- Errores con expresiones regulares -->
+                        <div *ngIf="this.celular?.hasError('required')" class="animated fadeIn fast text-danger font-14"
+                            id="">
+                            Este campo es requerido.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email </label>
+                    <input type="text" class="form-control" id="email" placeholder="Ingrese su nro. de correo"
+                        formControlName="email">
+                    <!-- Validacion -->
+                    <!-- Preguntamos si es invalido y si esta sucio o a sido tocado -->
+                    <div *ngIf="this.email?.invalid && (this.email?.dirty || this.email?.touched)">
+                        <!-- Errores con expresiones regulares -->
+                        <div *ngIf="this.email?.hasError('required')" class="animated fadeIn fast text-danger font-14"
+                            id="">
+                            Este campo es requerido.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Denuncia -->
+                <div class="form-group">
+                    <label for="denuncia">Denuncia</label>
+                    <textarea class="form-control d-block" name="" id="" cols="30" rows="8" id=""
+                        placeholder="Escriba su denuncia" formControlName="denuncia"></textarea>
+                    <!-- Validacion -->
+                    <!-- Preguntamos si es invalido y si esta sucio o a sido tocado -->
+                    <div *ngIf="this.denuncia?.invalid && (this.denuncia?.dirty || this.denuncia?.touched)">
+                        <!-- Errores con expresiones regulares -->
+                        <div *ngIf="this.denuncia?.hasError('required')"
+                            class="animated fadeIn fast text-danger font-14" id="">
+                            Este campo es requerido.
+                        </div>
+                        <!-- Mensaje de error si se exceden los 250 caracteres -->
+                        <div *ngIf="formulario.get('denuncia')?.errors?.['maxlength']"
+                            class="animated fadeIn fast text-danger font-14">
+                            La denuncia no puede exceder los 250 caracteres.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones -->
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-info text-uppercase btn-lg"
+                        [disabled]="this.formulario.invalid">Enviar
+                        Sugerencia</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<app-footer-gadc></app-footer-gadc>

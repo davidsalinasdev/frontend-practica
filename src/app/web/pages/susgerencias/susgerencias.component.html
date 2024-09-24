@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="fondo-header col-12">
+        <h2 class="text-center sugerencias-text text-uppercase">Sugerencias</h2>
+    </div>
+</div>
+
+<div class="container mt-4">
+
+    <form #formDirective="ngForm" [formGroup]="this.formulario" (ngSubmit)="submit(formDirective)">
+        <div class="row justify-content-center">
+            <h3>ENVÍENOS UNA SUGERENCIA MEDIANTE EL SIGUIENTE FORMULARIO</h3>
+            <div class="col-12 col-md-9 mt-3">
+                <div class="form-group">
+
+                    <div class="alert alert-success" [ngClass]="{'alerta': this.opcionAlerta}" role="alert">
+                        Su sugerencia se envió correctamente!
+                    </div>
+
+                    <textarea class="form-control d-block" name="" id="" cols="30" rows="10" id=""
+                        placeholder="Escriba su sugerencia" formControlName="sugerencia"></textarea>
+
+                    <!-- Validacion -->
+                    <!-- Preguntamos si es invalido y si esta sucio o a sido tocado -->
+                    <div *ngIf="this.sugerencia?.invalid && (this.sugerencia?.dirty || this.sugerencia?.touched)">
+                        <!-- Errores con expresiones regulares -->
+                        <div *ngIf="this.sugerencia?.hasError('required')"
+                            class="animated fadeIn fast text-danger font-14" id="">
+                            Este campo es requerido.
+                        </div>
+                        <!-- Mensaje de error si se exceden los 250 caracteres -->
+                        <div *ngIf="formulario.get('sugerencia')?.errors?.['maxlength']"
+                            class="animated fadeIn fast text-danger font-14">
+                            La sugerencia no puede exceder los 250 caracteres.
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-info text-uppercase btn-lg"
+                            [disabled]="this.formulario.invalid">Enviar Sugerencia</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<app-footer-gadc class="footer-sugerencia"></app-footer-gadc>

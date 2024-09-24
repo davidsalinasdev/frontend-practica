@@ -39,8 +39,12 @@
 }
 
 .container {
-
-    max-width: 1600px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    /* 4 columnas con un ancho mínimo de 300px y flexible */
+    gap: 20px;
+    padding: 20px;
+    /* max-width: 1600px; */
 }
 
 @media(max-width: 1350px) {
@@ -128,14 +132,10 @@ a:hover {
     font-size: 1rem;
 }
 
-.footer-convocatoria {
+.footer-auditoria {
     position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 1030;
-}
-
-.font-bold--text {
-    font-weight: bold;
 }

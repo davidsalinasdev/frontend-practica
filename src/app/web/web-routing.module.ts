@@ -7,6 +7,11 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { GacetaComponent } from './pages/gaceta/gaceta.component';
 import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
 import { RadioComponent } from './pages/radio/radio.component';
+import { ConvocatoriasComponent } from './pages/convocatorias/convocatorias.component';
+import { RendicionCuentasComponent } from './pages/rendicion-cuentas/rendicion-cuentas.component';
+import { SusgerenciasComponent } from './pages/susgerencias/susgerencias.component';
+import { DenunciasComponent } from './pages/denuncias/denuncias.component';
+import { MediatekaComponent } from './pages/mediateka/mediateka.component';
 
 const routes: Routes = [
   {
@@ -17,6 +22,11 @@ const routes: Routes = [
       { path: 'gaceta', component: GacetaComponent },
       { path: 'auditoria', component: AuditoriaComponent },
       { path: 'radio', component: RadioComponent },
+      { path: 'convocatorias', component: ConvocatoriasComponent },
+      { path: 'rendicion-cuentas', component: RendicionCuentasComponent },
+      { path: 'sugerencias', component: SusgerenciasComponent },
+      { path: 'denuncias', component: DenunciasComponent },
+      { path: 'mediateka', component: MediatekaComponent },
       { path: '**', redirectTo: 'fullscreen' } // Es la primera ruta que se muestra para este MODULO.
     ]
   } // Path inicial

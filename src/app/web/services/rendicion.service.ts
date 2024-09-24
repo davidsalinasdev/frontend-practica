@@ -1,4 +1,3 @@
-// Variables globales
 import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -10,14 +9,14 @@ const base_url = environment.base_url;
 @Injectable({
   providedIn: 'root'
 })
-export class ConvocatoriasService {
+export class RendicionService {
 
   constructor(private http: HttpClient) { }
 
   obtenerDocumentos(limite: number, page: number, search: string): Observable<any> {
 
-    const url = `${base_url}/api/unidad/convocatorias/1?limite=${limite}&page=${page}&search=${search}`;
-    // http://127.0.0.1:8000/api/unidad/convocatorias/1?limite=10&search=&page=1
+    const url = `${base_url}/api/unidad/rendicioncuentas/2?limite=${limite}&page=${page}&search=${search}`;
+    // https://gobernaciondecochabamba.bo/api/unidad/rendicioncuentas/2?limite=10&search=&page=1
 
     // Petición GET con manejo de errores
     return this.http.get(url).pipe(

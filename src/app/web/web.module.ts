@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common';
 import { WebRoutingModule } from './web-routing.module';
 
 import { NgxPaginationModule } from 'ngx-pagination';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 // Modulo SHARED
 import { SharedModule } from './shared/shared.module';
@@ -25,6 +26,10 @@ import { GacetaComponent } from './pages/gaceta/gaceta.component';
 import { AuditoriaComponent } from './pages/auditoria/auditoria.component';
 import { RadioComponent } from './pages/radio/radio.component';
 import { ConvocatoriasComponent } from './pages/convocatorias/convocatorias.component';
+import { RendicionCuentasComponent } from './pages/rendicion-cuentas/rendicion-cuentas.component';
+import { SusgerenciasComponent } from './pages/susgerencias/susgerencias.component';
+import { DenunciasComponent } from './pages/denuncias/denuncias.component';
+import { MediatekaComponent } from './pages/mediateka/mediateka.component';
 
 
 
@@ -41,14 +46,19 @@ import { ConvocatoriasComponent } from './pages/convocatorias/convocatorias.comp
     GacetaComponent,
     AuditoriaComponent,
     RadioComponent,
-    ConvocatoriasComponent
+    ConvocatoriasComponent,
+    RendicionCuentasComponent,
+    SusgerenciasComponent,
+    DenunciasComponent,
+    MediatekaComponent
   ],
   imports: [
     CommonModule,
     WebRoutingModule,
     SharedModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class WebModule { }

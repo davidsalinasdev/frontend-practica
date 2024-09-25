@@ -12,6 +12,7 @@ import { RendicionCuentasComponent } from './pages/rendicion-cuentas/rendicion-c
 import { SusgerenciasComponent } from './pages/susgerencias/susgerencias.component';
 import { DenunciasComponent } from './pages/denuncias/denuncias.component';
 import { MediatekaComponent } from './pages/mediateka/mediateka.component';
+import { SemanarioComponent } from './pages/semanario/semanario.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'sugerencias', component: SusgerenciasComponent },
       { path: 'denuncias', component: DenunciasComponent },
       { path: 'mediateka', component: MediatekaComponent },
+      { path: 'semanario', component: SemanarioComponent },
       { path: '**', redirectTo: 'fullscreen' } // Es la primera ruta que se muestra para este MODULO.
     ]
   } // Path inicial

@@ -30,6 +30,7 @@ import { RendicionCuentasComponent } from './pages/rendicion-cuentas/rendicion-c
 import { SusgerenciasComponent } from './pages/susgerencias/susgerencias.component';
 import { DenunciasComponent } from './pages/denuncias/denuncias.component';
 import { MediatekaComponent } from './pages/mediateka/mediateka.component';
+import { SemanarioComponent } from './pages/semanario/semanario.component';
 
 
 
@@ -50,7 +51,8 @@ import { MediatekaComponent } from './pages/mediateka/mediateka.component';
     RendicionCuentasComponent,
     SusgerenciasComponent,
     DenunciasComponent,
-    MediatekaComponent
+    MediatekaComponent,
+    SemanarioComponent
   ],
   imports: [
     CommonModule,

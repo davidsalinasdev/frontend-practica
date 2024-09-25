@@ -12,11 +12,26 @@
 /* Estilo de la galería */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas */
     gap: 20px;
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        /* Una columna en pantallas pequeñas */
+    }
 }
 
 .media-item {
@@ -25,6 +40,11 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    /* Alinea los elementos verticalmente */
+    justify-content: space-between;
+    /* Asegura que el botón esté al final */
 }
 
 .media-item:hover {
@@ -39,6 +59,10 @@
 
 .media-info {
     padding: 15px;
+    flex-grow: 1;
+    /* Esto hace que el contenido principal crezca */
+    display: flex;
+    flex-direction: column;
 }
 
 .media-info h2 {
@@ -51,6 +75,9 @@
     font-size: 16px;
     color: #555;
     margin-bottom: 15px;
+    flex-grow: 1;
+    font-weight: normal;
+    /* Empuja el botón hacia abajo */
 }
 
 .view-more {
@@ -58,9 +85,12 @@
     padding: 10px 20px;
     background-color: #0a74da;
     color: #fff;
+    text-align: center;
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    align-self: flex-start;
+    /* Alinea el botón al final del contenedor */
 }
 
 .view-more:hover {

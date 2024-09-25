@@ -5,34 +5,34 @@
 </div>
 
 <section class="gallery">
+
     <!-- Cada elemento multimedia -->
-    <article class="media-item">
-        <img src="../../../../assets/img/parallax.jpg" alt="Evento Gobernación">
+    <article class="media-item"
+        *ngFor="let doc of documentos | paginate: { itemsPerPage: this.limite, currentPage: this.page, totalItems: this.totalItems }">
+
+        <!-- Iframe para mostrar el video de YouTube -->
+        <iframe width="100%" height="315" [src]="doc.linkDescarga" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+
+
         <div class="media-info">
-            <h2>Título del Evento</h2>
-            <p>Descripción breve del evento multimedia.</p>
-            <a href="#" class="view-more">Ver más</a>
+            <h2>{{ doc.titulo }}</h2>
+            <p>{{ doc.descripcion }}</p>
+            <!-- <a href="#" class="view-more ">Ver más</a> -->
         </div>
+
+
     </article>
 
-    <article class="media-item">
-        <img src="../../../../assets/img/prueba2.jpg" alt="Reunión Oficial">
-        <div class="media-info">
-            <h2>Reunión Oficial</h2>
-            <p>Resumen de la reunión realizada en la Gobernación.</p>
-            <a href="#" class="view-more">Ver más</a>
-        </div>
-    </article>
-
-    <article class="media-item">
-        <video controls>
-            <source src="video1.mp4" type="video/mp4">
-            Tu navegador no soporta video en HTML5.
-        </video>
-        <div class="media-info">
-            <h2>Video Conferencia de Prensa</h2>
-            <p>Conferencia de prensa sobre nuevas leyes y proyectos.</p>
-            <a href="#" class="view-more">Ver más</a>
-        </div>
-    </article>
 </section>
+
+<!-- Paginación con ngx-pagination -->
+<div class="pagination">
+    <!-- Control de paginación -->
+    <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="this.pageChanged($event)">
+    </pagination-controls>
+</div>
+
+<app-footer-gadc></app-footer-gadc>

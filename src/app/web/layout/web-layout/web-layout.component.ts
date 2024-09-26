@@ -3,6 +3,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 // Declara una funcion de manera global
 declare function lightbox(): any;
 
+declare function turnInitFunctions(): any;
+
 @Component({
   selector: 'app-web-layout',
   templateUrl: './web-layout.component.html',
@@ -14,6 +16,11 @@ export class WebLayoutComponent implements OnInit {
   private scrollTimeout: any;
 
   ngOnInit(): void {
+
+    // Carga los métodos globales
+    lightbox();
+    turnInitFunctions();
+
     // Inicializa la posición de los íconos de redes sociales
     this.updateIconPosition();
 

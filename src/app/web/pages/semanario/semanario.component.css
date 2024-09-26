@@ -1,23 +1,94 @@
-.flipbook {
-    width: 600px;
-    /* Ancho del flipbook */
-    height: 400px;
-    /* Alto del flipbook */
-    margin: auto;
+.fondo-header {
+    background-color: rgb(10, 131, 201);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(154, 128, 158, 0.46);
+}
+
+.semanario-titulo {
+    font-size: 2.5rem;
+    color: whitesmoke;
+    padding: 15px 0px;
+}
+
+.flipbook-container {
     position: relative;
+    display: flex;
+    align-items: center;
+    /* Centra verticalmente los botones con el flipbook */
+    justify-content: center;
+    /* Centra el contenido horizontalmente */
+}
+
+.flipbook {
+    margin: 0 auto;
+    position: relative;
+    background: #f3f3f3;
+    box-shadow: 0 2px 15px rgba(78, 78, 78, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .page {
-    width: 100%;
-    height: 100%;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    backface-visibility: hidden;
-    /* Oculta el lado posterior */
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
 }
 
-.page:nth-child(odd) {
-    background-color: #f8f8f8;
-    /* Color de fondo para páginas impares */
+.page img {
+    width: 100%;
+    /* Imagen ocupa el 100% del ancho de la página */
+    height: 100%;
+    /* Mantiene la proporción de la imagen */
+    object-fit: cover;
+    /* La imagen cubre todo el área, manteniendo la proporción */
+}
+
+.hard {
+    background: #8e44ad;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+    /* Centra verticalmente los botones */
+    width: 80%;
+    /* Asegura que la navegación esté centrada */
+    display: flex;
+    /* Usa flexbox para posicionar los botones */
+    justify-content: space-between;
+    /* Espacia los botones a los lados */
+    padding: 0 20px;
+    /* Espaciado horizontal para separar un poco los botones del borde */
+}
+
+.nav-button {
+    background-color: transparent;
+    /* Fondo transparente para los botones */
+    color: #3498db;
+    /* Color del texto (íconos) */
+    border: none;
+    /* Sin bordes */
+    font-size: 24px;
+    /* Tamaño de fuente para los íconos */
+    cursor: pointer;
+    /* Cursor tipo puntero */
+    transition: color 0.3s;
+    /* Transición suave para el color */
+}
+
+.nav-button:hover {
+    color: #2980b9;
+    /* Cambia el color al pasar el mouse */
+}
+
+.nav-icon {
+    font-size: 24px;
+    /* Tamaño del ícono */
 }

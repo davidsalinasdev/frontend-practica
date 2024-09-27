@@ -23,9 +23,8 @@ export class HeaderGadcComponent {
       next: (resp: any) => {
 
         const { data } = resp;
-
         this.listBanners = data;
-        console.log(this.listBanners);
+        // console.log(this.listBanners);
 
       },
       error: (err) => {

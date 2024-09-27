@@ -4,19 +4,65 @@
     </div>
 </div>
 
-<div class="flipbook-container mt-3">
+
+
+<div class="row mt-4">
+    <div class="col-3"></div>
+    <div class="col-6 d-flex justify-content-between">
+        <span class="font-weight-normal"><span class="font-weight-bold text-info">Edición:</span> {{
+            this.libroImagenes[0]?.edicion
+            }}</span>
+        <span class="font-weight-normal"><span class="font-weight-bold text-info">Fecha de publicación:</span> {{
+            this.libroImagenes[0]?.fecha_publicacion
+            }}</span>
+    </div>
+    <div class="col-3"></div>
+</div>
+
+<div class="flipbook-container ">
 
     <div id="flipbook" class="flipbook">
-        <div class="page"><img src="../../../../assets/img/alcaldia2023.jpg" alt=""></div>
-        <div class="page"><img src="../../../../assets/img/1.jpg" alt=""></div>
-        <div class="page"><img src="../../../../assets/img/2.jpg" alt=""></div>
-        <div class="page"><img src="../../../../assets/img/3.jpg" alt=""></div>
-        <div class="page"><img src="../../../../assets/img/4.jpg" alt=""></div>
-        <div class="page"><img src="../../../../assets/img/5.jpg" alt=""></div>
+        <div *ngFor="let item of this.libroImagenes" class="page">
+            <img [src]="item.fullUrl" alt="Imagen revista">
+        </div>
     </div>
 
     <div class="navigation">
         <button type="button" id="prev" class="nav-button"><i class="fas fa-chevron-left"></i></button>
         <button type="button" id="next" class="nav-button"><i class="fas fa-chevron-right"></i></button>
     </div>
+
 </div>
+
+
+
+
+
+<div class="col-12" style="margin-top: 4.5rem;">
+    <h3 class="text-center text-uppercase">Gobernación al Día</h3>
+</div>
+<section class="gallery mt-3">
+    <!-- Cada elemento multimedia -->
+    <article class="media-item"
+        *ngFor="let doc of documentos | paginate: { itemsPerPage: this.limite, currentPage: this.page, totalItems: this.totalItems }">
+        <!-- imagen -->
+        <img [src]="this.urlPortada +'/'+ doc.img_semanarios[0]?.imagen" alt="semanarios">
+
+        <div class="media-info">
+            <h2 class="text-left">{{ doc.edicion }}</h2>
+            <p><span class="font-normal">Fecha de publicación:</span> {{ doc.fecha_publicacion }}</p>
+            <a class="view-more text-white" (click)="verSemanario(doc)">Ver semanario</a>
+        </div>
+
+    </article>
+
+</section>
+
+<!-- Paginación con ngx-pagination -->
+<div class="pagination">
+    <!-- Control de paginación -->
+    <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="this.pageChanged($event)">
+    </pagination-controls>
+</div>
+
+<app-footer-gadc></app-footer-gadc>

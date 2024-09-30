@@ -33,7 +33,9 @@ export class UltimasNoticiasComponent {
         console.log(err)
       },
 
-      complete: () => { console.log('complete') }
+      complete: () => {
+        // console.log('complete') 
+      }
     })
   }
 

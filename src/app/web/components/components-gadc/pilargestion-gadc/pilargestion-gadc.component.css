@@ -4,28 +4,72 @@
       text-transform: uppercase;
     }
 
-    .card {
-      border: 1px solid #ccc;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      background-color: #f9f9f9;
+    .container-pilares {
+      max-width: 1450px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
       margin-bottom: 20px;
     }
 
-    .card img {
-      max-width: 100%;
-      height: 200px;
-      margin-bottom: 10px;
-      object-fit: cover;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: rgb(0, 127, 198);
+    .card {
+      display: flex;
+      flex-direction: column;
+      /* Asegura que los elementos se apilen verticalmente */
+      justify-content: space-between;
+      /* Espacio igual entre elementos */
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 360px;
+      /* Establecer ancho fijo */
+      height: auto;
+      /* Establecer altura fija */
+      padding: 0;
+      /* Eliminar padding */
+      overflow: hidden;
+      /* Evita que el contenido sobrepase el tamaño de la tarjeta */
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      /* Mantiene la proporción de la imagen */
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin: 10px 0;
+      flex-grow: 1;
+      /* Permite que el título crezca para ocupar espacio disponible */
     }
 
     .card p {
-      font-size: 1.1em;
-      line-height: 1.5;
-      color: #0c0b0b;
+      font-size: 14px;
+      color: gray;
+      margin: 0;
+      /* Eliminar margenes en el párrafo */
+    }
+
+    .card .btn-bajar-archivo {
+      background-color: rgb(0, 127, 198);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: auto;
+      /* Mueve el botón hacia la parte inferior */
+    }
+
+    .card .btn-bajar-archivo:hover {
+      background-color: #0056b3;
     }

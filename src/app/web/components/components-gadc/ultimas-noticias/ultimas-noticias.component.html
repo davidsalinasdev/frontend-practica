@@ -13,12 +13,12 @@
       </div>
 
 
-      <a [routerLink]="[ '/web/detalle-noticias', this.noticia[0].titulo , 'individual' ]">
-        <img [src]="this.noticia[0].imagen" [alt]="this.noticia[0].antetitulo">
+      <a [routerLink]="[ '/web/detalle-noticias', this.noticia[0]?.titulo , 'individual' ]">
+        <img [src]="this.noticia[0]?.imagen" [alt]="this.noticia[0]?.antetitulo">
         <div class="news-info">
-          <span class="tag">{{ this.noticia[0].categorias[0] }}</span>
-          <h2 class="text-white">{{ this.noticia[0].titulo }}</h2>
-          <p class="text-white">Publicado el {{ this.noticia[0].fecha }}</p>
+          <span class="tag">{{ this.noticia[0]?.categorias[0] }}</span>
+          <h2 class="text-white">{{ this.noticia[0]?.titulo }}</h2>
+          <p class="text-white">Publicado el {{ this.noticia[0]?.fecha }}</p>
         </div>
       </a>
 
@@ -26,25 +26,25 @@
 
     <div class="secondary-news-group">
       <!-- Esta noticia tendrá el texto sobre la imagen -->
-      <a [routerLink]="[ '/web/detalle-noticias', this.noticia[1].titulo, 'individual']">
+      <a [routerLink]="[ '/web/detalle-noticias', this.noticia[1]?.titulo, 'individual']">
         <div class="secondary-news with-text-overlay">
-          <img [src]="this.noticia[1].imagen" [alt]="this.noticia[1].antetitulo">
+          <img [src]="this.noticia[1]?.imagen" [alt]="this.noticia[1]?.antetitulo">
           <div class="news-info">
-            <span class="tag">{{ this.noticia[1].categorias[0] }}</span>
-            <h5 class="mt-1">{{ this.noticia[1].titulo }}</h5>
-            <p class="font-weight-normal mb-0">Publicado el {{ this.noticia[1].fecha }}</p>
+            <span class="tag">{{ this.noticia[1]?.categorias[0] }}</span>
+            <h5 class="mt-1">{{ this.noticia[1]?.titulo }}</h5>
+            <p class="font-weight-normal mb-0">Publicado el {{ this.noticia[1]?.fecha }}</p>
           </div>
         </div>
       </a>
 
-      <a [routerLink]="[ '/web/detalle-noticias', this.noticia[2].titulo , 'individual' ]">
+      <a [routerLink]="[ '/web/detalle-noticias', this.noticia[2]?.titulo , 'individual' ]">
         <!-- Esta noticia tendrá el texto debajo de la imagen, como antes -->
         <div class="secondary-news">
-          <img [src]="this.noticia[2].imagen" [alt]="this.noticia[2].antetitulo">
+          <img [src]="this.noticia[2]?.imagen" [alt]="this.noticia[2]?.antetitulo">
           <div class="news-info">
-            <span class="tag">{{ this.noticia[2].categorias[0] }}</span>
-            <h5 class="mt-2">{{ this.noticia[2].titulo }}</h5>
-            <p class="font-weight-normal mb-0">Publicado el {{ this.noticia[2].fecha }}</p>
+            <span class="tag">{{ this.noticia[2]?.categorias[0] }}</span>
+            <h5 class="mt-2">{{ this.noticia[2]?.titulo }}</h5>
+            <p class="font-weight-normal mb-0">Publicado el {{ this.noticia[2]?.fecha }}</p>
           </div>
         </div>
       </a>

@@ -26,13 +26,15 @@ export class BannerPublicidadComponent {
         // console.log(resp);
 
         this.bannerPublicidad = resp.data.data;
-        console.log(this.bannerPublicidad);
+        // console.log(this.bannerPublicidad);
 
       },
       error: (err) => {
         console.log(err);
       },
-      complete: () => { console.log('complete') }
+      complete: () => {
+        // console.log('complete') 
+      }
     })
   }
 

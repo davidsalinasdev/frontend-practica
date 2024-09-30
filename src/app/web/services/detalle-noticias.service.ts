@@ -1,4 +1,3 @@
-// Variables globales
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
@@ -10,13 +9,14 @@ const base_url = environment.base_url;
 @Injectable({
   providedIn: 'root'
 })
-export class MediatekaService {
+export class DetalleNoticiasService {
+
 
   constructor(private http: HttpClient) { }
 
-  obtenerDocumentos(limite: number, page: number, tipo: number, search: string): Observable<any> {
+  obtenerMenuespecial(): Observable<any> {
 
-    const url = `${base_url}/api/multimedia/videosAudios?limite=${limite}&page=${page}`;
+    const url = `${base_url}/api/inicio/getMenuEspecial`;
 
 
     // Petición GET con manejo de errores
@@ -24,6 +24,31 @@ export class MediatekaService {
       catchError(this.handleError) // Manejo de errores
     );
   }
+
+  obtenerCategorias(): Observable<any> {
+
+    const url = `${base_url}/api/noticia/getCategoriasPalabrasClave`;
+
+
+    // Petición GET con manejo de errores
+    return this.http.get(url).pipe(
+      catchError(this.handleError) // Manejo de errores
+    );
+  }
+
+  // obtenerListaNoticias(limite: number, page: number, tipo: number, search: string): Observable<any> {
+  obtenerListaNoticias(categoria: any, palabra: any, search: any, page: any): Observable<any> {
+
+    const url = `${base_url}/api/noticia/noticias?categoria=${categoria}&palabra=${palabra}&search=${search}&page=${page}`;
+    // https://gobernaciondecochabamba.bo/api/noticia/noticias?categoria=veh%C3%ADculos&palabra=&search=&page=1
+
+    // Petición GET con manejo de errores
+    return this.http.get(url).pipe(
+      catchError(this.handleError) // Manejo de errores
+    );
+
+  }
+
 
   // Manejo de errores
   private handleError(error: HttpErrorResponse) {

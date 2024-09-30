@@ -1,0 +1,181 @@
+.fondo-header {
+    background-color: rgb(10, 131, 201);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(154, 128, 158, 0.46);
+}
+
+.noticias-titulo {
+    font-size: 2.5rem;
+    color: whitesmoke;
+    padding: 15px 0px;
+}
+
+.container-noticias {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Contenedor de categorías y lista separada */
+.categories-container {
+    width: 25%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    /* Fijar la altura del contenedor de categorías */
+    position: sticky;
+    /* Mantener el contenedor fijo */
+    top: 0;
+    /* Para que se mantenga visible al hacer scroll en la página */
+    overflow: hidden;
+    /* Evitar que crezca */
+}
+
+
+.categories-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Cuadro de búsqueda */
+.search-bar {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.search-bar input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    width: 30%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+/* Lista de categorías con scroll */
+.categories-list {
+    height: 600px;
+    /* Mantener el scroll solo en la lista */
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.categories-list ul {
+    list-style: none;
+}
+
+.categories-list li {
+    margin-bottom: 10px;
+}
+
+.categories-list a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.categories-list a:hover {
+    color: #0056b3;
+}
+
+/* Sección de Noticias */
+.news-section {
+    width: 75%;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.news-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+/* .news-card:hover {
+    transform: translateY(-5px);
+} */
+
+.news-title {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.news-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.news-image {
+    width: 100%;
+    height: 370px;
+    border-radius: 5px;
+    margin: 15px 0;
+    object-fit: cover;
+}
+
+.news-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.news-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.read-more-btn {
+    text-decoration: none;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Scroll personalizado para la lista de categorías */
+.categories-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.categories-list::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 127, 198);
+    border-radius: 4px;
+}
+
+.btn-categoria:hover {
+    color: rgb(0, 127, 198) !important;
+    cursor: pointer;
+}
+
+.alerta {
+    display: none;
+}

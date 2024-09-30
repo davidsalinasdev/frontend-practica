@@ -52,8 +52,7 @@
               "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
               "node_modules/fslightbox/index.js",
               "node_modules/toastr/build/toastr.min.js",
-              "node_modules/select2/dist/js/select2.min.js",
-              "node_modules/turn.js/turn.min.js"
+              "node_modules/select2/dist/js/select2.min.js"
             ]
           },
           "configurations": {

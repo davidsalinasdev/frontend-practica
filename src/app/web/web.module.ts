@@ -31,6 +31,9 @@ import { SusgerenciasComponent } from './pages/susgerencias/susgerencias.compone
 import { DenunciasComponent } from './pages/denuncias/denuncias.component';
 import { MediatekaComponent } from './pages/mediateka/mediateka.component';
 import { SemanarioComponent } from './pages/semanario/semanario.component';
+import { DetalleNoticiasComponent } from './pages/detalle-noticias/detalle-noticias.component';
+import { BannerPublicidadComponent } from './components/components-gadc/banner-publicidad/banner-publicidad.component';
+
 
 
 
@@ -52,7 +55,9 @@ import { SemanarioComponent } from './pages/semanario/semanario.component';
     SusgerenciasComponent,
     DenunciasComponent,
     MediatekaComponent,
-    SemanarioComponent
+    SemanarioComponent,
+    DetalleNoticiasComponent,
+    BannerPublicidadComponent
   ],
   imports: [
     CommonModule,
@@ -60,7 +65,8 @@ import { SemanarioComponent } from './pages/semanario/semanario.component';
     SharedModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ]
 })
 export class WebModule { }

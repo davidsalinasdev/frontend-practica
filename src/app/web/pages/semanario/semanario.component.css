@@ -9,95 +9,11 @@
     padding: 15px 0px;
 }
 
-.flipbook-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    /* Centra verticalmente los botones con el flipbook */
-    justify-content: center;
-    /* Centra el contenido horizontalmente */
-}
-
-.flipbook {
-    margin: 0 auto;
-    position: relative;
-    background: #f3f3f3;
-    box-shadow: 0 2px 15px rgba(78, 78, 78, 0.3);
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.page {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 18px;
-    text-align: center;
-}
-
-.page img {
-    width: 700px;
-    /* Imagen ocupa el 100% del ancho de la página */
-    height: 100%;
-    /* Mantiene la proporción de la imagen */
-    object-fit: cover;
-    /* La imagen cubre todo el área, manteniendo la proporción */
-}
-
-.hard {
-    background: #8e44ad;
-    color: white;
-    font-size: 24px;
-    text-align: center;
-}
-
-.navigation {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    transform: translateY(-50%);
-    /* Centra verticalmente los botones */
-    width: 80%;
-    /* Asegura que la navegación esté centrada */
-    display: flex;
-    /* Usa flexbox para posicionar los botones */
-    justify-content: space-between;
-    /* Espacia los botones a los lados */
-    padding: 0 20px;
-    /* Espaciado horizontal para separar un poco los botones del borde */
-}
-
-.nav-button {
-    background-color: transparent;
-    /* Fondo transparente para los botones */
-    color: #3498db;
-    /* Color del texto (íconos) */
-    border: none;
-    /* Sin bordes */
-    font-size: 24px;
-    /* Tamaño de fuente para los íconos */
-    cursor: pointer;
-    /* Cursor tipo puntero */
-    transition: color 0.3s;
-    /* Transición suave para el color */
-}
-
-.nav-button:hover {
-    color: #2980b9;
-    /* Cambia el color al pasar el mouse */
-}
-
-.nav-icon {
-    font-size: 24px;
-    /* Tamaño del ícono */
-}
-
 /* Lista semanario */
 /* Estilo de la galería */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     /* Tres columnas */
     gap: 20px;
     padding: 20px;
@@ -177,3 +93,321 @@
 }
 
 /* FIN Lista semanario */
+
+
+/* FLIPBOOK */
+
+.flitbook-contenedor {
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-family: sans-serif; */
+    /* background-color: #dac400; */
+}
+
+/* Button */
+button {
+    border: none;
+    background-color: rgba(5, 5, 5, 0.527);
+    margin: 40px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    color: white;
+    padding: 15px 13px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    color: rgb(207, 209, 212);
+}
+
+i {
+    color: gray;
+    font-size: 4em;
+}
+
+/* Book */
+.book {
+    width: 400px;
+    height: 530px;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.paper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front {
+    backface-visibility: hidden;
+    /* border-left: 3px solid #dac400; */
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/* Paper Flipped */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg)
+}
+
+/* Paper Z-index */
+#p1 {
+    z-index: 50;
+}
+
+#p2 {
+    z-index: 49;
+}
+
+#p3 {
+    z-index: 48;
+}
+
+#p4 {
+    z-index: 47;
+}
+
+#p5 {
+    z-index: 46;
+}
+
+#p6 {
+    z-index: 45;
+}
+
+#p7 {
+    z-index: 44;
+}
+
+#p8 {
+    z-index: 43;
+}
+
+#p9 {
+    z-index: 42;
+}
+
+#p10 {
+    z-index: 41;
+}
+
+#p11 {
+    z-index: 40;
+}
+
+#p12 {
+    z-index: 39;
+}
+
+#p13 {
+    z-index: 38;
+}
+
+#p14 {
+    z-index: 37;
+}
+
+#p15 {
+    z-index: 36;
+}
+
+#p16 {
+    z-index: 35;
+}
+
+#p17 {
+    z-index: 34;
+}
+
+#p18 {
+    z-index: 33;
+}
+
+#p19 {
+    z-index: 32;
+}
+
+#p20 {
+    z-index: 31;
+}
+
+#p21 {
+    z-index: 30;
+}
+
+#p22 {
+    z-index: 29;
+}
+
+#p23 {
+    z-index: 28;
+}
+
+#p24 {
+    z-index: 27;
+}
+
+#p25 {
+    z-index: 26;
+}
+
+#p26 {
+    z-index: 25;
+}
+
+#p27 {
+    z-index: 24;
+}
+
+#p28 {
+    z-index: 23;
+}
+
+#p29 {
+    z-index: 22;
+}
+
+#p30 {
+    z-index: 21;
+}
+
+#p31 {
+    z-index: 20;
+}
+
+#p32 {
+    z-index: 19;
+}
+
+#p33 {
+    z-index: 18;
+}
+
+#p34 {
+    z-index: 17;
+}
+
+#p35 {
+    z-index: 16;
+}
+
+#p36 {
+    z-index: 15;
+}
+
+#p37 {
+    z-index: 14;
+}
+
+#p38 {
+    z-index: 13;
+}
+
+#p39 {
+    z-index: 12;
+}
+
+#p40 {
+    z-index: 11;
+}
+
+#p41 {
+    z-index: 10;
+}
+
+#p42 {
+    z-index: 9;
+}
+
+#p43 {
+    z-index: 8;
+}
+
+#p44 {
+    z-index: 7;
+}
+
+#p45 {
+    z-index: 6;
+}
+
+#p46 {
+    z-index: 5;
+}
+
+#p47 {
+    z-index: 4;
+}
+
+#p48 {
+    z-index: 3;
+}
+
+#p49 {
+    z-index: 2;
+}
+
+#p50 {
+    z-index: 1;
+}
+
+/* Customization */
+
+.book-title {
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+.cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* FIN FLIPBOOK */

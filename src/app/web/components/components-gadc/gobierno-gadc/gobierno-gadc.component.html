@@ -4,18 +4,17 @@
   </div>
 
   <div class="row">
-    <div class="col-12 mt-3">
+    <div class="col-12 mt-2">
       <div class="secretarias-container">
-        <div class="secretaria">Secretaría de......</div>
-        <div class="secretaria">Secretaría de......</div>
-        <div class="secretaria">Secretaría de......</div>
-        <div class="secretaria">Secretaría de......</div>
-        <div class="secretaria">Secretaría de......</div>
-        <div class="secretaria">Secretaría de......</div>
-        <div class="secretaria">Secretaría de......</div>
-        <div class="secretaria">Secretaría de......</div>
-        <div class="secretaria">Secretaría de......</div>
-        <div class="secretaria">Secretaría de......</div>
+        <ng-container *ngFor="let secretaria of this.listSecretarias; let i = index">
+          <div class="secretaria" [ngStyle]="{'z-index': (1000-i)}">
+            <img [src]="secretaria.imagenIcono" alt="{{secretaria.nombre}}">
+            <span class="tooltip-text">
+              {{ secretaria.nombre }}
+            </span>
+          </div>
+        </ng-container>
+
       </div>
     </div>
   </div>

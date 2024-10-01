@@ -7,12 +7,14 @@
     <div class="col-12 mt-2">
       <div class="secretarias-container">
         <ng-container *ngFor="let secretaria of this.listSecretarias; let i = index">
-          <div class="secretaria" [ngStyle]="{'z-index': (1000-i)}">
-            <img [src]="secretaria.imagenIcono" alt="{{secretaria.nombre}}">
-            <span class="tooltip-text">
-              {{ secretaria.nombre }}
-            </span>
-          </div>
+          <a [routerLink]="[ '/web/secretarias', secretaria.undId ]">
+            <div class="secretaria" [ngStyle]="{'z-index': (1000-i)}">
+              <img [src]="secretaria.imagenIcono" alt="{{secretaria.nombre}}">
+              <span class="tooltip-text">
+                {{ secretaria.nombre }}
+              </span>
+            </div>
+          </a>
         </ng-container>
 
       </div>

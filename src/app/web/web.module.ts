@@ -33,6 +33,8 @@ import { MediatekaComponent } from './pages/mediateka/mediateka.component';
 import { SemanarioComponent } from './pages/semanario/semanario.component';
 import { DetalleNoticiasComponent } from './pages/detalle-noticias/detalle-noticias.component';
 import { BannerPublicidadComponent } from './components/components-gadc/banner-publicidad/banner-publicidad.component';
+import { SecretariasComponent } from './pages/secretarias/secretarias.component';
+
 
 
 
@@ -57,7 +59,8 @@ import { BannerPublicidadComponent } from './components/components-gadc/banner-p
     MediatekaComponent,
     SemanarioComponent,
     DetalleNoticiasComponent,
-    BannerPublicidadComponent
+    BannerPublicidadComponent,
+    SecretariasComponent
   ],
   imports: [
     CommonModule,

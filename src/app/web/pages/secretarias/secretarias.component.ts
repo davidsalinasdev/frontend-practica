@@ -1,0 +1,42 @@
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SecretariasService } from '../../services/secretarias.service';
+
+@Component({
+  selector: 'app-secretarias',
+  templateUrl: './secretarias.component.html',
+  styleUrl: './secretarias.component.css'
+})
+export class SecretariasComponent {
+
+
+  public idSecretaria: string | null = ''
+  public secretaria: any;
+
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private secretariaServices: SecretariasService
+  ) {
+    this.parametroQuery();
+  }
+
+
+
+  /**
+   * recibiendoTitulo
+   */
+  public parametroQuery() {
+    // Suscribirse a los cambios en los parámetros de la ruta
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.idSecretaria = params.get('id'); // Obtener el valor del parámetro 'id'
+
+      this.secretariaServices.showSecretaria(this.idSecretaria).subscribe((resp: any) => {
+        this.secretaria = resp.data;
+        console.log(this.secretaria);
+
+      });
+
+    });
+  }
+}

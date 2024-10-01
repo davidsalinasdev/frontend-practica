@@ -23,6 +23,8 @@ export class GobiernoGadcComponent {
     this.secretariasServices.indexSecretarias().subscribe({
       next: (resp: any) => {
         this.listSecretarias = resp.data
+        // console.log(this.listSecretarias);
+
       },
       error: (err) => {
         console.log(err)

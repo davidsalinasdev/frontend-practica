@@ -8,6 +8,17 @@
   <div class="row">
     <div class="col-12 mt-2">
       <div class="secretarias-container">
+
+        <!-- Despacho -->
+        <a [routerLink]="[ '/web/gobierno' ]">
+          <div class="secretaria" [ngStyle]="{'z-index': 99}">
+            <img [src]="this.despacho.despacho.imagenIcono" alt="{{this.despacho.despacho.nombre}}">
+            <span class="tooltip-text">
+              Despacho De La Gobernación
+            </span>
+          </div>
+        </a>
+
         <ng-container *ngFor="let secretaria of this.listSecretarias; let i = index">
           <a [routerLink]="[ '/web/secretarias', secretaria.undId ]">
             <div class="secretaria" [ngStyle]="{'z-index': (1000-i)}">

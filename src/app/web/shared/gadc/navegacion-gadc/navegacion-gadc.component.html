@@ -1,65 +1,75 @@
-<!-- <header class="fixed-top2"> -->
 <header class="">
-  <a [routerLink]="['/web/inicio']">
+  <a [routerLink]="['/web/inicio']" [ngClass]="{'active': activeLink === 'inicio'}" (click)="setActiveLink('inicio')">
     <div class="logo">
       <img src="./../../../../../assets/img/logo3.png" alt="Logo Cochabamba">
-      <!-- <img src="" alt="Logo Cochabamba"> -->
     </div>
   </a>
   <nav class="">
     <ul class="menu">
       <li>
-        <a [routerLink]="[ '/web/inicio' ]" routerLinkActive="active">Inicio</a>
+        <a [routerLink]="['/web/inicio']" [ngClass]="{'active': activeLink === 'inicio'}"
+          (click)="setActiveLink('inicio')">Inicio</a>
       </li>
       <li class="dropdown">
-        <a class="servicio-al-ciudadano">Servicio al Ciudadano</a>
+        <a class="servicio-al-ciudadano" [ngClass]="{'active': activeLink === 'servicio'}"
+          (click)="setActiveLink('servicio')">Servicio al Ciudadano</a>
         <ul class="dropdown-content">
-          <li><a href="#seguimiento-tramites">Seguimiento de Trámites</a></li>
-          <li><a href="#calcula-impuesto">Calcula tu Impuesto</a></li>
-          <li><a href="#personalidades-juridicas">Personalidades Jurídicas</a></li>
-          <li><a href="#reserva-espacios">Reserva de Espacios Deportivos</a></li>
-          <li><a href="#licencia-operadores">Licencia de Operadores de Turismo</a></li>
-          <li><a href="#comunidad-turismo">Comunidad de Turismo</a></li>
+          <li><a href="http://portal-ciudadano.gobernaciondecochabamba.bo/#/home/correspondencia"
+              target="_blank">Seguimiento de Trámites</a></li>
+          <li><a href="https://sisrec.gobernaciondecochabamba.bo/" target="_blank">Calcula tu Impuesto</a></li>
+          <li><a href="#personalidades-juridicas" target="_blank">Personalidades Jurídicas</a></li>
+          <li><a href="#reserva-espacios" target="_blank">Reserva de Espacios Deportivos</a></li>
+          <li><a href="#licencia-operadores" target="_blank">Licencia de Operadores de Turismo</a></li>
+          <li><a href="#comunidad-turismo" target="_blank">Comunidad de Turismo</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#comunicacion">Comunicación</a>
+        <a [ngClass]="{'active': activeLink === 'comunicacion'}"
+          (click)="setActiveLink('comunicacion')">Comunicación</a>
         <ul class="dropdown-content">
           <li><a href="#gobernacion-tv">Gobernación TV</a></li>
-          <li><a [routerLink]="[ '/web/radio' ]">Gobernación Radio</a></li>
-          <li><a [routerLink]="[ '/web/semanario' ]">Semanario Digital</a></li>
-          <li><a [routerLink]="[ '/web/mediateka' ]">Mediateca</a></li>
+          <li><a [routerLink]="['/web/radio']" [ngClass]="{'active': activeLink === 'radio'}"
+              (click)="setActiveLink('radio')">Gobernación Radio</a></li>
+          <li><a [routerLink]="['/web/semanario']" [ngClass]="{'active': activeLink === 'semanario'}"
+              (click)="setActiveLink('semanario')">Semanario Digital</a></li>
+          <li><a [routerLink]="['/web/mediateka']" [ngClass]="{'active': activeLink === 'mediateka'}"
+              (click)="setActiveLink('mediateka')">Mediateca</a></li>
           <li><a href="#jaku">JAKU</a></li>
         </ul>
       </li>
       <li>
-        <a [routerLink]="[ '/web/gaceta' ]" routerLinkActive="active">Gaceta</a>
+        <a [routerLink]="['/web/gaceta']" [ngClass]="{'active': activeLink === 'gaceta'}"
+          (click)="setActiveLink('gaceta')">Gaceta</a>
       </li>
       <li class="dropdown">
-        <a href="#transparencia">Transparencia</a>
+        <a [ngClass]="{'active': activeLink === 'transparencia'}"
+          (click)="setActiveLink('transparencia')">Transparencia</a>
         <ul class="dropdown-content">
-          <li><a [routerLink]="[ '/web/denuncias' ]">Denuncia</a></li>
-          <li><a [routerLink]="[ '/web/sugerencias' ]">Sugerencia</a></li>
-          <li><a [routerLink]="[ '/web/rendicion-cuentas' ]">Rendición de Cuentas</a></li>
-          <li><a [routerLink]="[ '/web/convocatorias' ]">Convocatorias</a></li>
-          <li><a [routerLink]="[ '/web/auditoria' ]">Auditorías</a></li>
+          <li><a [routerLink]="['/web/denuncias']" [ngClass]="{'active': activeLink === 'denuncias'}"
+              (click)="setActiveLink('denuncias')">Denuncia</a></li>
+          <li><a [routerLink]="['/web/sugerencias']" [ngClass]="{'active': activeLink === 'sugerencias'}"
+              (click)="setActiveLink('sugerencias')">Sugerencia</a></li>
+          <li><a [routerLink]="['/web/rendicion-cuentas']" [ngClass]="{'active': activeLink === 'rendicion'}"
+              (click)="setActiveLink('rendicion')">Rendición de Cuentas</a></li>
+          <li><a [routerLink]="['/web/convocatorias']" [ngClass]="{'active': activeLink === 'convocatorias'}"
+              (click)="setActiveLink('convocatorias')">Convocatorias</a></li>
+          <li><a [routerLink]="['/web/auditoria']" [ngClass]="{'active': activeLink === 'auditorias'}"
+              (click)="setActiveLink('auditorias')">Auditorías</a></li>
         </ul>
       </li>
       <li class="iconos">
-        <a href="#"><i class="bi bi-twitter-x"></i></a>
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-tiktok"></i></a>
-        <a href="#"><i class="bi bi-youtube"></i></a>
+        <a [href]="this.despacho?.despacho.linkTwitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
+        <a [href]="this.despacho?.despacho.linkFacebook" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.tiktok.com/@gobernaciondecochabamba" target="_blank"><i class="bi bi-tiktok"></i></a>
+        <a [href]="this.despacho?.despacho.linkYoutube" target="_blank"><i class="bi bi-youtube"></i></a>
+
+        <!-- Whatsapp -->
         <a href="#"><i class="bi bi-whatsapp"></i></a>
 
-        <!-- Implementación de radio Gobernación con tooltip que permanece -->
+        <!-- Implementación de radio Gobernación -->
         <a (click)="toggleRadio()" class="radio-button">
-          <!-- Cambia el ícono o imagen dependiendo del estado -->
           <ng-container *ngIf="radioService.playing; else showIcon">
-
             <img src="../../../../../assets/img/gifoficial.gif" alt="Reproduciendo" style="width: 30px; height: auto;">
-            <!-- Tooltip que permanece visible mientras la radio esté reproduciendo -->
-
             <span class="tooltip-text visible">
               <i class="fas fa-pause text-pause"></i>
               Detener radio en linea
@@ -67,17 +77,11 @@
           </ng-container>
           <ng-template #showIcon>
             <i class="mdi mdi-radio"></i>
-            <!-- Tooltip que aparece solo en hover cuando la radio está detenida -->
-            <span class="tooltip-text">
-              <!-- <i class="fas fa-play"></i> -->
-              Reproducir radio</span>
+            <span class="tooltip-text">Reproducir radio</span>
           </ng-template>
         </a>
 
-
-
-
-
+        <!-- Television en linea -->
         <a href="#"><i class="bi bi-broadcast"></i></a>
       </li>
     </ul>

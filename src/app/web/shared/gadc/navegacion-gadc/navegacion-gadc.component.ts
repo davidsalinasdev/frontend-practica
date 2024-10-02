@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 // Servicios
 import { RadioService } from '../../../services/radio.service';
+import { GobiernoService } from '../../../services/gobierno.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 declare var bootstrap: any;
 
@@ -12,7 +14,39 @@ declare var bootstrap: any;
 })
 export class NavegacionGadcComponent {
 
-  constructor(public radioService: RadioService) { }
+  public despacho: any;
+  public pdfUrl: any;
+  public acercaDe: any;
+
+  activeLink: string = '';
+  constructor(
+    public radioService: RadioService,
+    private gobiernoServices: GobiernoService,
+    private sanitizer: DomSanitizer
+  ) { }
+
+
+  setActiveLink(link: string) {
+    this.activeLink = link;
+  }
+
+
+  ngOnInit(): void {
+    this.getDespacho();
+  }
+
+  /**
+  * getDespacho
+ */
+  public getDespacho() {
+    this.gobiernoServices.getDespacho().subscribe((resp: any) => {
+      this.despacho = resp.data;
+      const url = this.despacho.despacho.organigrama;
+      this.pdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+
+      this.acercaDe = this.sanitizer.bypassSecurityTrustHtml(this.despacho?.biografia.resenia);  // Sanitizar contenido HTML
+    })
+  }
 
 
   ngAfterViewInit() {

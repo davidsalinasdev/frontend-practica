@@ -10,12 +10,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Modulo SHARED
 import { SharedModule } from './shared/shared.module';
 
+// PDF
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+
+
 // Componentes que pertenecen a Web
 import { WebLayoutComponent } from './layout/web-layout/web-layout.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 
 // web/componenents
-
 import { TelevisionComponent } from './components/television/television.component';
 import { UltimasNoticiasComponent } from './components/components-gadc/ultimas-noticias/ultimas-noticias.component';
 import { TelevisionGadcComponent } from './components/components-gadc/television-gadc/television-gadc.component';
@@ -71,6 +74,7 @@ import { GobernadorComponent } from './pages/gobernador/gobernador.component';
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
+    PdfViewerModule // Agrega el módulo aquí
 
   ]
 })

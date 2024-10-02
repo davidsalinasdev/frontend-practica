@@ -35,6 +35,7 @@ export class ConvocatoriasComponent implements OnInit {
         if (this.documentos.length >= 0 && this.documentos.length <= 2) {
           this.opcionAuditoria = true;
         }
+
       });
   }
 

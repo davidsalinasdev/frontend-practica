@@ -16,7 +16,7 @@
                 </div>
                 <div class="biography">
                     <h3>Biografía</h3>
-                    <p>{{ this.despacho?.biografia.resenia }}</p>
+                    <p [innerHTML]="this.acercaDe"></p>
                 </div>
             </div>
 
@@ -45,11 +45,11 @@
                 <p>{{ this.despacho?.despacho.historia }}</p>
             </div>
 
-            <!-- Secretarías -->
             <div class="section">
                 <h3>Organigrama</h3>
-                <!-- Lista de secretarías aquí -->
+                <iframe [src]="pdfUrl" width="100%" height="600px" style="border: none;"></iframe>
             </div>
+
         </div>
 
     </div>

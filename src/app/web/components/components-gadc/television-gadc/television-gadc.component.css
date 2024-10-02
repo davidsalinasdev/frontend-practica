@@ -1,17 +1,71 @@
-#video-player {
-  width: 100%;
-  height: auto;
-}
-
-@media(min-width: 992px) {
-  #video-player {
-    width: 60%;
-    height: auto;
-  }
-}
-
 .television__titulo {
   font-size: 2rem;
   color: #30336b;
   text-transform: uppercase;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h1 {
+  color: #333;
+}
+
+.program {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+}
+
+.video-player {
+  width: 60%;
+}
+
+.video-player video {
+  width: 100%;
+  height: auto;
+}
+
+.program-details {
+  padding: 20px;
+  flex: 1;
+}
+
+h2 {
+  color: #444;
+}
+
+.time {
+  font-weight: bold;
+  color: #666;
+}
+
+.description {
+  color: #555;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.watch-button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.watch-button:hover {
+  background-color: #218838;
 }

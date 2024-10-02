@@ -49,8 +49,9 @@
 }
 
 .biography p {
-    font-size: 16px;
+    font-size: 17px;
     color: #555;
+    font-weight: normal;
 }
 
 .section {
@@ -67,8 +68,9 @@
 }
 
 .section p {
-    font-size: 16px;
+    font-size: 17px;
     color: #555;
+    font-weight: normal;
 }
 
 @media (max-width: 768px) {

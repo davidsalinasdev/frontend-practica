@@ -15,6 +15,7 @@ import { MediatekaComponent } from './pages/mediateka/mediateka.component';
 import { SemanarioComponent } from './pages/semanario/semanario.component';
 import { DetalleNoticiasComponent } from './pages/detalle-noticias/detalle-noticias.component';
 import { SecretariasComponent } from './pages/secretarias/secretarias.component';
+import { GobernadorComponent } from './pages/gobernador/gobernador.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'semanario', component: SemanarioComponent },
       { path: 'detalle-noticias/:titulo/:otroParametro', component: DetalleNoticiasComponent },
       { path: 'secretarias/:id', component: SecretariasComponent },
+      { path: 'gobierno', component: GobernadorComponent },
       { path: '**', redirectTo: 'fullscreen' } // Es la primera ruta que se muestra para este MODULO.
     ]
   } // Path inicial

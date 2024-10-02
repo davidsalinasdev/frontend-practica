@@ -34,6 +34,7 @@ import { SemanarioComponent } from './pages/semanario/semanario.component';
 import { DetalleNoticiasComponent } from './pages/detalle-noticias/detalle-noticias.component';
 import { BannerPublicidadComponent } from './components/components-gadc/banner-publicidad/banner-publicidad.component';
 import { SecretariasComponent } from './pages/secretarias/secretarias.component';
+import { GobernadorComponent } from './pages/gobernador/gobernador.component';
 
 
 
@@ -60,7 +61,8 @@ import { SecretariasComponent } from './pages/secretarias/secretarias.component'
     SemanarioComponent,
     DetalleNoticiasComponent,
     BannerPublicidadComponent,
-    SecretariasComponent
+    SecretariasComponent,
+    GobernadorComponent
   ],
   imports: [
     CommonModule,

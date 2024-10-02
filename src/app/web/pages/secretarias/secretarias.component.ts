@@ -18,6 +18,8 @@ export class SecretariasComponent {
     private activatedRoute: ActivatedRoute,
     private secretariaServices: SecretariasService
   ) {
+    // Mover la página a la parte superior
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.parametroQuery();
   }
 

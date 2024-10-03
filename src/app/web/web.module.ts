@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
 
 // PDF
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+
 
 
 // Componentes que pertenecen a Web
@@ -73,9 +73,7 @@ import { GobernadorComponent } from './pages/gobernador/gobernador.component';
     SharedModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule,
-    PdfViewerModule // Agrega el módulo aquí
-
+    ReactiveFormsModule
   ]
 })
 export class WebModule { }

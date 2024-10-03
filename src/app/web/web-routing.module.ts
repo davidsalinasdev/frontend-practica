@@ -16,6 +16,7 @@ import { SemanarioComponent } from './pages/semanario/semanario.component';
 import { DetalleNoticiasComponent } from './pages/detalle-noticias/detalle-noticias.component';
 import { SecretariasComponent } from './pages/secretarias/secretarias.component';
 import { GobernadorComponent } from './pages/gobernador/gobernador.component';
+import { GobernacionTvComponent } from './pages/gobernacion-tv/gobernacion-tv.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
       { path: 'detalle-noticias/:titulo/:otroParametro', component: DetalleNoticiasComponent },
       { path: 'secretarias/:id', component: SecretariasComponent },
       { path: 'gobierno', component: GobernadorComponent },
+      { path: 'gobernaciontv', component: GobernacionTvComponent },
       { path: '**', redirectTo: 'fullscreen' } // Es la primera ruta que se muestra para este MODULO.
     ]
   } // Path inicial

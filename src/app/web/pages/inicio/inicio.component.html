@@ -7,6 +7,14 @@
 
 <div class="container" style="max-width: 1600px;">
 
+  <div #television>
+    <br><br>
+    @defer (on viewport(television)) {
+    <app-television-gadc></app-television-gadc>
+    }
+  </div>
+
+
   <br><br>
   <div #ultimasnoticias>
     @defer (on viewport(ultimasnoticias)) {
@@ -21,12 +29,7 @@
     }
   </div>
 
-  <br><br>
-  <div #television>
-    @defer (on viewport(television)) {
-    <app-television-gadc></app-television-gadc>
-    }
-  </div>
+
 
   <br><br>
   <div #pilaresgestion>

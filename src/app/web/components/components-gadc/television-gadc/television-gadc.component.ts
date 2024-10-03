@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { TransmisionService } from '../../../services/transmision.service';
 
 @Component({
   selector: 'app-television-gadc',
@@ -10,21 +11,17 @@ export class TelevisionGadcComponent implements OnInit {
 
   public videoUrlYoutube!: SafeResourceUrl;
   public videoUrlFacebook!: SafeResourceUrl;
+  public datosTransmision: any[] = [];
 
-  constructor(private sanitizer: DomSanitizer) { }
+  public urlGlobal: any;
+
+  constructor(
+    private sanitizer: DomSanitizer,
+    private TransmisionServices: TransmisionService) { }
 
   ngOnInit(): void {
 
-    // Sanitizamos la URL del video en vivo para youtube
-    const LiveUrl = "https://www.youtube.com/watch?v=TZspKqY2_wM";
-    const embedUrl = this.convertToEmbedUrl(LiveUrl);
-    this.videoUrlYoutube = this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
-
-    // Sanitizamos la URL del video en vivo para facebook
-    // URL del video en vivo de Facebook
-    const LiveFacebookUrl = "https://www.facebook.com/lobojzz/videos/1083374333507996/";
-    const embedUrlFacebook = this.convertToFacebookEmbedUrl(LiveFacebookUrl);
-    this.videoUrlFacebook = this.sanitizer.bypassSecurityTrustResourceUrl(embedUrlFacebook);
+    this.getTransmision();
 
   }
 
@@ -32,8 +29,11 @@ export class TelevisionGadcComponent implements OnInit {
     const videoId = this.extractVideoId(url);
     // Añadimos los parámetros de autoplay y mute
     // Añadimos el parámetro `modestbranding=1` para ocultar el logo de YouTube
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&modestbranding=1`;
+    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
   }
+
+
+
 
   extractVideoId(url: string): string | null {
     const regExp = /^.*(youtu.be\/|v\/|watch\?v=|watch\?.+&v=)([^#&?]*).*/;
@@ -45,8 +45,39 @@ export class TelevisionGadcComponent implements OnInit {
   // Logica para facebook
   convertToFacebookEmbedUrl(url: string): string {
     // Parametrizamos para autoplay y mute
-    return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&autoplay=true&mute=false`;
+    return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&autoplay=true&mute=1`;
 
   }
+
+
+
+
+
+  /**
+   * getTransmision
+   */
+  public getTransmision() {
+    this.TransmisionServices.getTransmision().subscribe(
+      (resp: any) => {
+        this.datosTransmision = resp.transmision;
+
+        if (this.datosTransmision[0]?.plataforma === "youtube") {
+          // const LiveUrl = this.datosTransmision[0]?.url_youtube;
+          const LiveUrl = 'https://www.youtube.com/watch?v=sfBa33WsxdE';
+          const embedUrl = this.convertToEmbedUrl(LiveUrl);
+          // console.log('URL de YouTube:', embedUrl); // Verifica la URL aquí
+          this.videoUrlYoutube = this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+          this.urlGlobal = this.videoUrlYoutube;
+        } else {
+          const LiveFacebookUrl = this.datosTransmision[0]?.url_facebook;
+          const embedUrlFacebook = this.convertToFacebookEmbedUrl(LiveFacebookUrl);
+          // console.log('URL de Facebook:', embedUrlFacebook); // Verifica la URL aquí
+          this.videoUrlFacebook = this.sanitizer.bypassSecurityTrustResourceUrl(embedUrlFacebook);
+          this.urlGlobal = this.videoUrlFacebook;
+        }
+      }
+    );
+  }
+
 
 }

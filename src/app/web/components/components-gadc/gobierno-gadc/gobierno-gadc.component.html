@@ -12,7 +12,7 @@
         <!-- Despacho -->
         <a [routerLink]="[ '/web/gobierno' ]">
           <div class="secretaria" [ngStyle]="{'z-index': 99}">
-            <img [src]="this.despacho.despacho.imagenIcono" alt="{{this.despacho.despacho.nombre}}">
+            <img [src]="this.despacho?.despacho.imagenIcono" alt="{{this.despacho?.despacho.nombre}}">
             <span class="tooltip-text">
               Despacho De La Gobernación
             </span>

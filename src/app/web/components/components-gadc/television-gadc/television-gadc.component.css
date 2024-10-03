@@ -78,3 +78,39 @@ h1 {
 .watch-button:hover {
   background-color: #0056b3;
 }
+
+.live-indicator {
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Fondo semitransparente */
+  color: white;
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.live-circle {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  margin-right: 5px;
+  animation: fadeInOut 2s infinite;
+  /* Animación de entrada y salida */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

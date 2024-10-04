@@ -7,7 +7,7 @@
 
 <div class="container" style="max-width: 1600px;">
 
-  <div #television>
+  <div #television [ngClass]="{'live-css': this.liveCss}">
     <br><br>
     @defer (on viewport(television)) {
     <app-television-gadc></app-television-gadc>

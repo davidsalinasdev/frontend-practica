@@ -49,6 +49,8 @@ export class InicioComponent implements OnInit {
           this.datosTransmision = resp.transmision;
         }
         else {
+          console.log('no hay live');
+
           this.liveCss = true;
         }
 

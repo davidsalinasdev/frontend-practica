@@ -63,7 +63,7 @@ export class TelevisionGadcComponent implements OnInit {
 
         if (this.datosTransmision[0]?.plataforma === "youtube") {
           // const LiveUrl = this.datosTransmision[0]?.url_youtube;
-          const LiveUrl = 'https://www.youtube.com/watch?v=sfBa33WsxdE';
+          const LiveUrl = this.datosTransmision[0]?.url_youtube;
           const embedUrl = this.convertToEmbedUrl(LiveUrl);
           // console.log('URL de YouTube:', embedUrl); // Verifica la URL aquí
           this.videoUrlYoutube = this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);

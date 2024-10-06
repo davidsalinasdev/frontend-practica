@@ -30,6 +30,10 @@ h2 {
     gap: 1.5rem;
 }
 
+.program {
+    border-radius: 10px 10px 5px 5px;
+}
+
 .program img {
     width: 100%;
     border-radius: 10px;
@@ -89,4 +93,22 @@ h2 {
     height: 100%;
     object-fit: cover;
     /* Hace que la imagen cubra todo el espacio del contenedor */
+}
+
+.watch-button {
+    padding: 10px 15px;
+    background-color: rgb(10, 131, 201);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.watch-button:hover {
+    background-color: #0056b3;
+}
+
+.tarjeta {
+    margin-bottom: 15rem;
 }

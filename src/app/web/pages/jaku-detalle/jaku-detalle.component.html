@@ -1,1 +1,53 @@
-<p>jaku-detalle works!</p>
+<div class="row">
+    <div class="fondo-header col-12">
+        <h2 class="text-center jaku-titulo text-uppercase">Jaku</h2>
+    </div>
+</div>
+
+<div class="row mt-3 tarjeta">
+    <div class="col-12">
+        <div class="container-tv">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-left text-uppercase">{{ this.categoriaJaku }}</h2>
+                </div>
+            </div>
+            <div class="programs-grid mt-2">
+
+                <!-- Loop a través de los items obtenidos del servicio -->
+                <div *ngFor="let item of this.listGestionJaku"
+                    class="program border d-flex flex-column justify-content-between">
+
+                    <div class="">
+                        <!-- Vista previa de video o PDF -->
+                        <div class="contenedor-img">
+                            <!-- Si es video (mp4) -->
+                            <video *ngIf="item.archivo.endsWith('.mp4')" controls width="100%" height="100%"
+                                poster="{{ baseUrl + '/storage/uploads/' + item.imagen_portada }}">
+
+                                <source [src]="baseUrl + '/storage/uploads/' + item.archivo" type="video/mp4">
+                                Tu navegador no soporta la etiqueta de video.
+                            </video>
+
+                            <!-- Si es PDF -->
+                            <a *ngIf="item.archivo.endsWith('.pdf')"
+                                [href]="baseUrl + '/storage/uploads/' + item.archivo" target="_blank"
+                                style="cursor: pointer;">
+                                <img [src]="baseUrl + '/storage/uploads/' + item.imagen_portada" alt="Portada PDF">
+                            </a>
+                        </div>
+
+                        <div class="p-2">
+                            <!-- Título de la tarjeta -->
+                            <h4 class="text-left mt-0 mb-0">{{ item.nombre }}</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer-gadc></app-footer-gadc>

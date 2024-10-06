@@ -1,0 +1,114 @@
+.fondo-header {
+    background-color: rgb(10, 131, 201);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(154, 128, 158, 0.46);
+}
+
+.jaku-titulo {
+    font-size: 2.5rem;
+    color: whitesmoke;
+    padding: 15px 0px;
+}
+
+.container-tv {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #30336b;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Grid Styles */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Para móviles, 2 columnas */
+    gap: 1.5rem;
+}
+
+.program {
+    border-radius: 10px 10px 5px 5px;
+}
+
+.program img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.program h3 {
+    font-size: 1rem;
+    color: #222;
+    margin: 0.5rem 0;
+}
+
+.program p {
+    font-size: 0.9rem;
+    color: red;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .programs-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Para tabletas, 3 columnas */
+    }
+}
+
+@media (min-width: 1024px) {
+    .programs-grid {
+        grid-template-columns: repeat(5, 1fr);
+        /* Para escritorio, 5 columnas */
+    }
+
+    .program img {
+        max-width: 100%;
+    }
+
+    .program h3 {
+        font-size: 1.3rem;
+    }
+
+    .program p {
+        font-size: 1rem;
+    }
+}
+
+.contenedor-img {
+    width: 100%;
+    /* Ocupa el 100% del ancho del contenedor padre */
+    height: 150px;
+    /* Altura fija de 250px */
+    overflow: hidden;
+    /* Oculta el desbordamiento para que no se muestren partes recortadas */
+}
+
+.contenedor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Hace que la imagen cubra todo el espacio del contenedor */
+}
+
+.watch-button {
+    padding: 10px 15px;
+    background-color: rgb(10, 131, 201);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.watch-button:hover {
+    background-color: #0056b3;
+}
+
+.tarjeta {
+    margin-bottom: 15rem;
+}

@@ -18,6 +18,7 @@ import { SecretariasComponent } from './pages/secretarias/secretarias.component'
 import { GobernadorComponent } from './pages/gobernador/gobernador.component';
 import { GobernacionTvComponent } from './pages/gobernacion-tv/gobernacion-tv.component';
 import { JakuComponent } from './pages/jaku/jaku.component';
+import { JakuDetalleComponent } from './pages/jaku-detalle/jaku-detalle.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'gobierno', component: GobernadorComponent },
       { path: 'gobernaciontv', component: GobernacionTvComponent },
       { path: 'jaku', component: JakuComponent },
+      { path: 'jaku-detalle/:id/:descripcion', component: JakuDetalleComponent },
       { path: '**', redirectTo: 'fullscreen' } // Es la primera ruta que se muestra para este MODULO.
     ]
   } // Path inicial

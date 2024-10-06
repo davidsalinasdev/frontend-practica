@@ -4,7 +4,7 @@
     </div>
 </div>
 
-<div class="row mt-3">
+<div class="row mt-3 tarjeta">
     <div class="col-12">
         <div class="container-tv">
             <div class="row">
@@ -13,34 +13,33 @@
                 </div>
             </div>
             <div class="programs-grid mt-2">
+
                 <!-- Loop a través de los items obtenidos del servicio -->
-                <div class="program border d-flex flex-column justify-content-between">
+                <div *ngFor="let item of this.listJaku"
+                    class="program border d-flex flex-column justify-content-between">
 
                     <div class="">
                         <!-- portada -->
                         <div class=" contenedor-img">
-                            <img src="../../../../assets/img/alcaldia.jpg" alt="Tarjeta digital Jaku">
-                            <!-- <img src="{{ this.base_url + '/storage/uploads/' + item.imagen }}" alt=""> -->
+                            <!-- <img src="../../../../assets/img/alcaldia.jpg" alt="Tarjeta digital Jaku"> -->
+                            <img src="{{ this.baseUrl + '/storage/uploads/' + item.imagen }}" alt="">
                         </div>
 
                         <div class="p-2">
-                            <span class="text-dark">Tarjeta digital</span>
-
-                            <!-- Título del programa -->
-                            <h3 class="text-left mt-0 mb-0">Malas Vibras</h3>
-
-                            <!-- Fecha del programa -->
-                            <!-- <p class="text-left text-secondary">{{ item.created_at | date: 'dd/MM/yyyy' }}</p> -->
-                            <p class="text-left text-secondary">05/05/2020</p>
+                            <!-- Título de la tarjeta -->
+                            <h4 class="text-left mt-0 mb-0">{{ item.nombre }}</h4>
                         </div>
                     </div>
                     <!-- <a class="watch-button ml-2 mb-2 font-weight-normal"
                         style="color: rgb(0, 127, 198); cursor: pointer;" (click)="this.enviarItem(item)"> Ver
                         programa</a> -->
 
-                    <a class="watch-button ml-2 mb-2 font-weight-normal"
-                        style="color: rgb(0, 127, 198); cursor: pointer;"> Ver
-                        programa</a>
+                    <div class="d-flex justify-content-center">
+                        <a [routerLink]="[ '/web/jaku-detalle', item.id, item.nombre ]"
+                            class="ml-2 mb-2 font-weight-normal text-uppercase"
+                            style="color: rgb(0, 127, 198); cursor: pointer;"> Ver
+                            tarjeta</a>
+                    </div>
 
 
                 </div>
@@ -48,3 +47,5 @@
         </div>
     </div>
 </div>
+
+<app-footer-gadc></app-footer-gadc>

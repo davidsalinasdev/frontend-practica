@@ -25,14 +25,14 @@ export class ConvocatoriasComponent implements OnInit {
   obtenerDocumentos(): void {
     this.convocatoriaServices.obtenerDocumentos(this.limite, this.page, this.search)
       .subscribe(response => {
-        console.log(response);
         this.documentos = response.data.data;
         this.totalItems = response.data.total;  // Total de documentos
 
         this.opcionAuditoria = false;
-        console.log(this.documentos.length);
 
-        if (this.documentos.length >= 0 && this.documentos.length <= 2) {
+        if (this.documentos.length === 0) {
+          console.log('No hay elementos');
+
           this.opcionAuditoria = true;
         }
 

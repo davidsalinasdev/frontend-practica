@@ -7,7 +7,52 @@
 <div class="row mt-3">
     <div class="col-12">
         <div style="max-width: 1350px; margin: auto;" class="">
-            <app-television-gadc style="width: 100%;"></app-television-gadc>
+            <app-televisiondigital-gadc style="width: 100%;"></app-televisiondigital-gadc>
         </div>
     </div>
 </div>
+
+
+<div class="row justify-content-center mb-5">
+    <div class="col-12">
+        <div class="container-tv">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-left text-uppercase">Últimos programas</h2>
+                </div>
+            </div>
+            <div class="programs-grid">
+                <!-- Loop a través de los items obtenidos del servicio -->
+                <div *ngFor="let item of this.gobernaciontv"
+                    class="program border d-flex flex-column justify-content-between">
+
+                    <div class="">
+                        <!-- portada -->
+                        <div class=" contenedor-img">
+                            <img src="{{ this.base_url + '/storage/uploads/' + item.imagen }}" alt="">
+                        </div>
+
+                        <div class="p-2">
+                            <span class="text-dark">{{
+                                item.categoria_tv.nombre
+                                }}</span>
+
+                            <!-- Título del programa -->
+                            <h3 class="text-left mt-0 mb-0">{{ item.programa }}</h3>
+
+                            <!-- Fecha del programa -->
+                            <p class="text-left text-secondary">{{ item.created_at | date: 'dd/MM/yyyy' }}</p>
+                        </div>
+                    </div>
+                    <a class="watch-button ml-2 mb-2 font-weight-normal"
+                        style="color: rgb(0, 127, 198); cursor: pointer;" (click)="this.enviarItem(item)"> Ver
+                        programa</a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer-gadc></app-footer-gadc>

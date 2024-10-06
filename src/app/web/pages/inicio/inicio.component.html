@@ -1,6 +1,26 @@
 <!-- GOBERNACIÓN -->
 
 
+<!-- Modal Bootstrap -->
+<div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 800px;">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <img [src]="this.base_url + '/storage/uploads/'+ this.modalTv[0]?.imagen " class="img-fluid" width="100%"
+          height="100%" alt="Informacion importante">
+      </div>
+
+      <div class="modal-footer d-flex justify-content-between">
+        <a href="" class="btn btn-info">Ver más</a>
+        <button type="button" class="btn btn-secondary" id="btnFooterCloseModal">Cerrar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <div #header id="header">
   <app-header-gadc></app-header-gadc>
 </div>

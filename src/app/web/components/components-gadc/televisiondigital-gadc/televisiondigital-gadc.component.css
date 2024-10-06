@@ -1,0 +1,116 @@
+.television__titulo {
+  font-size: 2rem;
+  color: #30336b;
+  text-transform: uppercase;
+}
+
+.container-tv {
+  width: 100%;
+  max-width: 1350px;
+  margin: auto;
+
+}
+
+
+h1 {
+  color: #333;
+}
+
+.program {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+}
+
+.video-player {
+  width: 70%;
+  /* Hacemos que el video ocupe el 100% del contenedor */
+  height: auto;
+  /* Ajusta la altura automáticamente */
+}
+
+.video-player iframe {
+  width: 100%;
+  /* El iframe también ocupará el 100% del contenedor */
+  height: 550px;
+  /* Puedes ajustar esta altura según lo desees */
+}
+
+.program-details {
+  padding: 20px;
+  flex: 1;
+}
+
+.program-details h4 {
+  color: rgb(0, 127, 198);
+  font-size: 1.5rem;
+}
+
+.program-details p {
+  font-size: 1rem;
+}
+
+
+.time {
+  font-weight: bold;
+  color: #666;
+}
+
+.description {
+  color: #555;
+  line-height: 1.5;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.watch-button {
+  padding: 10px 15px;
+  background-color: rgb(10, 131, 201);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.watch-button:hover {
+  background-color: #0056b3;
+}
+
+.live-indicator {
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Fondo semitransparente */
+  color: white;
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.live-circle {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  margin-right: 5px;
+  animation: fadeInOut 2s infinite;
+  /* Animación de entrada y salida */
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

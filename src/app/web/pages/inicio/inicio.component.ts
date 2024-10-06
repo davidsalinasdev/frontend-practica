@@ -1,6 +1,10 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { TransmisionService } from '../../services/transmision.service';
 
+// Importa jQuery de forma correcta
+declare var $: any;
+import { environment } from '../../../../environments/environment';
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -8,13 +12,31 @@ import { TransmisionService } from '../../services/transmision.service';
 })
 export class InicioComponent implements OnInit {
   public datosTransmision: any[] = [];
+  public modalTv: any[] = [];
+  public base_url = environment.base_url;
 
   constructor(
-    private TransmisionServices: TransmisionService) { }
+    private TransmisionServices: TransmisionService) {
+    // Peticion para modal
+    this.TransmisionServices.getModal().subscribe(
+      (resp: any) => {
+        this.modalTv = resp.modaltv;
+
+        if (this.modalTv[0]?.estado === "live") {
+          setTimeout(() => {
+            this.showModal();
+          }, 4000);
+        }
+
+      }
+    )
+  }
 
   public liveCss: boolean = true; // No muestra
 
   ngOnInit(): void {
+
+    this.setupCloseButtons();
     // Desplazarse a la parte superior de la página cuando se inicia el componente
     window.scrollTo({
       top: 0,
@@ -22,6 +44,28 @@ export class InicioComponent implements OnInit {
     });
 
     this.getTransmision();
+  }
+
+  showModal(): void {
+    // Aquí es donde usas jQuery para mostrar el modal
+    $(document).ready(() => {
+      $('#welcomeModal').modal('show');
+    });
+  }
+
+  setupCloseButtons(): void {
+    // Cerrar el modal usando jQuery cuando se hace clic en los botones
+    $(document).ready(() => {
+      // Botón de cierre en el header
+      $('#btnCloseModal').click(() => {
+        $('#welcomeModal').modal('hide');
+      });
+
+      // Botón de cierre en el footer
+      $('#btnFooterCloseModal').click(() => {
+        $('#welcomeModal').modal('hide');
+      });
+    });
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -53,6 +97,8 @@ export class InicioComponent implements OnInit {
 
           this.liveCss = true;
         }
+
+
 
       })
   }

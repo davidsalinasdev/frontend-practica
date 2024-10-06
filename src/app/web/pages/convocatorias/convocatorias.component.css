@@ -138,7 +138,7 @@ a:hover {
 }
 
 .font-bold--text {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 
@@ -147,13 +147,11 @@ a:hover {
     margin-top: 20px;
 }
 
-@media(max-width: 1700px) {
-    .footer-convocatoria {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1030;
-        margin-top: 50px;
-    }
+
+.footer-convocatorias {
+    display: none;
+}
+
+.pagination {
+    margin-bottom: 10rem;
 }

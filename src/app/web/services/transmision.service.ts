@@ -11,7 +11,10 @@ const base_url = environment.base_url;
 })
 export class TransmisionService {
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+
+  }
 
   /**
   * index
@@ -19,4 +22,13 @@ export class TransmisionService {
   public getTransmision() {
     return this.http.get(`${base_url}/api/tv/transmisiones`);
   }
+
+  /**
+   * getModal
+   */
+  public getModal() {
+    return this.http.get(`${base_url}/api/modal/modaltv`);
+  }
+
+
 }

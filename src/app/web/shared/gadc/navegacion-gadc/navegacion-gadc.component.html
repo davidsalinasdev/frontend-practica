@@ -46,9 +46,15 @@
         <a [routerLink]="['/web/gaceta']" [ngClass]="{'active': activeLink === 'gaceta'}"
           (click)="setActiveLink('gaceta')">Gaceta</a>
       </li>
+
+
+      <!-- Transparencias -->
+
       <li class="dropdown">
+
         <a [ngClass]="{'active': activeLink === 'transparencia'}"
           (click)="setActiveLink('transparencia')">Transparencia</a>
+
         <ul class="dropdown-content">
           <li><a [routerLink]="['/web/denuncias']" [ngClass]="{'active': activeLink === 'denuncias'}"
               (click)="setActiveLink('denuncias')">Denuncia</a></li>
@@ -61,7 +67,10 @@
           <li><a [routerLink]="['/web/auditoria']" [ngClass]="{'active': activeLink === 'auditorias'}"
               (click)="setActiveLink('auditorias')">Auditorías</a></li>
         </ul>
+
       </li>
+
+
       <li class="iconos">
         <a [href]="this.despacho?.despacho.linkTwitter" target="_blank"><i class="bi bi-twitter-x"></i></a>
         <a [href]="this.despacho?.despacho.linkFacebook" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -90,10 +99,147 @@
         <a [routerLink]="['/web/gobernaciontv']"><i class="bi bi-broadcast"></i></a>
       </li>
     </ul>
-    <div class="hamburger">
+
+    <div class="hamburger" (click)="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </nav>
 </header>
+
+
+<!-- MENU LATERAL -->
+
+<ul class="sidebar-nav mb-0" id="sidebarnav" [ngClass]="{'sidebar-visible': this.menuVisible}">
+  <li>
+    <a class="text-white text-uppercase texto-total" [routerLink]="['/web/inicio']"
+      [ngClass]="{'active': activeLink === 'inicio'}" (click)="setActiveLink('inicio')">Inicio</a>
+  </li>
+
+
+  <!-- Servicio al ciudadano -->
+  <div class="dropdown">
+    <a class="btn btn-secondary bg-transparent dropdown-toggle text-white text-uppercase texto-total" href="#"
+      role="button" data-toggle="dropdown" aria-expanded="false" style="border: none;">
+      Servicio al Ciudadano
+    </a>
+
+    <div class="dropdown-menu">
+
+
+      <a class="dropdown-item  text-uppercase texto-total texto-universal"
+        href="http://portal-ciudadano.gobernaciondecochabamba.bo/#/home/correspondencia" target="_blank">Seguimiento
+        de Trámites</a>
+      <a class="dropdown-item  text-uppercase texto-total texto-universal"
+        href="https://sisrec.gobernaciondecochabamba.bo/" target="_blank">Calcula tu Impuesto</a>
+
+      <!-- Hacer crud -->
+
+      <!-- <li><a href="#personalidades-juridicas" target="_blank">Personalidades Jurídicas</a></li>
+          <li><a href="#reserva-espacios" target="_blank">Reserva de Espacios Deportivos</a></li>
+          <li><a href="#licencia-operadores" target="_blank">Licencia de Operadores de Turismo</a></li>
+          <li><a href="#comunidad-turismo" target="_blank">Comunidad de Turismo</a></li> -->
+
+
+    </div>
+  </div>
+
+
+
+  <!-- Comunicación -->
+  <div class="dropdown">
+    <a class="btn btn-secondary bg-transparent dropdown-toggle text-white text-uppercase texto-total" href="#"
+      role="button" data-toggle="dropdown" aria-expanded="false" style="border: none;">
+      Comunicación
+    </a>
+
+    <div class="dropdown-menu">
+
+
+      <a class="dropdown-item texto-universal text-uppercase texto-total"
+        [routerLink]="['/web/gobernaciontv']">Gobernación
+        TV</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/radio']">Gobernación
+        Radio</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/semanario']">Semanario
+        Digital</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total"
+        [routerLink]="['/web/mediateka']">Mediateca</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/jaku']">JAKU</a>
+
+
+    </div>
+  </div>
+
+
+  <!-- Gaceta -->
+  <li>
+    <a class="text-white text-uppercase texto-total" [routerLink]="['/web/gaceta']">Gaceta</a>
+  </li>
+
+
+  <!-- Transparencia-->
+  <div class="dropdown">
+    <a class="btn btn-secondary bg-transparent dropdown-toggle text-white text-uppercase texto-total" href="#"
+      role="button" data-toggle="dropdown" aria-expanded="false" style="border: none;">
+      Transparencia
+    </a>
+
+    <div class="dropdown-menu">
+
+
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/denuncias']"
+        [ngClass]="{'active': activeLink === 'denuncias'}" (click)="setActiveLink('denuncias')">Denuncia</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/sugerencias']"
+        [ngClass]="{'active': activeLink === 'sugerencias'}" (click)="setActiveLink('sugerencias')">Sugerencia</a>
+
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/rendicion-cuentas']"
+        [ngClass]="{'active': activeLink === 'rendicion'}" (click)="setActiveLink('rendicion')">Rendición de
+        Cuentas</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/convocatorias']"
+        [ngClass]="{'active': activeLink === 'convocatorias'}"
+        (click)="setActiveLink('convocatorias')">Convocatorias</a>
+
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/auditoria']"
+        [ngClass]="{'active': activeLink === 'auditorias'}" (click)="setActiveLink('auditorias')">Auditorías</a>
+
+
+    </div>
+  </div>
+
+  <!-- Redes sociales -->
+  <li class="iconos-lateral mb-5">
+    <a class="text-white text-uppercase texto-iconos-redes" [href]="this.despacho?.despacho.linkTwitter"
+      target="_blank"><i class="bi bi-twitter-x"></i></a>
+    <a class="text-white text-uppercase texto-iconos-redes" [href]="this.despacho?.despacho.linkFacebook"
+      target="_blank"><i class="bi bi-facebook"></i></a>
+    <a class="text-white text-uppercase texto-iconos-redes" href="https://www.tiktok.com/@gobernaciondecochabamba"
+      target="_blank"><i class="bi bi-tiktok"></i></a>
+    <a class="text-white text-uppercase texto-iconos-redes" [href]="this.despacho?.despacho.linkYoutube"
+      target="_blank"><i class="bi bi-youtube"></i></a>
+
+    <!-- Whatsapp -->
+    <a class="text-white text-uppercase texto-iconos-redes" href="#"><i class="bi bi-whatsapp"></i></a>
+
+    <!-- Implementación de radio Gobernación -->
+    <a class="text-white text-uppercase texto-iconos-redes" (click)="toggleRadio()" class="radio-button">
+      <ng-container *ngIf="radioService.playing; else showIcon">
+        <img src="../../../../../assets/img/gifoficial.gif" alt="Reproduciendo" style="width: 30px; height: auto;">
+        <span class="tooltip-text visible">
+          <i class="fas fa-pause text-pause"></i>
+          Detener radio en linea
+        </span>
+      </ng-container>
+      <ng-template #showIcon>
+        <i class="mdi mdi-radio"></i>
+        <span class="tooltip-text">Reproducir radio</span>
+      </ng-template>
+    </a>
+
+    <!-- Television en linea -->
+    <a class="text-white text-uppercase texto-iconos-redes" [routerLink]="['/web/gobernaciontv']"><i
+        class="bi bi-broadcast"></i></a>
+  </li>
+
+</ul>

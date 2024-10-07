@@ -18,6 +18,8 @@ export class NavegacionGadcComponent {
   public pdfUrl: any;
   public acercaDe: any;
 
+  public menuVisible: boolean = false;
+
   activeLink: string = '';
   constructor(
     public radioService: RadioService,
@@ -28,6 +30,12 @@ export class NavegacionGadcComponent {
 
   setActiveLink(link: string) {
     this.activeLink = link;
+  }
+
+  // Método para alternar el estado del menú hamburguesa
+  toggleMenu() {
+
+    this.menuVisible = !this.menuVisible;
   }
 
 

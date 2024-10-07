@@ -132,8 +132,8 @@ nav {
   /* Color blanco para las barras del menú hamburguesa */
   border-radius: 2px;
   display: block;
-  height: 3px;
-  margin: 5px 0;
+  height: 2px;
+  margin: 4px 0;
   transition: all 0.3s ease-in-out;
   width: 25px;
 }
@@ -167,6 +167,7 @@ nav {
 
   .hamburger {
     display: flex;
+
   }
 }
 
@@ -241,6 +242,68 @@ nav {
   color: rgb(0, 127, 198);
 }
 
-/* .servicio-al-ciudadano {
-  font-family: "Open Sans", sans-serif;
-} */
+/* Boottrap */
+.imagen-principal {
+  margin: 6.5px 0px;
+}
+
+.fondo-menu-main {
+  background-color: rgb(0, 127, 198);
+}
+
+.icon-redes-sociales {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-text {
+  font-size: 0.98rem !important;
+}
+
+/* Lateral */
+.sidebar-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: rgb(0, 127, 198);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Mostrar el sidebar cuando se active la clase */
+.sidebar-visible {
+  display: flex;
+  flex-direction: column;
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  color: white;
+  background-color: rgb(0, 127, 198);
+  transform: translateX(0);
+  /* Asegurarse que se muestre */
+}
+
+/* Cuando está oculto, se mueve fuera de la vista */
+.sidebar-nav:not(.sidebar-visible) {
+  transform: translateX(-100%);
+}
+
+
+.iconos-lateral {
+  display: flex;
+  gap: 25px;
+}
+
+@media (min-width: 1253px) {
+  .sidebar-nav {
+    display: none;
+  }
+}

@@ -156,3 +156,7 @@ input {
 .leer-mas--guindo:hover {
   background-color: #b3155785
 }
+
+.texto-universal {
+  color: rgb(0, 127, 198) !important;
+}

@@ -24,7 +24,7 @@ export class ChatComponent implements OnInit {
       script.setAttribute('data-chat-url', 'https://bots.easy-peasy.ai/bot/a6c6da5b-225a-49cd-92be-801bc3264b51');
       script.setAttribute('data-btn-position', 'bottom-right');
       script.setAttribute('data-widget-btn-color', 'rgba(248, 248, 252, 0)');
-      script.setAttribute('data-widget-icon', 'http://127.0.0.1:8000/storage/uploads/JAKU.png');
+      script.setAttribute('data-widget-icon', 'https://gobernaciondecochabamba.bo/storage/uploads/JAKU.png');
       script.defer = true;
 
       script.onload = () => resolve();

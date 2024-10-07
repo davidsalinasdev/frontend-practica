@@ -17,17 +17,22 @@
           <li><a href="http://portal-ciudadano.gobernaciondecochabamba.bo/#/home/correspondencia"
               target="_blank">Seguimiento de Trámites</a></li>
           <li><a href="https://sisrec.gobernaciondecochabamba.bo/" target="_blank">Calcula tu Impuesto</a></li>
-          <li><a href="#personalidades-juridicas" target="_blank">Personalidades Jurídicas</a></li>
+
+          <!-- Hacer crud -->
+
+          <!-- <li><a href="#personalidades-juridicas" target="_blank">Personalidades Jurídicas</a></li>
           <li><a href="#reserva-espacios" target="_blank">Reserva de Espacios Deportivos</a></li>
           <li><a href="#licencia-operadores" target="_blank">Licencia de Operadores de Turismo</a></li>
-          <li><a href="#comunidad-turismo" target="_blank">Comunidad de Turismo</a></li>
+          <li><a href="#comunidad-turismo" target="_blank">Comunidad de Turismo</a></li> -->
+
+
         </ul>
       </li>
       <li class="dropdown">
         <a [ngClass]="{'active': activeLink === 'comunicacion'}"
           (click)="setActiveLink('comunicacion')">Comunicación</a>
         <ul class="dropdown-content">
-          <li><a href="#gobernacion-tv">Gobernación TV</a></li>
+          <li><a [routerLink]="['/web/gobernaciontv']">Gobernación TV</a></li>
           <li><a [routerLink]="['/web/radio']" [ngClass]="{'active': activeLink === 'radio'}"
               (click)="setActiveLink('radio')">Gobernación Radio</a></li>
           <li><a [routerLink]="['/web/semanario']" [ngClass]="{'active': activeLink === 'semanario'}"
@@ -82,7 +87,7 @@
         </a>
 
         <!-- Television en linea -->
-        <a href="#"><i class="bi bi-broadcast"></i></a>
+        <a [routerLink]="['/web/gobernaciontv']"><i class="bi bi-broadcast"></i></a>
       </li>
     </ul>
     <div class="hamburger">

@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   /****  Rutas PUBLICAS Principales como hijas de app-routing.module.ts****/
-  { path: 'login', component: LoginComponent, data: { titulo: 'Iniciar Sesión' } },
+  // { path: 'login', component: LoginComponent, data: { titulo: 'Iniciar Sesión' } },
 ];
 
 @NgModule({

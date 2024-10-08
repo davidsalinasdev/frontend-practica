@@ -14,9 +14,12 @@
         <a class="servicio-al-ciudadano" [ngClass]="{'active': activeLink === 'servicio'}"
           (click)="setActiveLink('servicio')">Servicio al Ciudadano</a>
         <ul class="dropdown-content">
-          <li><a href="http://portal-ciudadano.gobernaciondecochabamba.bo/#/home/correspondencia"
-              target="_blank">Seguimiento de Trámites</a></li>
-          <li><a href="https://sisrec.gobernaciondecochabamba.bo/" target="_blank">Calcula tu Impuesto</a></li>
+
+
+          <li *ngFor="let item of this.ciudadano">
+            <a [href]="item.url_documento" target="_blank">{{ item.descripcion }}</a>
+          </li>
+
 
           <!-- Hacer crud -->
 

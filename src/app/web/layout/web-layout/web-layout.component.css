@@ -1,5 +1,5 @@
 /* Redes sociales */
-/* .redes-sociales {
+.redes-sociales {
   position: absolute;
   z-index: 500;
   right: 80px;
@@ -39,7 +39,7 @@
   50% {
     box-shadow: 0 0 8px 5px rgb(251, 254, 255);
   }
-} */
+}
 
 /* FIN Redes sociales */
 

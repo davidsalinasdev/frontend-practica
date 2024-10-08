@@ -1,54 +1,64 @@
-<section class="ultimas-noticias">
-  <a [routerLink]="[ '/web/detalle-noticias','ultimas','ultimas' ]">
-    <h2 class="text-left ultimas-noticias__titulo">Últimas Noticias</h2>
-  </a>
+<div class="row">
+  <div class="col-12">
+    <section class="ultimas-noticias">
 
-  <div class="news-grid">
-    <div class="main-news">
-      <!-- Aquí los iconos de redes sociales -->
-      <div class="social-icons">
-        <a href="https://www.facebook.com/GobernacionDeCochabamba" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com/GobernacionCbba" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/gobernaciondecochabamba" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a [routerLink]="[ '/web/detalle-noticias','ultimas','ultimas' ]">
+        <h2 class="text-left ultimas-noticias__titulo">Últimas Noticias</h2>
+      </a>
+
+      <div class="news-grid">
+
+        <!-- Noticia principal -->
+        <div class="main-news">
+          <!-- Aquí los iconos de redes sociales -->
+          <div class="social-icons">
+            <a href="https://www.facebook.com/GobernacionDeCochabamba" target="_blank"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/GobernacionCbba" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/gobernaciondecochabamba" target="_blank"><i
+                class="fab fa-instagram"></i></a>
+          </div>
+
+
+          <a [routerLink]="[ '/web/detalle-noticias', this.noticia[0]?.titulo , 'individual' ]">
+            <img [src]="this.noticia[0]?.imagen" [alt]="this.noticia[0]?.antetitulo">
+            <div class="news-info">
+              <span class="tag">{{ this.noticia[0]?.categorias[0] }}</span>
+              <h2 class="text-white">{{ this.noticia[0]?.titulo }}</h2>
+              <p class="text-white">Publicado el {{ this.noticia[0]?.fecha }}</p>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="secondary-news-group">
+          <!-- Esta noticia tendrá el texto sobre la imagen -->
+          <a [routerLink]="[ '/web/detalle-noticias', this.noticia[1]?.titulo, 'individual']">
+            <div class="secondary-news with-text-overlay">
+              <img [src]="this.noticia[1]?.imagen" [alt]="this.noticia[1]?.antetitulo">
+              <div class="news-info">
+                <span class="tag">{{ this.noticia[1]?.categorias[0] }}</span>
+                <h5 class="mt-1">{{ this.noticia[1]?.titulo }}</h5>
+                <p class="font-weight-normal mb-0">Publicado el {{ this.noticia[1]?.fecha }}</p>
+              </div>
+            </div>
+          </a>
+
+          <a [routerLink]="[ '/web/detalle-noticias', this.noticia[2]?.titulo , 'individual' ]">
+            <!-- Esta noticia tendrá el texto debajo de la imagen, como antes -->
+            <div class="secondary-news">
+              <img [src]="this.noticia[2]?.imagen" [alt]="this.noticia[2]?.antetitulo">
+              <div class="news-info">
+                <span class="tag">{{ this.noticia[2]?.categorias[0] }}</span>
+                <h5 class="mt-2">{{ this.noticia[2]?.titulo }}</h5>
+                <p class="font-weight-normal mb-0">Publicado el {{ this.noticia[2]?.fecha }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
       </div>
 
-
-      <a [routerLink]="[ '/web/detalle-noticias', this.noticia[0]?.titulo , 'individual' ]">
-        <img [src]="this.noticia[0]?.imagen" [alt]="this.noticia[0]?.antetitulo">
-        <div class="news-info">
-          <span class="tag">{{ this.noticia[0]?.categorias[0] }}</span>
-          <h2 class="text-white">{{ this.noticia[0]?.titulo }}</h2>
-          <p class="text-white">Publicado el {{ this.noticia[0]?.fecha }}</p>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="secondary-news-group">
-      <!-- Esta noticia tendrá el texto sobre la imagen -->
-      <a [routerLink]="[ '/web/detalle-noticias', this.noticia[1]?.titulo, 'individual']">
-        <div class="secondary-news with-text-overlay">
-          <img [src]="this.noticia[1]?.imagen" [alt]="this.noticia[1]?.antetitulo">
-          <div class="news-info">
-            <span class="tag">{{ this.noticia[1]?.categorias[0] }}</span>
-            <h5 class="mt-1">{{ this.noticia[1]?.titulo }}</h5>
-            <p class="font-weight-normal mb-0">Publicado el {{ this.noticia[1]?.fecha }}</p>
-          </div>
-        </div>
-      </a>
-
-      <a [routerLink]="[ '/web/detalle-noticias', this.noticia[2]?.titulo , 'individual' ]">
-        <!-- Esta noticia tendrá el texto debajo de la imagen, como antes -->
-        <div class="secondary-news">
-          <img [src]="this.noticia[2]?.imagen" [alt]="this.noticia[2]?.antetitulo">
-          <div class="news-info">
-            <span class="tag">{{ this.noticia[2]?.categorias[0] }}</span>
-            <h5 class="mt-2">{{ this.noticia[2]?.titulo }}</h5>
-            <p class="font-weight-normal mb-0">Publicado el {{ this.noticia[2]?.fecha }}</p>
-          </div>
-        </div>
-      </a>
-    </div>
+    </section>
   </div>
-
-</section>
+</div>

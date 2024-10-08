@@ -18,7 +18,7 @@ export class WebLayoutComponent implements OnInit {
   ngOnInit(): void {
 
     // Carga los métodos globales
-    lightbox();
+    // lightbox();
     turnInitFunctions();
 
     // Inicializa la posición de los íconos de redes sociales

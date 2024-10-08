@@ -171,9 +171,23 @@
     border-radius: 4px;
 }
 
+.btn-categoria {
+    font-size: 13px !important;
+}
+
 .btn-categoria:hover {
     color: rgb(0, 127, 198) !important;
     cursor: pointer;
+}
+
+.btn-buscar {
+    background-color: rgb(0, 127, 198) !important;
+    color: white;
+}
+
+.btn-buscar:hover {
+    background-color: rgb(11, 108, 165) !important;
+    color: white;
 }
 
 .alerta {

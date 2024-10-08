@@ -6,7 +6,7 @@
 
 .secretarias-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1.8em;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -16,8 +16,8 @@
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 50%;
-  width: 190px;
-  height: 190px;
+  width: 150px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,6 +34,13 @@
   /* Permite que el tooltip sea visible fuera del contenedor */
 }
 
+@media (min-width: 768px) {
+  .secretaria {
+    width: 190px;
+    height: 190px;
+  }
+}
+
 .secretaria img {
   width: 100%;
   height: 100%;
@@ -46,14 +53,16 @@
 }
 
 /* Media query para dispositivos móviles */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .secretarias-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .secretaria {
-    width: 100px;
-    height: 100px;
+}
+
+@media (min-width: 992px) {
+  .secretarias-container {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 

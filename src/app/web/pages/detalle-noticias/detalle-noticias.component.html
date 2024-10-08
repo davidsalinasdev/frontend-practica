@@ -22,16 +22,16 @@
             <!-- Cuadro de búsqueda -->
             <div class="search-bar">
                 <input type="text" placeholder="Buscar noticia..." id="search-input">
-                <button id="search-btn" (click)="this.buscarNoticias()">Buscar</button>
+                <button class="btn-buscar" id="search-btn" (click)="this.buscarNoticias()">Buscar</button>
             </div>
-            <h2 class="text-uppercase border p-2 text-white" style="background-color: rgb(0, 127, 198);">Categorías</h2>
+            <h2 class="text-uppercase border p-2 text-white" style="background-color: rgb(0, 127, 198);">Secciones</h2>
 
             <!-- Solo la lista con scroll -->
             <div class="categories-list">
                 <ul>
                     <!-- Aquí se colocarán hasta 50 categorías -->
                     <li class="mb-0 font-weight-normal" *ngFor="let item of this.categoriaNoticias">
-                        <a (click)="verCategorias(item)" class="text-dark btn-categoria">{{item}}</a>
+                        <a (click)="verCategorias(item)" class="text-dark btn-categoria text-uppercase">{{item}}</a>
                     </li>
                     <!-- ... más categorías -->
                 </ul>

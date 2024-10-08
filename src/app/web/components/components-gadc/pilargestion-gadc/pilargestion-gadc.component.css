@@ -73,3 +73,13 @@
     .card .btn-bajar-archivo:hover {
       background-color: #0056b3;
     }
+
+    .publi-baner {
+      margin-top: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .publi-baner {
+        margin: 20px;
+      }
+    }

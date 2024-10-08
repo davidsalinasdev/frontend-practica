@@ -11,7 +11,13 @@
   /* Cambiamos las proporciones */
   grid-template-rows: auto;
   gap: 20px;
-  margin: 20px;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .news-grid {
+    margin: 20px;
+  }
 }
 
 .main-news {

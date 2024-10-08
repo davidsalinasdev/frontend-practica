@@ -46,6 +46,7 @@
     <div class="grid-card"
         *ngFor="let doc of documentos | paginate: { itemsPerPage: this.limite, currentPage: this.page, totalItems: this.totalItems }">
         <div class="card gaceta">
+
             <div class="row justify-content-center">
                 <div class="image-container">
                     <img src="../../../../assets/img/logogaceta.jpg" alt="Leyes y decretos">
@@ -53,13 +54,14 @@
             </div>
 
             <h2 class="font-weight-bold">{{ doc.titulo }}</h2>
-            <p class="font-weight-normal"><strong>Resumen:</strong> {{ doc.resumen }}"</p>
+            <p class="font-weight-normal"><strong>Resumen:</strong> {{ doc.resumen | slice:0:100 }}"</p>
             <ul>
                 <li class="font-weight-normal"><strong>Fecha Publicación:</strong>{{ doc.fechaaprobacion }}</li>
                 <li class="font-weight-normal"><strong>Fecha Emisión:</strong> {{ doc.fechapromulgacion }}</li>
                 <li class="font-weight-normal"><strong>Número Documento:</strong> {{ doc.numerodocumento }}</li>
             </ul>
-            <a [href]="doc.archivo">Descargar</a>
+            <a [href]="doc.archivo" target="_blank">Descargar</a>
+
         </div>
     </div>
 </div>

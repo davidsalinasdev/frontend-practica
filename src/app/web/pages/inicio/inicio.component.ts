@@ -17,6 +17,7 @@ export class InicioComponent implements OnInit {
 
   constructor(
     private TransmisionServices: TransmisionService) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     // Peticion para modal
     this.TransmisionServices.getModal().subscribe(
       (resp: any) => {
@@ -27,7 +28,6 @@ export class InicioComponent implements OnInit {
             this.showModal();
           }, 4000);
         }
-
       }
     )
   }
@@ -37,11 +37,6 @@ export class InicioComponent implements OnInit {
   ngOnInit(): void {
 
     this.setupCloseButtons();
-    // Desplazarse a la parte superior de la página cuando se inicia el componente
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth' // Usa 'auto' si no quieres la animación suave
-    });
 
     this.getTransmision();
   }
@@ -97,8 +92,6 @@ export class InicioComponent implements OnInit {
 
           this.liveCss = true;
         }
-
-
 
       })
   }

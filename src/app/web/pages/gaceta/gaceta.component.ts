@@ -47,6 +47,7 @@ export class GacetaComponent implements OnInit {
   }
 
   pageChanged(event: number): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.page = event;
     this.obtenerDocumentos();
   }

@@ -6,37 +6,52 @@
   <div class="modal-dialog" style="max-width: 800px;">
     <div class="modal-content">
 
-      <div class="modal-body">
+      <div class="modal-body p-0">
         <img [src]="this.base_url + '/storage/uploads/'+ this.modalTv[0]?.imagen " class="img-fluid" width="100%"
           height="100%" alt="Informacion importante">
       </div>
 
       <div class="modal-footer d-flex justify-content-between">
-        <a href="" class="btn btn-info">Ver más</a>
-        <button type="button" class="btn btn-secondary" id="btnFooterCloseModal">Cerrar</button>
+        <a [href]="this.modalTv[0]?.url_documento" class="watch-button" target="_blank">Más Información</a>
+        <a class="btn btn-link" style="color: rgb(0, 127, 198)" data-dismiss="modal" id="btnFooterCloseModal">Cerrar</a>
       </div>
 
     </div>
   </div>
 </div>
+<!-- Mostrar cuando este en vivo -->
+<div #live class="container" style="max-width: 1600px;" [ngClass]="{'live-css': this.liveCss}">
 
+  <br>
+  @defer (on viewport(live)) {
+  <app-television-gadc></app-television-gadc>
+  }
+  <div class="row mb-2">
+    <div class="col-12">
 
+      <h2 class="text-center television__titulo">Unir trabajar y crecer</h2>
+      <!-- <span class="live-indicator ml-2">
+          <span class="live-circle"></span>
+          EN DIRECTO
+        </span> -->
+
+    </div>
+
+  </div>
+
+</div>
 
 
 <div #header id="header">
+  @defer (on viewport(header)) {
   <app-header-gadc style="z-index: 2500;"></app-header-gadc>
+  }
 </div>
 
-<div class="container" style="max-width: 1600px;">
 
-  <div #television [ngClass]="{'live-css': this.liveCss}">
-    <br><br>
-    @defer (on viewport(television)) {
-    <app-television-gadc></app-television-gadc>
-    }
-  </div>
-
-
+<!-- Otras secciones -->
+<div #container class="container" style="max-width: 1600px;">
+  @defer (on viewport(container)) {
   <br><br>
   <div #ultimasnoticias>
     @defer (on viewport(ultimasnoticias)) {
@@ -66,11 +81,16 @@
     <app-gobierno-gadc></app-gobierno-gadc>
     }
   </div>
+  }
 </div>
 
 
 <br><br>
-<app-footer-gadc></app-footer-gadc>
+<div #footer>
+  @defer (on viewport(footer)) {
+  <app-footer-gadc></app-footer-gadc>
+  }
+</div>
 
 
 

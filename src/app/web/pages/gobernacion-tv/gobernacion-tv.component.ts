@@ -25,6 +25,7 @@ export class GobernacionTvComponent implements OnInit {
     private cd: ChangeDetectorRef,
     private enviardatosServices: EnviardatosService // Inyecta ChangeDetectorRef
   ) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.base_url = baseUrl;
   }
 

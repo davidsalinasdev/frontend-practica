@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { RadioService } from '../../../services/radio.service';
 import { GobiernoService } from '../../../services/gobierno.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CiudadanoService } from '../../../services/ciudadano.service';
 
 declare var bootstrap: any;
 
@@ -17,6 +18,7 @@ export class NavegacionGadcComponent {
   public despacho: any;
   public pdfUrl: any;
   public acercaDe: any;
+  public ciudadano: any[] = [];
 
   public menuVisible: boolean = false;
 
@@ -24,7 +26,8 @@ export class NavegacionGadcComponent {
   constructor(
     public radioService: RadioService,
     private gobiernoServices: GobiernoService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private ciudadanoServices: CiudadanoService
   ) { }
 
 
@@ -67,6 +70,17 @@ export class NavegacionGadcComponent {
 
   toggleRadio() {
     this.radioService.toggle();
+  }
+
+  /**
+   * indexCiudadano
+   */
+  public indexCiudadano() {
+    this.ciudadanoServices.getCiudadano().subscribe((resp: any) => {
+
+      const { ciudadanotv } = resp;
+      this.ciudadano = ciudadanotv;
+    })
   }
 
 }

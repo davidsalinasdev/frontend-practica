@@ -40,6 +40,7 @@ export class AuditoriaComponent implements OnInit {
   pageChanged(event: number): void {
     this.page = event;
     this.obtenerDocumentos();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   buscar(): void {

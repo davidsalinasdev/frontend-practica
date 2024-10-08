@@ -78,7 +78,7 @@
         <a [href]="this.despacho?.despacho.linkYoutube" target="_blank"><i class="bi bi-youtube"></i></a>
 
         <!-- Whatsapp -->
-        <a href="#"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.instagram.com/gobernaciondecochabamba/" target="_blank"><i class="bi bi-instagram"></i></a>
 
         <!-- Implementación de radio Gobernación -->
         <a (click)="toggleRadio()" class="radio-button">
@@ -127,20 +127,8 @@
 
     <div class="dropdown-menu">
 
-
-      <a class="dropdown-item  text-uppercase texto-total texto-universal"
-        href="http://portal-ciudadano.gobernaciondecochabamba.bo/#/home/correspondencia" target="_blank">Seguimiento
-        de Trámites</a>
-      <a class="dropdown-item  text-uppercase texto-total texto-universal"
-        href="https://sisrec.gobernaciondecochabamba.bo/" target="_blank">Calcula tu Impuesto</a>
-
-      <!-- Hacer crud -->
-
-      <!-- <li><a href="#personalidades-juridicas" target="_blank">Personalidades Jurídicas</a></li>
-          <li><a href="#reserva-espacios" target="_blank">Reserva de Espacios Deportivos</a></li>
-          <li><a href="#licencia-operadores" target="_blank">Licencia de Operadores de Turismo</a></li>
-          <li><a href="#comunidad-turismo" target="_blank">Comunidad de Turismo</a></li> -->
-
+      <a *ngFor="let item of this.ciudadano" class="dropdown-item  text-uppercase texto-total texto-universal"
+        [href]="item.url_documento" target="_blank">{{ item.descripcion }}</a>
 
     </div>
   </div>
@@ -220,7 +208,8 @@
       target="_blank"><i class="bi bi-youtube"></i></a>
 
     <!-- Whatsapp -->
-    <a class="text-white text-uppercase texto-iconos-redes" href="#"><i class="bi bi-whatsapp"></i></a>
+    <a class="text-white text-uppercase texto-iconos-redes" href="https://www.instagram.com/gobernaciondecochabamba/"><i
+        class="bi bi-instagram"></i></a>
 
     <!-- Implementación de radio Gobernación -->
     <a class="text-white text-uppercase texto-iconos-redes" (click)="toggleRadio()" class="radio-button">

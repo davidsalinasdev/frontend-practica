@@ -25,9 +25,9 @@
                     </svg>
                 </div>
             </div>
-            <h2 class="font-bold">{{ doc.titulo }}</h2>
-            <p class="font-weight-normal">{{ doc.descripcion }}"</p>
-            <a [href]="doc.archivo">ABRIR</a>
+            <h2 class="font-bold">{{ doc.titulo | slice:0:50}}</h2>
+            <p class="font-weight-normal">{{ doc.descripcion | slice:0:170 }}"</p>
+            <a [href]="doc.archivo" target="_blank">ABRIR</a>
         </div>
     </div>
 </div>

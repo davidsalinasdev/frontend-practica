@@ -24,7 +24,7 @@
             <img [src]="this.noticia[0]?.imagen" [alt]="this.noticia[0]?.antetitulo">
             <div class="news-info">
               <span class="tag">{{ this.noticia[0]?.categorias[0] }}</span>
-              <h2 class="text-white">{{ this.noticia[0]?.titulo }}</h2>
+              <h2 class="text-white">{{ this.noticia[0]?.titulo | slice:0:120}}</h2>
               <p class="text-white">Publicado el {{ this.noticia[0]?.fecha }}</p>
             </div>
           </a>
@@ -38,7 +38,7 @@
               <img [src]="this.noticia[1]?.imagen" [alt]="this.noticia[1]?.antetitulo">
               <div class="news-info">
                 <span class="tag">{{ this.noticia[1]?.categorias[0] }}</span>
-                <h5 class="mt-1">{{ this.noticia[1]?.titulo }}</h5>
+                <h5 class="mt-1">{{ this.noticia[1]?.titulo | slice:0:100 }}</h5>
                 <p class="font-weight-normal mb-0">Publicado el {{ this.noticia[1]?.fecha }}</p>
               </div>
             </div>
@@ -50,7 +50,7 @@
               <img [src]="this.noticia[2]?.imagen" [alt]="this.noticia[2]?.antetitulo">
               <div class="news-info">
                 <span class="tag">{{ this.noticia[2]?.categorias[0] }}</span>
-                <h5 class="mt-2">{{ this.noticia[2]?.titulo }}</h5>
+                <h5 class="mt-2">{{ this.noticia[2]?.titulo | slice:0:101 }}</h5>
                 <p class="font-weight-normal mb-0">Publicado el {{ this.noticia[2]?.fecha }}</p>
               </div>
             </div>

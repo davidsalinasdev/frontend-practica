@@ -7,7 +7,8 @@
 /* ------------- */
 .news-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  /* Cambiamos las columnas 1.5*/
   /* Cambiamos las proporciones */
   grid-template-rows: auto;
   gap: 20px;
@@ -61,7 +62,7 @@
 
 .secondary-news-group {
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   gap: 20px;
 }
 
@@ -75,7 +76,7 @@
 .secondary-news img {
   width: 100%;
   height: auto;
-  max-height: 180px;
+  max-height: 220px;
   /* Controlamos el tamaño máximo de las imágenes secundarias */
   object-fit: cover;
   border-radius: 5px;

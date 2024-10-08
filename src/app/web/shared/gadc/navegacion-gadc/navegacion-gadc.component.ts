@@ -43,6 +43,7 @@ export class NavegacionGadcComponent {
 
 
   ngOnInit(): void {
+    this.indexCiudadano();
     this.getDespacho();
   }
 
@@ -80,6 +81,8 @@ export class NavegacionGadcComponent {
 
       const { ciudadanotv } = resp;
       this.ciudadano = ciudadanotv;
+      console.log(this.ciudadano);
+
     })
   }
 

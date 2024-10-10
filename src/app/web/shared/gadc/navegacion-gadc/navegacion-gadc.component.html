@@ -19,16 +19,11 @@
           <li *ngFor="let item of this.ciudadano">
             <a [href]="item.url_documento" target="_blank">{{ item.descripcion }}</a>
           </li>
-
-
           <!-- Hacer crud -->
-
           <!-- <li><a href="#personalidades-juridicas" target="_blank">Personalidades Jurídicas</a></li>
           <li><a href="#reserva-espacios" target="_blank">Reserva de Espacios Deportivos</a></li>
           <li><a href="#licencia-operadores" target="_blank">Licencia de Operadores de Turismo</a></li>
           <li><a href="#comunidad-turismo" target="_blank">Comunidad de Turismo</a></li> -->
-
-
         </ul>
       </li>
       <li class="dropdown">
@@ -45,14 +40,29 @@
           <li><a [routerLink]="['/web/jaku']">JAKU</a></li>
         </ul>
       </li>
+
+      <!-- Gaceta -->
       <li>
-        <a [routerLink]="['/web/gaceta']" [ngClass]="{'active': activeLink === 'gaceta'}"
-          (click)="setActiveLink('gaceta')">Gaceta</a>
+        <a [routerLink]="['/web/gaceta']">Gaceta</a>
       </li>
 
 
-      <!-- Transparencias -->
+      <!-- Gaceta -->
+      <li class="dropdown">
+        <a>Gaceta</a>
+        <ul class="dropdown-content">
+          <li><a [routerLink]="['/web/gaceta',4]">Estatuto departamental</a></li>
+          <li><a [routerLink]="['/web/gaceta',3]">Ley departamental</a></li>
+          <li><a [routerLink]="['/web/gaceta',1]">Decretos departamental</a></li>
+          <li><a [routerLink]="['/web/gaceta',2]">Decretos gobernativo</a></li>
+          <li><a [routerLink]="['/web/gaceta',5]">Resolución departamental</a></li>
+          <li><a [routerLink]="['/web/gaceta',6]">Resolución administrativa</a></li>
+        </ul>
+      </li>
+      <!-- FIN gaceta -->
 
+
+      <!-- Transparencias -->
       <li class="dropdown">
 
         <a [ngClass]="{'active': activeLink === 'transparencia'}"

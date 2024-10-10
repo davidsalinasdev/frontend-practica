@@ -26,7 +26,7 @@ const routes: Routes = [
     // Definiendo rutas hijas de este modulo
     children: [ // ruta hija depende del padre
       { path: 'inicio', component: InicioComponent }, // Path inicial
-      { path: 'gaceta', component: GacetaComponent },
+      { path: 'gaceta/:tipo', component: GacetaComponent },
       { path: 'auditoria', component: AuditoriaComponent },
       { path: 'radio', component: RadioComponent },
       { path: 'convocatorias', component: ConvocatoriasComponent },

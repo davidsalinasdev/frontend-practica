@@ -81,7 +81,7 @@ export class NavegacionGadcComponent {
 
       const { ciudadanotv } = resp;
       this.ciudadano = ciudadanotv;
-      console.log(this.ciudadano);
+      // console.log(this.ciudadano);
 
     })
   }

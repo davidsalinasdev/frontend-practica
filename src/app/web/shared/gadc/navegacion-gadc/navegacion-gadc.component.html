@@ -15,7 +15,6 @@
           (click)="setActiveLink('servicio')">Servicio al Ciudadano</a>
         <ul class="dropdown-content">
 
-
           <li *ngFor="let item of this.ciudadano">
             <a [href]="item.url_documento" target="_blank">{{ item.descripcion }}</a>
           </li>

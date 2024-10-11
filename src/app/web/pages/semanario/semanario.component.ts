@@ -2,6 +2,10 @@ import { Component, AfterViewInit } from '@angular/core';
 import { SemanarioService } from '../../services/semanario.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
+
+// jquery en angular
+declare var $: any;
+
 @Component({
   selector: 'app-semanario',
   templateUrl: './semanario.component.html',
@@ -151,8 +155,8 @@ export class SemanarioComponent implements AfterViewInit {
     this.numOfPapers = this.libroImagenesPairs.length;
     this.maxState = this.numOfPapers + 1;
 
-    console.log(this.libroImagenesPairs);
-
+    // Muestra el modal
+    $('#modalSemanario').modal('show');
 
   }
 

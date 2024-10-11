@@ -5,69 +5,12 @@
 </div>
 
 
-<div class="row mt-4">
-    <div class="col-3"></div>
-    <div class="col-6 d-flex justify-content-between">
-        <span class="font-weight-normal"><span class="font-weight-normal text-info">Edición:</span> {{
-            this.libroImagenes[0]?.edicion
-            }}</span>
-        <span class="font-weight-normal"><span class="font-weight-normal text-info">Fecha de publicación:</span> {{
-            this.libroImagenes[0]?.fecha_publicacion
-            }}</span>
-    </div>
-    <div class="col-3"></div>
-</div>
-
-<hr>
-
-<div class="row">
-
-    <div class="col-12 flitbook-contenedor">
-        <!-- flipBook -->
-        <button id="prev-btn">
-            <i class="fas fa-chevron-left"></i> <!-- Icono para menor que -->
-        </button>
-
-
-        <div id="book" class="book">
-
-            <!-- Iteramos sobre libroImagenes -->
-            <!-- Iteramos sobre libroImagenes para generar papers dinámicos -->
-            <div *ngFor="let imagenPair of libroImagenesPairs; let i = index" [id]="'p' + (i + 1)" class="paper">
-
-                <!-- Front Side (primera imagen del par) -->
-                <div class="front">
-                    <div [id]="'f' + (i + 1)" class="front-content">
-                        <img class="cover-img" [src]="imagenPair[0]?.fullUrl" [alt]="'Imagen ' + (2 * i + 1)"
-                            *ngIf="imagenPair[0]">
-                    </div>
-                </div>
-
-                <!-- Back Side (segunda imagen del par, si existe) -->
-                <div class="back">
-                    <div [id]="'b' + (i + 1)" class="back-content">
-                        <img class="cover-img" [src]="imagenPair[1]?.fullUrl" [alt]="'Imagen ' + (2 * i + 2)"
-                            *ngIf="imagenPair[1]">
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <button id="next-btn">
-            <i class="fas fa-chevron-right"></i> <!-- Icono para mayor que -->
-        </button>
-        <!-- FIN FlipBook -->
-    </div>
-
-</div>
-
 <!-- Cards  de eleccion -->
-<div class="col-12" style="margin-top: 4.5rem;">
-    <h3 class="text-center text-uppercase">Gobernación al Día</h3>
+<div class="mt-5" style="width: 1390px; margin: auto;">
+    <h3 class="text-left text-uppercase">Semanario digital Gobernación al Día</h3>
 </div>
 <section class="gallery mt-3">
+
     <!-- Cada elemento multimedia -->
     <article class="media-item"
         *ngFor="let doc of documentos | paginate: { itemsPerPage: this.limite, currentPage: this.page, totalItems: this.totalItems }">
@@ -85,10 +28,69 @@
 </section>
 
 <!-- Paginación con ngx-pagination -->
-<div class=" pagination">
+<div class=" pagination" style="margin-bottom: 30rem;">
     <!-- Control de paginación -->
     <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" (pageChange)="this.pageChanged($event)">
     </pagination-controls>
 </div>
 
 <app-footer-gadc></app-footer-gadc>
+
+<!-- Modal -->
+<div class="modal fade" id="modalSemanario" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog " style="max-width: 1200px;" role="document">
+        <div class="modal-content">
+            <div class="modal-header datos-semanario" style="background-color: rgb(0, 127, 198);">
+
+                <span class="font-weight-normal text-uppercase text-white">Semanario digital</span>
+
+
+            </div>
+            <div class="modal-body">
+
+
+
+                <div class="row modal-personalizado">
+                    <div class="col-12 flitbook-contenedor">
+                        <button id="prev-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div id="book" class="book">
+                            <div *ngFor="let imagenPair of this.libroImagenesPairs; let i = index" [id]="'p' + (i + 1)"
+                                class="paper">
+                                <div class="front">
+                                    <div [id]="'f' + (i + 1)" class="front-content">
+                                        <img class="cover-img" [src]="imagenPair[0]?.fullUrl"
+                                            [alt]="'Imagen ' + (2 * i + 1)" *ngIf="imagenPair[0]">
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div [id]="'b' + (i + 1)" class="back-content">
+                                        <img class="cover-img" [src]="imagenPair[1]?.fullUrl"
+                                            [alt]="'Imagen ' + (2 * i + 2)" *ngIf="imagenPair[1]">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex flex-row justify-content-between">
+                    <span class="font-weight-normal text-uppercase"><span
+                            class="font-weight-normal  text-uppercase text-info ">Edición:</span>
+                        {{
+                        this.libroImagenes[0]?.edicion
+                        }}</span>
+                    <span class="font-weight-normal text-uppercase"><span
+                            class="font-weight-normal text-info text-uppercase">Fecha de
+                            Publicación:</span> {{
+                        this.libroImagenes[0]?.fecha_publicacion
+                        }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

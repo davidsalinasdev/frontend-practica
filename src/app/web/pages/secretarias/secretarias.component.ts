@@ -23,6 +23,11 @@ export class SecretariasComponent {
     this.parametroQuery();
   }
 
+  ngOnInit(): void {
+    console.log('Hola mundo');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
 
   /**

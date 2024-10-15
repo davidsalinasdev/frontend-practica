@@ -32,7 +32,7 @@ ul {
 
 }
 
-@media(min-width: 1550px) {
+@media(min-width: 1300px) {
   header {
     flex-direction: row;
   }

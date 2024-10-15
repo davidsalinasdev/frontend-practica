@@ -50,8 +50,16 @@
 
 
 <!-- Otras secciones -->
-<div #container class="container" style="max-width: 1600px;">
+<div #container class="container contenedor-principal">
   @defer (on viewport(container)) {
+
+  <br><br>
+  <div #serviciociudadano>
+    @defer (on viewport(serviciociudadano)) {
+    <app-servicio-ciudadano></app-servicio-ciudadano>
+    }
+  </div>
+
   <br><br>
   <div #ultimasnoticias>
     @defer (on viewport(ultimasnoticias)) {

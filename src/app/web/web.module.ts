@@ -42,6 +42,7 @@ import { GobernacionTvComponent } from './pages/gobernacion-tv/gobernacion-tv.co
 import { TelevisiondigitalGadcComponent } from './components/components-gadc/televisiondigital-gadc/televisiondigital-gadc.component';
 import { JakuComponent } from './pages/jaku/jaku.component';
 import { JakuDetalleComponent } from './pages/jaku-detalle/jaku-detalle.component';
+import { ServicioCiudadanoComponent } from './components/components-gadc/servicio-ciudadano/servicio-ciudadano.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { JakuDetalleComponent } from './pages/jaku-detalle/jaku-detalle.componen
     GobernacionTvComponent,
     TelevisiondigitalGadcComponent,
     JakuComponent,
-    JakuDetalleComponent
+    JakuDetalleComponent,
+    ServicioCiudadanoComponent
   ],
   imports: [
     CommonModule,

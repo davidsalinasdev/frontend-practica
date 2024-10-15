@@ -1,9 +1,14 @@
 <header class="">
+
+  <!-- Logo gobernación -->
   <a [routerLink]="['/web/inicio']" [ngClass]="{'active': activeLink === 'inicio'}" (click)="setActiveLink('inicio')">
     <div class="logo">
       <img class="img-fluid" src="./../../../../../assets/img/logo3.png" alt="Logo Cochabamba">
     </div>
   </a>
+
+
+  <!-- Menu gobernación -->
   <nav class="">
     <ul class="menu">
       <li>
@@ -18,11 +23,7 @@
           <li *ngFor="let item of this.ciudadano">
             <a [href]="item.url_documento" target="_blank">{{ item.descripcion }}</a>
           </li>
-          <!-- Hacer crud -->
-          <!-- <li><a href="#personalidades-juridicas" target="_blank">Personalidades Jurídicas</a></li>
-          <li><a href="#reserva-espacios" target="_blank">Reserva de Espacios Deportivos</a></li>
-          <li><a href="#licencia-operadores" target="_blank">Licencia de Operadores de Turismo</a></li>
-          <li><a href="#comunidad-turismo" target="_blank">Comunidad de Turismo</a></li> -->
+
         </ul>
       </li>
       <li class="dropdown">
@@ -118,6 +119,7 @@
       <span></span>
     </div>
   </nav>
+
 </header>
 
 

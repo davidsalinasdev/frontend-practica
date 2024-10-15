@@ -21,3 +21,7 @@
 .watch-button:hover {
     background-color: #0056b3;
 }
+
+.contenedor-principal {
+    max-width: 1600px;
+}

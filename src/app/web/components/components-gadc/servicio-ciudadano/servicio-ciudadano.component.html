@@ -9,7 +9,7 @@
             <div class="programs-grid mt-2">
 
                 <!-- Loop a través de los items obtenidos del servicio -->
-                <div *ngFor="let item of this.listJaku"
+                <div *ngFor="let item of this.listCiudadano"
                     class="program border d-flex flex-column justify-content-between">
 
                     <div class="">
@@ -29,13 +29,14 @@
                         programa</a> -->
 
                     <div class="d-flex justify-content-center">
-                        <a [routerLink]="[ '/web/jaku-detalle', item.id, item.nombre ]"
+                        <a href="{{ item.url_documento }}" target="_blank"
                             class="ml-2 mb-2 font-weight-normal text-uppercase"
                             style="color: rgb(0, 127, 198); cursor: pointer;"> Visitar sitio</a>
                     </div>
 
 
                 </div>
+
             </div>
         </div>
     </div>

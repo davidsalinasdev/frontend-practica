@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '../../../../../environments/environment';
-import { JakuService } from '../../../services/jaku.service';
-
+import { CiudadanoService } from '../../../services/ciudadano.service';
 
 const base_url = environment.base_url;
 
@@ -13,12 +12,11 @@ const base_url = environment.base_url;
 export class ServicioCiudadanoComponent {
 
   public baseUrl: string;
-  public listJaku: any[] = [];
+  public listCiudadano: any[] = [];
 
-  constructor(private jakuServices: JakuService) {
+  constructor(private ciudadanoServices: CiudadanoService) {
     this.baseUrl = base_url;
   }
-
 
   ngOnInit(): void {
     this.indexJaku();
@@ -28,11 +26,10 @@ export class ServicioCiudadanoComponent {
    * indexJaku
    */
   public indexJaku() {
-    this.jakuServices.getJaku().subscribe(
+    this.ciudadanoServices.getCiudadano().subscribe(
       (resp: any) => {
-        this.listJaku = resp.jakutv;
-        // console.log(this.listJaku);
-
+        this.listCiudadano = resp.ciudadanotv;
+        console.log(this.listCiudadano);
       }
     )
   }

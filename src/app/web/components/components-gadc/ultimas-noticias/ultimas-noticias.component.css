@@ -28,19 +28,41 @@
   border-radius: 5px;
 }
 
-.main-news img {
-  width: 100%;
-  height: 100%;
 
-  border-radius: 5px;
 
-  /* max-width: 400px; */
-  /* Cambia esto a 100% para que la imagen también ocupe toda la altura */
-  object-fit: cover;
-  /* La imagen se ajustará al contenedor sin deformarse */
-  display: block;
-  /* Elimina cualquier espacio extra alrededor de la imagen */
+@media (min-width: 992px) {
+  .main-news img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 5px;
+
+    /* max-width: 400px; */
+    /* Cambia esto a 100% para que la imagen también ocupe toda la altura */
+    object-fit: cover;
+    /* La imagen se ajustará al contenedor sin deformarse */
+    display: block;
+    /* Elimina cualquier espacio extra alrededor de la imagen */
+  }
 }
+
+@media (min-width: 1315px) {
+  .main-news img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 5px;
+
+    /* max-width: 400px; */
+    /* Cambia esto a 100% para que la imagen también ocupe toda la altura */
+    object-fit: inherit;
+    /* La imagen se ajustará al contenedor sin deformarse */
+    display: inherit
+      /* Elimina cualquier espacio extra alrededor de la imagen */
+  }
+}
+
+
 
 .main-news .news-info {
   position: absolute;
@@ -75,11 +97,21 @@
 
 .secondary-news img {
   width: 100%;
-  height: auto;
-  max-height: 220px;
+  height: 100%;
   /* Controlamos el tamaño máximo de las imágenes secundarias */
   object-fit: cover;
   border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+  .secondary-news img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    /* Controlamos el tamaño máximo de las imágenes secundarias */
+    object-fit: cover;
+    border-radius: 5px;
+  }
 }
 
 .secondary-news .news-info {

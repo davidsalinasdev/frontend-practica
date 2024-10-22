@@ -29,7 +29,7 @@ export class ServicioCiudadanoComponent {
     this.ciudadanoServices.getCiudadano().subscribe(
       (resp: any) => {
         this.listCiudadano = resp.ciudadanotv;
-        // console.log(this.listCiudadano);
+        console.log(this.listCiudadano);
       }
     )
   }

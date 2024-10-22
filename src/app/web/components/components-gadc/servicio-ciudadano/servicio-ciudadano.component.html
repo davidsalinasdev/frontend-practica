@@ -1,42 +1,46 @@
-<div class="row tarjeta">
+<div class="row">
     <div class="col-12">
-        <div class="container-tv">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="text-left text-uppercase">Servicio al ciudadano</h2>
+        <h2 class="text-left text-uppercase">Servicio al ciudadano</h2>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="programs-grid mt-2">
+
+                    <!-- Loop a través de los items obtenidos del servicio -->
+                    <div *ngFor="let item of this.listCiudadano" class="card"
+                        class="program border d-flex flex-column justify-content-between">
+
+                        <div class="card-body text-center">
+                            <span><i class="fa fa-hospital-o" style="font-size: 4rem;"></i></span>
+                            <div class="d-flex justify-content-center">
+                                <a href="{{ item.url_documento }}" target="_blank"
+                                    class="ml-2 mb-2 font-weight-normal text-uppercase"
+                                    style="color: rgb(0, 127, 198); cursor: pointer;"> {{ item.descripcion }}</a>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
-            <div class="programs-grid mt-2">
-
-                <!-- Loop a través de los items obtenidos del servicio -->
-                <div *ngFor="let item of this.listCiudadano"
-                    class="program border d-flex flex-column justify-content-between">
-
-                    <div class="">
-                        <!-- portada -->
-                        <div class=" contenedor-img">
-                            <!-- <img src="../../../../assets/img/alcaldia.jpg" alt="Tarjeta digital Jaku"> -->
-                            <img src="{{ this.baseUrl + '/storage/uploads/' + item.imagen }}" alt="">
-                        </div>
-
-                        <div class="p-2">
-                            <!-- Título de la tarjeta -->
-                            <h4 class="text-left mt-0 mb-0">{{ item.nombre }}</h4>
+            <div class="col-12 col-md-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group input-buscar position-relative">
+                            <input type="text" class="form-control" placeholder="Buscar">
+                            <span class="fa fa-search icono-buscar"></span>
                         </div>
                     </div>
-                    <!-- <a class="watch-button ml-2 mb-2 font-weight-normal"
-                        style="color: rgb(0, 127, 198); cursor: pointer;" (click)="this.enviarItem(item)"> Ver
-                        programa</a> -->
 
-                    <div class="d-flex justify-content-center">
-                        <a href="{{ item.url_documento }}" target="_blank"
-                            class="ml-2 mb-2 font-weight-normal text-uppercase"
-                            style="color: rgb(0, 127, 198); cursor: pointer;"> Visitar sitio</a>
+                    <div class="col-12">
+                        <div class="input-buscar input-buscar--img">
+                            <p class="interes">De tu interes</p>
+                            <img src="../../../../../assets/img/2.jpg" alt="IUmagen">
+                        </div>
                     </div>
-
-
                 </div>
-
             </div>
         </div>
     </div>

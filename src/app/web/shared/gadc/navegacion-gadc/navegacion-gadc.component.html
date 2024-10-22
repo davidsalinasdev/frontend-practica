@@ -98,7 +98,7 @@
           <ng-container *ngIf="radioService.playing; else showIcon">
             <img src="../../../../../assets/img/gifoficial.gif" alt="Reproduciendo" style="width: 30px; height: auto;">
             <span class="tooltip-text visible">
-              <i class="fas fa-pause text-pause"></i>
+              <i class="fa fa-pause text-pause"></i>
               Detener radio en linea
             </span>
           </ng-container>
@@ -124,7 +124,6 @@
 
 
 <!-- MENU LATERAL -->
-
 <ul class="sidebar-nav mb-0" id="sidebarnav" [ngClass]="{'sidebar-visible': this.menuVisible}">
   <li>
     <a class="text-white text-uppercase texto-total" [routerLink]="['/web/inicio']"
@@ -230,7 +229,7 @@
       <ng-container *ngIf="radioService.playing; else showIcon">
         <img src="../../../../../assets/img/gifoficial.gif" alt="Reproduciendo" style="width: 30px; height: auto;">
         <span class="tooltip-text visible">
-          <i class="fas fa-pause text-pause"></i>
+          <i class="fa fa-pause text-pause"></i>
           Detener radio en linea
         </span>
       </ng-container>

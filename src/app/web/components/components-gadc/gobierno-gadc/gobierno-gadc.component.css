@@ -7,9 +7,7 @@
 .secretarias-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1.8em;
-  margin-top: 20px;
-  margin-bottom: 2em;
+  grid-gap: 1.8rem;
 }
 
 .secretaria {
@@ -63,6 +61,7 @@
 @media (min-width: 992px) {
   .secretarias-container {
     grid-template-columns: repeat(5, 1fr);
+    grid-gap: 3.5rem;
   }
 }
 

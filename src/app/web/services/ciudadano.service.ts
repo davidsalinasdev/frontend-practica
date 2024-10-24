@@ -17,6 +17,12 @@ export class CiudadanoService {
   */
   public getCiudadano() {
     return this.http.get(`${base_url}/api/interes/ciudadano`);
-    // http://localhost:8000/api/multimedia/geleria/1
+  }
+
+  /**
+* index de tu interes
+*/
+  public getInteres() {
+    return this.http.get(`${base_url}/api/interes/detuinteres`);
   }
 }

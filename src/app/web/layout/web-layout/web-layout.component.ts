@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 
-// Declara una funcion de manera global
-declare function lightbox(): any;
+
 
 declare function turnInitFunctions(): any;
 

@@ -11,11 +11,11 @@
                     <a href="{{ item.url_documento }}" target="_blank" *ngFor="let item of this.listCiudadano"
                         class="program  mb-0">
 
-                        <div class="card-body">
+                        <div class="card-body p-0">
 
                             <div class="d-flex justify-content-center">
                                 <div class="icono-interes">
-                                    <i class="fa fa-hospital-o icono-main"
+                                    <i class="{{ item.imagen }} icono-main"
                                         style="font-size: 3.5rem; color: rgb(0, 127, 198);"></i>
                                 </div>
                             </div>
@@ -47,7 +47,35 @@
                     <div class="col-12">
                         <div class="input-buscar input-buscar--img">
                             <p class="interes">De tu interes</p>
-                            <img class="img-fluid" src="../../../../../assets/img/prueba_corte.jpg" alt="IUmagen">
+                            <div id="banerInteres" class="carousel slide carousel-fade" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#banerInteres" data-slide-to="0" class="active"></li>
+                                    <li data-target="#banerInteres" data-slide-to="1" class=""></li>
+                                    <li data-target="#banerInteres" data-slide-to="2" class=""></li>
+                                </ol>
+                                <div class="carousel-inner" role="listbox">
+                                    <div *ngFor="let item of listInteres; let i = index" class="carousel-item"
+                                        [class.active]="i === 0">
+
+
+                                        <figure class="gallery">
+                                            <img src="{{ this.baseUrl + '/storage/uploads/' + item.imagen }}"
+                                                class="d-block w-100 img-carrusel imagen-baner thumbnail"
+                                                [alt]="item.descripcion" onclick="openLightbox(); setImage(i);">
+                                        </figure>
+
+
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#banerInteres" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#banerInteres" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -55,4 +83,11 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-image">
+    <div class="caption" id="caption"></div>
 </div>

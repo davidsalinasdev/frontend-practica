@@ -1,31 +1,41 @@
 <div class="row">
 
     <div class="col-12">
-        <h2 class="text-left interes__titulo">De tu interés</h2>
+        <h2 class="text-left interes__titulo">Campañas</h2>
     </div>
 
-    <div class="col-12 mt-3">
+    <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-11 mt-3">
+                <div id="banerPubli" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#banerPubli" data-slide-to="0" class="active"></li>
+                        <li data-target="#banerPubli" data-slide-to="1"></li>
+                        <li data-target="#banerPubli" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item" *ngFor="let item of groupedItems; let i = index"
+                            [class.active]="i === 0">
+                            <div class="element-carrusel">
+                                <div class="" *ngFor="let subItem of item; let j = index">
 
-        <div id="banerPubli" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#banerPubli" data-slide-to="0" class="active"></li>
-                <li data-target="#banerPubli" data-slide-to="1" class=""></li>
-                <li data-target="#banerPubli" data-slide-to="2" class=""></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <div *ngFor="let item of bannerPublicidad; let i = index" class="carousel-item"
-                    [class.active]="i === 0">
-                    <img [src]="item.imagen" class="d-block w-100 img-carrusel imagen-baner" [alt]="item.titulo">
+                                    <img [src]="subItem.src" class="img-carrusel" [alt]="subItem.caption"
+                                        (click)="open(item,j)">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#banerPubli" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#banerPubli" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#banerPubli" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#banerPubli" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
     </div>
 

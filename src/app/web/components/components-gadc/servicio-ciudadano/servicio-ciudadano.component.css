@@ -124,8 +124,8 @@ h2 {
 
 .icono-interes {
     position: relative;
-    width: 110px !important;
-    height: 110px !important;
+    width: 105px !important;
+    height: 105px !important;
     border-radius: 50%;
     background-color: #eceef3;
     /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
@@ -136,12 +136,30 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3.5rem;
+    font-size: 3.3rem;
     color: rgb(0, 127, 198);
+    transition: all 0.3s ease;
 }
 
 .titulo-interes {
     font-weight: 400;
     font-size: 1.1rem;
     transition: all 0.3s ease;
+}
+
+.centrar-icono {
+    display: flex;
+    justify-content: center;
+}
+
+.program:hover {
+
+    .titulo-interes {
+        color: rgb(0, 127, 198) !important;
+    }
+
+    .icono-main {
+        color: rgb(96, 163, 219);
+    }
+
 }

@@ -13,10 +13,9 @@
 
                         <div class="card-body p-0">
 
-                            <div class="d-flex justify-content-center">
+                            <div class="centrar-icono">
                                 <div class="icono-interes">
-                                    <i class="{{ item.imagen }} icono-main"
-                                        style="font-size: 3.5rem; color: rgb(0, 127, 198);"></i>
+                                    <i class="{{ item.imagen }} icono-main"></i>
                                 </div>
                             </div>
 
@@ -54,14 +53,13 @@
                                     <li data-target="#banerInteres" data-slide-to="2" class=""></li>
                                 </ol>
                                 <div class="carousel-inner" role="listbox">
-                                    <div *ngFor="let item of listInteres; let i = index" class="carousel-item"
+                                    <div *ngFor="let item of this._album; let i = index" class="carousel-item"
                                         [class.active]="i === 0">
 
 
                                         <figure class="gallery">
-                                            <img src="{{ this.baseUrl + '/storage/uploads/' + item.imagen }}"
-                                                class="d-block w-100 img-carrusel imagen-baner thumbnail"
-                                                [alt]="item.descripcion" onclick="openLightbox(); setImage(i);">
+                                            <img src="{{  item.src }}" class="d-block w-100" [alt]="item.caption"
+                                                (click)="open(i)">
                                         </figure>
 
 
@@ -83,11 +81,4 @@
             </div>
         </div>
     </div>
-</div>
-
-<!-- Lightbox Modal -->
-<div id="lightbox" class="lightbox">
-    <span class="close" onclick="closeLightbox()">&times;</span>
-    <img class="lightbox-content" id="lightbox-image">
-    <div class="caption" id="caption"></div>
 </div>

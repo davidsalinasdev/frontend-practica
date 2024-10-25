@@ -6,6 +6,7 @@ import { WebRoutingModule } from './web-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { LightboxModule } from 'ngx-lightbox';
 
 // Modulo SHARED
 import { SharedModule } from './shared/shared.module';
@@ -71,7 +72,8 @@ import { ServicioCiudadanoComponent } from './components/components-gadc/servici
     TelevisiondigitalGadcComponent,
     JakuComponent,
     JakuDetalleComponent,
-    ServicioCiudadanoComponent
+    ServicioCiudadanoComponent,
+
   ],
   imports: [
     CommonModule,
@@ -79,7 +81,8 @@ import { ServicioCiudadanoComponent } from './components/components-gadc/servici
     SharedModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LightboxModule
   ]
 })
 export class WebModule { }

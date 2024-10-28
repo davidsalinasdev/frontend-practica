@@ -2,8 +2,9 @@ import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { BannerPublicidadService } from '../../../services/banner-publicidad.service';
 import * as bootstrap from 'bootstrap';
 // Declara una funcion de manera global
-import { Lightbox } from 'ngx-lightbox';
+import { Lightbox, LightboxEvent, LIGHTBOX_EVENT } from 'ngx-lightbox';
 import { environment } from '../../../../../environments/environment';
+import { Subscription } from 'rxjs';
 
 const base_url = environment.base_url;
 @Component({
@@ -17,8 +18,12 @@ export class BannerPublicidadComponent implements OnInit, AfterViewInit {
   public groupedItems: any[] = [];
   public baseUrl: string;
   public _album: any[] = [];
+  private _subscription!: Subscription;
 
-  constructor(private bannerPublicidadServices: BannerPublicidadService, private _lightbox: Lightbox) {
+  constructor(private bannerPublicidadServices: BannerPublicidadService,
+    private _lightbox: Lightbox,
+    private _lightboxEvent: LightboxEvent
+  ) {
     this.baseUrl = base_url;
   }
 
@@ -78,16 +83,68 @@ export class BannerPublicidadComponent implements OnInit, AfterViewInit {
 
   open(item: any, index: number): void {
 
-    console.log(item);
-    console.log(index);
+    this._subscription = this._lightboxEvent.lightboxEvent$
+      .subscribe(event => this._onReceivedEvent(event));
 
     this._lightbox.open(item, index, {
+      positionFromTop: 20,
+      fitImageInViewPort: true,
       wrapAround: true,
-      showImageNumberLabel: false,
-      centerVertically: false,
-      fitImageInViewPort: true, // Aquí es donde se agrega la opción
     });
   }
+
+
+  private _onReceivedEvent(event: any): void {
+    // remember to unsubscribe the event when lightbox is closed
+    if (event.id === LIGHTBOX_EVENT.CLOSE) {
+      // event CLOSED is fired
+      this._subscription.unsubscribe();
+    }
+
+    if (event.id === LIGHTBOX_EVENT.OPEN) {
+      // event OPEN is fired
+      console.log(event);
+
+      // Seleccionar la imagen visible en el Lightbox
+      setTimeout(() => {
+        const contenedor = document.querySelector('#outerContainer') as HTMLImageElement;
+        const lightboxImage = document.querySelector('#image') as HTMLImageElement;
+        console.log(lightboxImage);
+        if (lightboxImage) {
+          // O estilos inline como alternativa
+          lightboxImage.style.width = '1110px';
+          lightboxImage.style.height = '600px';
+          contenedor.style.height = '1110px';
+          contenedor.style.height = '600px';
+        }
+
+      }, 500);
+
+
+    }
+
+    if (event.id === LIGHTBOX_EVENT.CHANGE_PAGE) {
+      // event change page is fired
+      // console.log(event.data); // -> image index that lightbox is switched to
+
+      // Seleccionar la imagen visible en el Lightbox
+      setTimeout(() => {
+        const contenedor = document.querySelector('#outerContainer') as HTMLImageElement;
+        const lightboxImage = document.querySelector('#image') as HTMLImageElement;
+        console.log(lightboxImage);
+        if (lightboxImage) {
+          // O estilos inline como alternativa
+          lightboxImage.style.width = '1110px';
+          lightboxImage.style.height = '600px';
+          contenedor.style.height = '1110px';
+          contenedor.style.height = '600px';
+        }
+
+      }, 500);
+    }
+  }
+
+
 
 
 

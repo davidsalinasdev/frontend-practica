@@ -17,9 +17,9 @@
                         <div class="carousel-item" *ngFor="let item of groupedItems; let i = index"
                             [class.active]="i === 0">
                             <div class="element-carrusel">
-                                <div class="" *ngFor="let subItem of item; let j = index">
+                                <div class="gallery" *ngFor="let subItem of item; let j = index">
 
-                                    <img [src]="subItem.src" class="img-carrusel" [alt]="subItem.caption"
+                                    <img [src]="subItem.src" class="img-carrusel myimg" [alt]="subItem.caption"
                                         (click)="open(item,j)">
 
                                 </div>

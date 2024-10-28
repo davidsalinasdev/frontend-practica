@@ -60,3 +60,9 @@
 .contenedor-img {
     margin: 0 auto;
 }
+
+.custom-lightbox-image {
+    width: 1110px !important;
+    height: 500px !important;
+
+}

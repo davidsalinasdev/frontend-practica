@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
 import { InicioService } from '../../../services/inicio.service';
 // Importa Bootstrap
+import { DomSanitizer } from '@angular/platform-browser';
+
 import * as bootstrap from 'bootstrap';
+import { environment } from '../../../../../environments/environment';
+const base_url = environment.base_url;
 
 @Component({
   selector: 'app-header-gadc',
@@ -10,8 +14,9 @@ import * as bootstrap from 'bootstrap';
 })
 export class HeaderGadcComponent {
   public listBanners: any = [];
+  public baseUrl: string = base_url
 
-  constructor(private inicioServices: InicioService) { }
+  constructor(private inicioServices: InicioService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.indexBaners();
@@ -26,7 +31,19 @@ export class HeaderGadcComponent {
 
         const { data } = resp;
         this.listBanners = data;
-        // console.log(this.listBanners);
+
+        this.listBanners = data.map((banner: any) => {
+          // Sanitiza la URL del video
+          if (banner.tipoArchivo === 'video') {
+            banner.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+              `${this.baseUrl}/storage/uploads/${banner.videoBanner}`
+            );
+          }
+          return banner;
+        });
+
+        console.log(this.listBanners[0]?.videoUrl);
+
 
       },
       error: (err) => {

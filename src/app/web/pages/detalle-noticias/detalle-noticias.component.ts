@@ -123,6 +123,8 @@ export class DetalleNoticiasComponent {
             contenido: this.sanitizer.bypassSecurityTrustHtml(noticia.contenido)  // Sanitizar contenido HTML
           };
         });
+        console.log(this.listaNoticias);
+
         this.totalItems = data.total;  // Total de documentos
       });
   }

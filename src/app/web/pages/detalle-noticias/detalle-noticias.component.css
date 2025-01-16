@@ -48,7 +48,7 @@
 .search-bar input[type="text"] {
     width: 70%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #b9b9b9;
     border-radius: 5px 0 0 5px;
     font-size: 1rem;
 }
@@ -192,4 +192,19 @@
 
 .alerta {
     display: none;
+}
+
+/* Ordenar para movil  */
+@media (max-width: 767px) {
+
+    /* Cambiamos el orden */
+    .seccion-noticias {
+        order: -1;
+        /* Aparece antes */
+    }
+
+    .seccion-categorias {
+        order: 1;
+        /* Aparece después */
+    }
 }

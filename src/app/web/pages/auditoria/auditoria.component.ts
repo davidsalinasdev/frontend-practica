@@ -28,7 +28,7 @@ export class AuditoriaComponent implements OnInit {
         // console.log(response);
         this.documentos = response.data.data;
         this.totalItems = response.data.total;  // Total de documentos
-
+        // console.log(this.documentos);
         this.opcionAuditoria = false;
         if (this.documentos.length === 0) {
           this.opcionAuditoria = true;

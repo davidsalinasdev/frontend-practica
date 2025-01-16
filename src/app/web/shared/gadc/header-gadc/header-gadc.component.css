@@ -48,3 +48,8 @@
    }
 
    /* FIN Posicionamiento del mensaje en las imagenes de carrusel */
+
+   .full-width-video {
+     width: 100%;
+     height: auto;
+   }

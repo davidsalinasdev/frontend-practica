@@ -1,5 +1,13 @@
+@if (listBanners[0]?.tipoArchivo === 'video') {
+<div align="center">
+  <video class="full-width-video" autoplay loop [muted]="true"
+    *ngIf="listBanners.length > 0 && listBanners[0]?.tipoArchivo === 'video'">
+    <source [src]="listBanners[0]?.videoUrl" type="video/mp4" />
+    Tu navegador no soporta el elemento de video.
+  </video>
+</div>
+}@else {
 <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators2" data-slide-to="1" class=""></li>
@@ -19,3 +27,4 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+}

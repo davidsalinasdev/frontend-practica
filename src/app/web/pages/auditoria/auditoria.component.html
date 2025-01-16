@@ -27,6 +27,9 @@
             </div>
             <h2 class="font-bold">{{ doc.titulo }}</h2>
             <p class="font-weight-normal">{{ doc.resumen | slice: 0:200 }}"</p>
+            <ul>
+                <li class="font-weight-normal"><strong>Fecha Publicación: </strong>{{ doc.fecha_publicacion }}</li>
+            </ul>
             <a [href]="doc.archivo" target="_blank">ABRIR</a>
         </div>
     </div>

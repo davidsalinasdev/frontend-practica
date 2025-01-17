@@ -42,6 +42,33 @@ export class NavegacionGadcComponent {
   }
 
 
+  isDropdownOpenComunicacion = false;
+
+  toggleDropdownComunicacion() {
+    this.isDropdownOpenComunicacion = !this.isDropdownOpenComunicacion;
+  }
+
+
+  isDropdownOpenCiudadano = false;
+
+  toggleDropdownCiudadano() {
+    this.isDropdownOpenCiudadano = !this.isDropdownOpenCiudadano;
+  }
+
+  isDropdownOpenTransparencia = false;
+
+  toggleDropdownTransparencia() {
+    this.isDropdownOpenTransparencia = !this.isDropdownOpenTransparencia;
+  }
+
+  isDropdownOpenGaceta = false;
+
+  toggleDropdownGaceta() {
+    this.isDropdownOpenGaceta = !this.isDropdownOpenGaceta;
+  }
+
+
+
   ngOnInit(): void {
     this.indexCiudadano();
     this.getDespacho();

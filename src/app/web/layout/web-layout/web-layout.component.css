@@ -1,14 +1,4 @@
 /* Redes sociales */
-.redes-sociales {
-  position: absolute;
-  z-index: 500;
-  right: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  transition: top 1s ease-in-out;
-}
 
 .redes-sociales a img {
   width: 65px;
@@ -46,13 +36,15 @@
 
 /* Estilos generales para redes sociales */
 .redes-sociales {
-  position: absolute;
-  z-index: 500;
-  right: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
+  position: fixed;
+  position: fixed;
+  /* Fija la posición sin importar el scroll */
+  bottom: 49px;
+  /* Distancia desde la parte inferior */
+  right: 160px;
+  /* Distancia desde la parte derecha */
+  z-index: 1000;
+  /* Asegura que esté por encima de otros elementos */
   transition: top 1s ease-in-out;
 }
 

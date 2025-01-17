@@ -21,27 +21,27 @@ export class WebLayoutComponent implements OnInit {
     turnInitFunctions();
 
     // Inicializa la posición de los íconos de redes sociales
-    this.updateIconPosition();
+    // this.updateIconPosition();
 
     // Asegúrate de volver a calcular la posición al cargar completamente la página
-    window.addEventListener('load', () => {
-      this.updateIconPosition();
-    });
+    // window.addEventListener('load', () => {
+    //   this.updateIconPosition();
+    // });
   }
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    clearTimeout(this.scrollTimeout);
-    this.scrollTimeout = setTimeout(() => {
-      this.updateIconPosition();
-    }, this.delay);
-  }
+  // @HostListener('window:scroll', [])
+  // onWindowScroll() {
+  //   clearTimeout(this.scrollTimeout);
+  //   this.scrollTimeout = setTimeout(() => {
+  //     this.updateIconPosition();
+  //   }, this.delay);
+  // }
 
-  private updateIconPosition() {
-    const socialIcons = document.querySelector('.redes-sociales') as HTMLElement;
-    if (socialIcons) {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      socialIcons.style.top = `${scrollTop + window.innerHeight - 200}px`; // Ajusta la posición según sea necesario
-    }
-  }
+  // private updateIconPosition() {
+  //   const socialIcons = document.querySelector('.redes-sociales') as HTMLElement;
+  //   if (socialIcons) {
+  //     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  //     socialIcons.style.top = `${scrollTop + window.innerHeight - 115}px`; // Ajusta la posición según sea necesario
+  //   }
+  // }
 }

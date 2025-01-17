@@ -312,3 +312,31 @@ nav {
 .sombra {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(154, 128, 158, 0.46);
 }
+
+/* **** */
+.dropdown-menu {
+  position: inherit !important;
+  float: none !important;
+  transform: none !important;
+}
+
+.dropdown-item {
+  white-space: normal !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #fff !important;
+}
+
+@media (min-width: 1253px) {
+  .dropdown-menu {
+    position: absolute !important;
+    float: right !important;
+    transform: translate3d(0px, 0px, 0px) !important;
+  }
+
+  .dropdown-item {
+    white-space: nowrap !important;
+  }
+}

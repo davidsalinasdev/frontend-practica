@@ -31,7 +31,7 @@
 }
 
 .profile-img {
-    width: 450px;
+    max-width: 100%;
     height: auto;
     border-radius: 5%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -81,5 +81,14 @@
 
     .biography {
         margin-left: 0;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .profile-img {
+
+        height: auto;
+        max-width: 450px;
     }
 }

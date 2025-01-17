@@ -123,26 +123,28 @@
 </header>
 
 
-<!-- MENU LATERAL -->
+<!-- MENU DE NAVEGACIÓN CELULAR -->
 <ul class="sidebar-nav mb-0" id="sidebarnav" [ngClass]="{'sidebar-visible': this.menuVisible}">
+
+  <!-- Inicio -->
   <li>
     <a class="text-white text-uppercase texto-total" [routerLink]="['/web/inicio']"
-      [ngClass]="{'active': activeLink === 'inicio'}" (click)="setActiveLink('inicio')">Inicio</a>
+      [ngClass]="{'active': activeLink === 'inicio'}" (click)="setActiveLink('inicio')">Inicios</a>
   </li>
 
 
   <!-- Servicio al ciudadano -->
   <div class="dropdown">
-    <a class="btn btn-secondary bg-transparent dropdown-toggle text-white text-uppercase texto-total" href="#"
-      role="button" data-toggle="dropdown" aria-expanded="false" style="border: none;">
+    <a class="btn btn-secondary bg-transparent dropdown-toggle text-white text-uppercase texto-total"
+      href="javaScript:void(0);" (click)="toggleDropdownCiudadano()" role="button" data-toggle="dropdown"
+      aria-expanded="false" style="border: none;">
       Servicio al Ciudadano
     </a>
-
-    <div class="dropdown-menu">
-
-      <a *ngFor="let item of this.ciudadano" class="dropdown-item  text-uppercase texto-total texto-universal"
-        [href]="item.url_documento" target="_blank">{{ item.descripcion }}</a>
-
+    <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpenCiudadano}">
+      <a *ngFor="let item of ciudadano" class="dropdown-item text-uppercase texto-total texto-universal"
+        [href]="item.url_documento" target="_blank">
+        {{ item.descripcion }}
+      </a>
     </div>
   </div>
 
@@ -150,45 +152,62 @@
 
   <!-- Comunicación -->
   <div class="dropdown">
-    <a class="btn btn-secondary bg-transparent dropdown-toggle text-white text-uppercase texto-total" href="#"
-      role="button" data-toggle="dropdown" aria-expanded="false" style="border: none;">
+    <a class="btn btn-secondary bg-transparent dropdown-toggle text-white text-uppercase texto-total" role="button"
+      (click)="toggleDropdownComunicacion()" aria-expanded="false" style="border: none;" href="javaScript:void(0);">
       Comunicación
     </a>
-
-    <div class="dropdown-menu">
-
-
-      <a class="dropdown-item texto-universal text-uppercase texto-total"
-        [routerLink]="['/web/gobernaciontv']">Gobernación
+    <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpenComunicacion}">
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/gobernaciontv']"
+        [ngClass]="{'active': activeLink === 'gobernaciontv'}" (click)="setActiveLink('gobernaciontv')">Gobernación
         TV</a>
-      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/radio']">Gobernación
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/radio']"
+        [ngClass]="{'active': activeLink === 'radio'}" (click)="setActiveLink('radio')">Gobernación
         Radio</a>
-      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/semanario']">Semanario
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/semanario']"
+        [ngClass]="{'active': activeLink === 'semanario'}" (click)="setActiveLink('semanario')">Semanario
         Digital</a>
-      <a class="dropdown-item texto-universal text-uppercase texto-total"
-        [routerLink]="['/web/mediateka']">Mediateca</a>
-      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/jaku']">JAKU</a>
-
-
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/mediateka']"
+        [ngClass]="{'active': activeLink === 'mediateka'}" (click)="setActiveLink('mediateka')">Mediateca</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/jaku']"
+        [ngClass]="{'active': activeLink === 'jaku'}" (click)="setActiveLink('jaku')">JAKU</a>
     </div>
   </div>
 
-
   <!-- Gaceta -->
-  <li>
-    <a class="text-white text-uppercase texto-total" [routerLink]="['/web/gaceta']">Gaceta</a>
-  </li>
+  <div class="dropdown">
+    <a class="btn btn-secondary bg-transparent dropdown-toggle text-white text-uppercase texto-total"
+      href="javaScript:void(0);" (click)="toggleDropdownGaceta()" role="button" data-toggle="dropdown"
+      aria-expanded="false" style="border: none;">
+      Gaceta
+    </a>
+
+    <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpenGaceta}">
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/gaceta',4]">Estatuto
+        departamental</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/gaceta',3]">Ley
+        departamental</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/gaceta',1]">Decretos
+        departamental</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/gaceta',2]">Decretos
+        gobernativo</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/gaceta',5]">Resolución
+        departamental</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/gaceta',6]">Resolución
+        administrativa</a>
+    </div>
+
+  </div>
 
 
   <!-- Transparencia-->
   <div class="dropdown">
-    <a class="btn btn-secondary bg-transparent dropdown-toggle text-white text-uppercase texto-total" href="#"
-      role="button" data-toggle="dropdown" aria-expanded="false" style="border: none;">
+    <a class="btn btn-secondary bg-transparent dropdown-toggle text-white text-uppercase texto-total"
+      href="javaScript:void(0);" (click)="toggleDropdownTransparencia()" role="button" data-toggle="dropdown"
+      aria-expanded="false" style="border: none;">
       Transparencia
     </a>
 
-    <div class="dropdown-menu">
-
+    <div class="dropdown-menu" [ngClass]="{'show': isDropdownOpenTransparencia}">
 
       <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/denuncias']"
         [ngClass]="{'active': activeLink === 'denuncias'}" (click)="setActiveLink('denuncias')">Denuncia</a>
@@ -207,6 +226,7 @@
 
 
     </div>
+
   </div>
 
   <!-- Redes sociales -->

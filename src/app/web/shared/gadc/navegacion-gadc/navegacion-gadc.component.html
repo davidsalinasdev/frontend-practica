@@ -51,12 +51,12 @@
       <li class="dropdown">
         <a>Gaceta</a>
         <ul class="dropdown-content">
-          <li><a [routerLink]="['/web/gaceta',4]">Estatuto departamental</a></li>
-          <li><a [routerLink]="['/web/gaceta',3]">Ley departamental</a></li>
-          <li><a [routerLink]="['/web/gaceta',1]">Decretos departamental</a></li>
-          <li><a [routerLink]="['/web/gaceta',2]">Decretos gobernativo</a></li>
-          <li><a [routerLink]="['/web/gaceta',5]">Resolución departamental</a></li>
-          <li><a [routerLink]="['/web/gaceta',6]">Resolución administrativa</a></li>
+          <li><a [routerLink]="['/web/gaceta',4]">Estatutos departamentales</a></li>
+          <li><a [routerLink]="['/web/gaceta',3]">Leyes departamentales</a></li>
+          <li><a [routerLink]="['/web/gaceta',1]">Decretos departamentales</a></li>
+          <li><a [routerLink]="['/web/gaceta',2]">Decretos gubernativos</a></li>
+          <li><a [routerLink]="['/web/gaceta',5]">Resoluciones departamentales</a></li>
+          <li><a [routerLink]="['/web/gaceta',6]">Resoluciones administrativas</a></li>
         </ul>
       </li>
       <!-- FIN gaceta -->
@@ -74,15 +74,15 @@
           <li><a [routerLink]="['/web/sugerencias']" [ngClass]="{'active': activeLink === 'sugerencias'}"
               (click)="setActiveLink('sugerencias')">Sugerencia</a></li>
           <li><a [routerLink]="['/web/rendicion-cuentas']" [ngClass]="{'active': activeLink === 'rendicion'}"
-              (click)="setActiveLink('rendicion')">Rendición de Cuentas</a></li>
+              (click)="setActiveLink('rendicion')">Rendición Pública de Cuentas</a></li>
           <li><a [routerLink]="['/web/convocatorias']" [ngClass]="{'active': activeLink === 'convocatorias'}"
               (click)="setActiveLink('convocatorias')">Convocatorias</a></li>
           <li><a [routerLink]="['/web/auditoria']" [ngClass]="{'active': activeLink === 'auditorias'}"
               (click)="setActiveLink('auditorias')">Auditorías</a></li>
+          <li><a [routerLink]="['/web/planes']" [ngClass]="{'active': activeLink === 'planes'}"
+              (click)="setActiveLink('planes')">Planes Institucionales</a></li>
         </ul>
-
       </li>
-
 
       <li class="iconos">
         <a [href]="this.despacho?.despacho.linkTwitter" target="_blank"><i class="bi bi-twitter-x"></i></a>

@@ -44,6 +44,7 @@ import { TelevisiondigitalGadcComponent } from './components/components-gadc/tel
 import { JakuComponent } from './pages/jaku/jaku.component';
 import { JakuDetalleComponent } from './pages/jaku-detalle/jaku-detalle.component';
 import { ServicioCiudadanoComponent } from './components/components-gadc/servicio-ciudadano/servicio-ciudadano.component';
+import { PlanesComponent } from './pages/planes/planes.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { ServicioCiudadanoComponent } from './components/components-gadc/servici
     JakuComponent,
     JakuDetalleComponent,
     ServicioCiudadanoComponent,
+    PlanesComponent,
 
   ],
   imports: [

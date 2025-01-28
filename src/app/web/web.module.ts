@@ -45,6 +45,8 @@ import { JakuComponent } from './pages/jaku/jaku.component';
 import { JakuDetalleComponent } from './pages/jaku-detalle/jaku-detalle.component';
 import { ServicioCiudadanoComponent } from './components/components-gadc/servicio-ciudadano/servicio-ciudadano.component';
 import { PlanesComponent } from './pages/planes/planes.component';
+import { CampaniasComponent } from './pages/campanias/campanias.component';
+import { BanerCampaniaComponent } from './pages/baner-campania/baner-campania.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import { PlanesComponent } from './pages/planes/planes.component';
     JakuDetalleComponent,
     ServicioCiudadanoComponent,
     PlanesComponent,
+    CampaniasComponent,
+    BanerCampaniaComponent,
 
   ],
   imports: [

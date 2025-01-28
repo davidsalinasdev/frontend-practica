@@ -36,6 +36,9 @@ export class BannerPublicidadComponent implements OnInit, AfterViewInit {
       next: (resp: any) => {
         this.bannerPublicidad = resp.data.data;
 
+        console.log(resp);
+
+
         // Lightbox
         for (let i = 0; i < this.bannerPublicidad.length; i++) {
 

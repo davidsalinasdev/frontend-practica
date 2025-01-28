@@ -1,68 +1,65 @@
-/* Rellenando toda la pantalla */
-#banerPubli {
-    height: 100%;
-    /* 100% of viewport height */
+/* Contenedor general */
+.contenedor-campañas {
+    padding: 0px 20px;
+    text-align: center;
 }
 
-
-
-.carousel-inner {
-    height: 100%;
-    /* 100% of parent height */
-}
-
-.carousel-item {
-    height: 100%;
-    /* 100% of parent height */
-}
-
-.img-carrusel {
-    width: 461.54px;
-    height: 250px !important;
-}
-
-.element-carrusel {
-    display: grid;
-    grid-template-columns: repeat(3, 0fr);
-    grid-gap: 20px;
-
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* FIN Rellenando toda la pantalla */
-
-/* Mensajes en pantalla */
-.borde {
-    border: 2px solid black;
-}
-
-/* FIN Mensajes en pantalla */
-
-/* Posicionamiento del mensaje en las imagenes de carrusel */
-.carousel {
-    position: relative;
-}
-
-/* FIN Posicionamiento del mensaje en las imagenes de carrusel */
-
-
+/* Título */
 .interes__titulo {
+    text-align: start;
     font-size: 2rem;
     color: #30336b;
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-.contenedor-img {
-    margin: 0 auto;
+/* Contenedor Flex */
+.flex-campañas {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que los elementos salten a la siguiente línea si no caben */
+    gap: 20px;
+    /* Espaciado entre elementos */
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
+    align-items: center;
+    /* Alinea los elementos verticalmente */
 }
 
-.custom-lightbox-image {
-    width: 1110px !important;
-    height: 500px !important;
+/* Estilo de los elementos Flex */
+.campaña-item {
+    flex: 1 1 100%;
+    /* Ocupa todo el ancho por defecto (en dispositivos móviles) */
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    /* Opcional: esquinas redondeadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Opcional: sombra */
+}
 
+/* Estilo de las imágenes */
+.img-campaña {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Responsivo: a partir de 768px (tablets) */
+@media (min-width: 768px) {
+    .campaña-item {
+        flex: 1 1 calc(50% - 20px);
+        /* Ocupa la mitad del ancho menos el gap */
+        max-width: calc(50% - 20px);
+    }
+}
+
+/* Responsivo: a partir de 992px (pantallas grandes) */
+@media (min-width: 992px) {
+    .campaña-item {
+        flex: 1 1 calc(33.333% - 20px);
+        /* Ocupa un tercio del ancho menos el gap */
+        max-width: calc(33.333% - 20px);
+    }
 }

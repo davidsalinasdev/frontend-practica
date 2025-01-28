@@ -1,0 +1,57 @@
+.campanias__titulo {
+    font-size: 2.7rem;
+    color: #30336b;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.sumate {
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.campaign-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+}
+
+.card-btn {
+    background-color: #ffffff;
+    color: rgb(0, 127, 198);
+    font-weight: bold;
+    border: 2px solid rgba(0, 125, 198, 0.685);
+    border-radius: 8px;
+    padding: 5px 20px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+}
+
+.card-btn:hover {
+    background-color: rgb(96, 163, 219);
+    color: white;
+}

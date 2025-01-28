@@ -20,6 +20,7 @@ import { GobernacionTvComponent } from './pages/gobernacion-tv/gobernacion-tv.co
 import { JakuComponent } from './pages/jaku/jaku.component';
 import { JakuDetalleComponent } from './pages/jaku-detalle/jaku-detalle.component';
 import { PlanesComponent } from './pages/planes/planes.component';
+import { CampaniasComponent } from './pages/campanias/campanias.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,7 @@ const routes: Routes = [
       { path: 'jaku', component: JakuComponent },
       { path: 'jaku-detalle/:id/:descripcion', component: JakuDetalleComponent },
       { path: 'planes', component: PlanesComponent },
+      { path: 'campanias/:id', component: CampaniasComponent },
       { path: '**', redirectTo: 'fullscreen' } // Es la primera ruta que se muestra para este MODULO.
     ]
   } // Path inicial

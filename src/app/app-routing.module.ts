@@ -8,7 +8,6 @@ import { authGuard, cantLoadModuleGuard } from './admin/guards/auth.guard';
 
 const routes: Routes = [
 
-  // Para asegurar de que al iniciar tu aplicación en http://localhost:4200 se 
   // redirija directamente a http://localhost:4200/web/inicio
   { path: '', redirectTo: 'web/inicio', pathMatch: 'full' },
 

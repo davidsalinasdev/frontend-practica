@@ -1,0 +1,255 @@
+<app-baner-campania [iugId]="this.iugId"></app-baner-campania>
+
+<div class="row mt-5 justify-content-center">
+    <div class="fondo-header col-8 text-center">
+        <span class="campanias__titulo text-uppercase">SUMATE A LA CAMPAÑA COMPARTÍ LOS CONTENIDOS</span>
+    </div>
+</div>
+
+<div class="row mt-4 mb-5 justify-content-center">
+    <div class="col-11 text-center p-5" style="background-color: rgb(96, 163, 219); border-radius: 15px;">
+        <span class="sumate">{{ this.campania[0]!.titulo }}</span>
+        <div class="campaign-section mt-3">
+
+            <!-- video -->
+            @for (item of this.listCampania; track item.id) {
+            @if(item.tipo_documento === 'video' && item.url_imagen != null) {
+            <div class="card">
+                <div class="card-image">
+                    <img [src]="this.base_url + '/storage/uploads/' + item.url_imagen" alt="Video Thumbnail">
+                </div>
+                <button class="card-btn" data-bs-toggle="modal" data-bs-target="#modalList"
+                    (click)="showModalVideo()">Videos
+                    <i class="bi bi-file-pdf"></i></button>
+            </div>
+            }
+            }
+
+            <!-- afiche -->
+            @for (item of this.listCampania; track item.id) {
+            @if(item.tipo_documento === 'afiche' && item.url_imagen != null) {
+            <div class="card">
+                <div class="card-image">
+                    <img [src]="this.base_url + '/storage/uploads/' + item.url_imagen" alt="Video Thumbnail">
+                </div>
+                <button class="card-btn" (click)="showModalAfiche()">Afiche <i class="bi bi-file-pdf"></i></button>
+            </div>
+            }
+            }
+
+            <!-- Volante -->
+            @for (item of this.listCampania; track item.id) {
+            @if(item.tipo_documento === 'volante' && item.url_imagen != null) {
+            <div class="card">
+                <div class="card-image">
+                    <img [src]="this.base_url + '/storage/uploads/' + item.url_imagen" alt="Video Thumbnail">
+                </div>
+                <button class="card-btn" (click)="showModalVolante()">Volante <i class="bi bi-file-pdf"></i></button>
+            </div>
+            }
+            }
+
+
+            <!-- Carrusel de redes -->
+            @for (item of this.listCampania; track item.id) {
+            @if(item.tipo_documento === 'redes' && item.url_imagen != null) {
+            <div class="card">
+                <div class="card-image">
+                    <img [src]="this.base_url + '/storage/uploads/' + item.url_imagen" alt="Video Thumbnail">
+                </div>
+                <button class="card-btn" (click)="showModalRedes()">Carrusel Redes <i
+                        class="bi bi-file-pdf"></i></button>
+            </div>
+            }
+            }
+
+            <!-- Historia Redes -->
+            @for (item of this.listCampania; track item.id) {
+            @if(item.tipo_documento === 'historia' && item.url_imagen != null) {
+            <div class="card">
+                <div class="card-image">
+                    <img [src]="this.base_url + '/storage/uploads/' + item.url_imagen" alt="Video Thumbnail">
+                </div>
+                <button class="card-btn" (click)="showModalHistoria()">Historia Redes <i
+                        class="bi bi-file-pdf"></i></button>
+            </div>
+            }
+            }
+
+        </div>
+    </div>
+</div>
+
+<app-footer-gadc></app-footer-gadc>
+
+<!-- video -->
+<div class="modal fade" id="modalListVideo" tabindex="-1" aria-labelledby="modalCampaniasvideo" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 800px;">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 70%;"></th>
+                            <th style="width: 30%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <!-- video -->
+                        @for (item of this.listCampania; track item.id) {
+                        @if(item.tipo_documento === 'video' && item.archivo != null) {
+                        <tr>
+                            <td class="text-center">{{ item.archivo }}</td>
+                            <td class="text-center">
+                                <a [href]="this.base_url + '/storage/uploads/' + item.archivo" target="_blank"
+                                    title="Descargar"><i class="bi bi-download"></i></a>
+                            </td>
+                        </tr>
+                        }}
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- afiche -->
+<div class="modal fade" id="modalListAfiche" tabindex="-1" aria-labelledby="modalCampaniasafiche" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 800px;">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 70%;"></th>
+                            <th style="width: 30%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- afiche -->
+                        @for (item of this.listCampania; track item.id) {
+                        @if(item.tipo_documento === 'afiche' && item.archivo != null) {
+                        <tr>
+                            <td class="text-center">{{ item.archivo }}</td>
+                            <td class="text-center">
+                                <a [href]="this.base_url + '/storage/uploads/' + item.archivo" target="_blank"
+                                    title="Descargar"><i class="bi bi-download"></i></a>
+                            </td>
+                        </tr>
+                        }}
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- volante -->
+<div class="modal fade" id="modalListVolante" tabindex="-1" aria-labelledby="modalCampaniasvolante" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 800px;">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 70%;"></th>
+                            <th style="width: 30%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- afiche -->
+                        @for (item of this.listCampania; track item.id) {
+                        @if(item.tipo_documento === 'volante' && item.archivo != null) {
+                        <tr>
+                            <td class="text-center">{{ item.archivo }}</td>
+                            <td class="text-center">
+                                <a [href]="this.base_url + '/storage/uploads/' + item.archivo" target="_blank"
+                                    title="Descargar"><i class="bi bi-download"></i></a>
+                            </td>
+                        </tr>
+                        }}
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- redes -->
+<div class="modal fade" id="modalListRedes" tabindex="-1" aria-labelledby="modalCampaniasredes" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 800px;">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 70%;"></th>
+                            <th style="width: 30%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- afiche -->
+                        @for (item of this.listCampania; track item.id) {
+                        @if(item.tipo_documento === 'redes' && item.archivo != null) {
+                        <tr>
+                            <td class="text-center">{{ item.archivo }}</td>
+                            <td class="text-center">
+                                <a [href]="this.base_url + '/storage/uploads/' + item.archivo" target="_blank"
+                                    title="Descargar"><i class="bi bi-download"></i></a>
+                            </td>
+                        </tr>
+                        }}
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Historia -->
+<div class="modal fade" id="modalListHistoria" tabindex="-1" aria-labelledby="modalCampaniashistoria"
+    aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 800px;">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 70%;"></th>
+                            <th style="width: 30%;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- afiche -->
+                        @for (item of this.listCampania; track item.id) {
+                        @if(item.tipo_documento === 'historia' && item.archivo != null) {
+                        <tr>
+                            <td class="text-center">{{ item.archivo }}</td>
+                            <td class="text-center">
+                                <a [href]="this.base_url + '/storage/uploads/' + item.archivo" target="_blank"
+                                    title="Descargar"><i class="bi bi-download"></i></a>
+                            </td>
+                        </tr>
+                        }}
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

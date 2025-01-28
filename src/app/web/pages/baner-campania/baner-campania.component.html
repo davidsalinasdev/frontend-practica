@@ -1,7 +1,7 @@
 <div align="center">
     <video class="full-width-video" autoplay loop [muted]="true"
         *ngIf="listBanners.length > 0 && listBanners[0]?.imagen_banner">
-        <source [src]="listBanners[0]!.videoUrl" type="video/mp4" />
+        <source [src]="listBanners[0].videoUrl" type="video/mp4" />
         Tu navegador no soporta el elemento de video.
     </video>
 </div>

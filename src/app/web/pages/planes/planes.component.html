@@ -5,18 +5,21 @@
 </div>
 
 <div class="row justify-content-center" style="margin-bottom: 7rem;">
-    <div class="col-12 col-md-10">
-        <div class="grid">
-            <div *ngFor="let item of pilares" class="card">
-                <img src="{{ item.imagen }}" alt="Imagen 1">
-                <div class="p-3">
-                    <h4 class="text-dark font-weight-normal">{{ item.titulo }}</h4>
-                </div>
-                <div class="row pb-2">
-                    <p class="col-12 mb-2 font-weight-normal text-dark text-center">{{ item.periodo }}</p>
-                    <div class="col-12 text-center mb-2 mt-2">
-                        <a class="text-white btn-bajar-archivo text-uppercase" (click)="abrirArchivo(item.archivo)">Ver
-                            Plan</a>
+    <div class="col-11">
+        <div style="max-width: 1100px; margin: auto;">
+            <div class="grid">
+                <div *ngFor="let item of pilares" class="card">
+                    <img src="{{ item.imagen }}" alt="Imagen 1">
+                    <div class="p-3">
+                        <h5 class="text-dark font-weight-normal">{{ item.titulo }}</h5>
+                    </div>
+                    <div class="row pb-2">
+                        <p class="col-12 mb-2 font-weight-normal text-dark text-center">{{ item.periodo }}</p>
+                        <div class="col-12 text-center mb-2 mt-2">
+                            <a class="text-white btn-bajar-archivo text-uppercase"
+                                (click)="abrirArchivo(item.archivo)">Ver
+                                Plan</a>
+                        </div>
                     </div>
                 </div>
             </div>

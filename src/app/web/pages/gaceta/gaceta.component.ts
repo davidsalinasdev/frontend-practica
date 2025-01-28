@@ -27,7 +27,7 @@ export class GacetaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.obtenerDocumentos();
+    // this.obtenerDocumentos();
     // Suscribirse para capturar el parámetro de la URL
     this.route.paramMap.subscribe(tipo => {
       this.params = tipo.get('tipo') || '';
@@ -49,6 +49,9 @@ export class GacetaComponent implements OnInit {
         this.documentos = response.data.data;
         this.totalItems = response.data.total;  // Total de documentos
 
+        // console.log(this.documentos);
+
+
         if (this.documentos.length === 0) {
           this.opcionGaceta = true;
         }
@@ -60,9 +63,14 @@ export class GacetaComponent implements OnInit {
     this.gacetaServices.obtenerDocumentos(this.limite, this.page, tipo, this.search)
       .subscribe(response => {
 
+        this.documentos = [];
+
         this.opcionGaceta = false;
 
         this.documentos = response.data.data;
+
+        // console.log(this.documentos);
+
         this.totalItems = response.data.total;  // Total de documentos
 
         if (this.documentos.length === 0) {

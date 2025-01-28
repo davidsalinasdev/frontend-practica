@@ -34,6 +34,9 @@ export class BanerCampaniaComponent {
     this.bannerServices.getBannerCampania(this.iugId).subscribe({
       next: (resp: any) => {
         const { banners } = resp;
+
+        console.log(banners);
+
         this.listBanners = banners.map((banner: any) => {
           // Sanitiza la URL del video
           if (banner.imagen_banner) {

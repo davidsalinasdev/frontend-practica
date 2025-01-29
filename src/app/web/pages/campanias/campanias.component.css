@@ -1,16 +1,33 @@
 .campanias__titulo {
-    font-size: 2.7rem;
+    font-size: 2rem;
     color: #30336b;
     text-transform: uppercase;
     font-weight: normal;
 }
 
 .sumate {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
 }
+
+@media(min-width: 768px) {
+    .campanias__titulo {
+        font-size: 2.7rem;
+        color: #30336b;
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+
+    .sumate {
+        font-size: 2.5rem;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
 
 .campaign-section {
     display: flex;

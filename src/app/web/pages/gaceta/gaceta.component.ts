@@ -49,9 +49,6 @@ export class GacetaComponent implements OnInit {
         this.documentos = response.data.data;
         this.totalItems = response.data.total;  // Total de documentos
 
-        // console.log(this.documentos);
-
-
         if (this.documentos.length === 0) {
           this.opcionGaceta = true;
         }

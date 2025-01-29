@@ -57,10 +57,18 @@
             <p class="font-weight-normal"><strong>Resumen:</strong> {{ doc.resumen | slice:0:100 }}"</p>
             <ul>
                 <li class="font-weight-normal"><strong>Fecha Publicación:</strong>{{ doc.fechaaprobacion }}</li>
+                @if(doc.tipo == 3){
+                <li class="font-weight-normal"><strong>Fecha Promulgación:</strong> {{ doc.fechapromulgacion }}</li>
+                }@else{
                 <li class="font-weight-normal"><strong>Fecha Emisión:</strong> {{ doc.fechapromulgacion }}</li>
+                }
                 <li class="font-weight-normal"><strong>Número Documento:</strong> {{ doc.numerodocumento }}</li>
+                @if(doc.anexo != null){
+                <li class="font-weight-normal"><strong>Anexo:</strong> <a class="btn btn-link" [href]="doc.url_anexo"
+                        target="_blank"> Descargar Anexo</a></li>
+                }
             </ul>
-            <a [href]="doc.archivo" target="_blank">Descargar</a>
+            <a class="download" [href]="doc.archivo" target="_blank">Descargar</a>
 
         </div>
     </div>

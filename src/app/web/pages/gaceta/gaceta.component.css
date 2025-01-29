@@ -89,7 +89,7 @@ ul {
     font-size: 14px;
 }
 
-a {
+.download {
     background-color: rgb(10, 131, 201);
     color: white;
     border: none;
@@ -98,7 +98,7 @@ a {
     cursor: pointer;
 }
 
-a:hover {
+.download:hover {
     background-color: #0056b3;
 }
 

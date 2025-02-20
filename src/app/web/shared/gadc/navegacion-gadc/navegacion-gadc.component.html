@@ -57,6 +57,7 @@
           <li><a [routerLink]="['/web/gaceta',2]">Decretos gubernativos</a></li>
           <li><a [routerLink]="['/web/gaceta',5]">Resoluciones departamentales</a></li>
           <li><a [routerLink]="['/web/gaceta',6]">Resoluciones administrativas</a></li>
+          <li><a [routerLink]="['/web/gaceta',7]">Personalidad juridica</a></li>
         </ul>
       </li>
       <!-- FIN gaceta -->
@@ -121,7 +122,6 @@
   </nav>
 
 </header>
-
 
 <!-- MENU DE NAVEGACIÓN CELULAR -->
 <ul class="sidebar-nav mb-0" id="sidebarnav" [ngClass]="{'sidebar-visible': this.menuVisible}">
@@ -194,6 +194,8 @@
         departamental</a>
       <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/gaceta',6]">Resolución
         administrativa</a>
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/gaceta',7]">Personalidad
+        juridica</a>
     </div>
 
   </div>

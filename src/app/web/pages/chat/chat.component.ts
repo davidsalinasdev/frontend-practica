@@ -21,7 +21,8 @@ export class ChatComponent implements OnInit {
     return new Promise((resolve, reject) => {
       const script = this.renderer.createElement('script');
       script.src = "https://bots.easy-peasy.ai/chat.min.js";
-      script.setAttribute('data-chat-url', 'https://bots.easy-peasy.ai/bot/a6c6da5b-225a-49cd-92be-801bc3264b51');
+      // script.setAttribute('data-chat-url', 'https://bots.easy-peasy.ai/bot/a6c6da5b-225a-49cd-92be-801bc3264b51');
+      script.setAttribute('data-chat-url', 'https://bots.easy-peasy.ai/bot/535acd64-3076-409b-b15d-f51c78246b69');
       script.setAttribute('data-btn-position', 'bottom-right');
       script.setAttribute('data-widget-btn-color', 'rgba(248, 248, 252, 0)');
       script.setAttribute('data-widget-icon', 'https://gobernaciondecochabamba.bo/storage/uploads/JAKU.png');
@@ -42,9 +43,6 @@ export class ChatComponent implements OnInit {
       const widgetIcon = document.querySelector('#dialoq-btn img');
       const divPadre = document.querySelector('#dialoq-btn');
       const mensaje = document.querySelector('#dialoq-message-bubbles');
-
-
-
 
       elementoPadre = divPadre!.parentElement;
 

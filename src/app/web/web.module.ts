@@ -47,6 +47,8 @@ import { ServicioCiudadanoComponent } from './components/components-gadc/servici
 import { PlanesComponent } from './pages/planes/planes.component';
 import { CampaniasComponent } from './pages/campanias/campanias.component';
 import { BanerCampaniaComponent } from './pages/baner-campania/baner-campania.component';
+import { FinancierosComponent } from './pages/financieros/financieros.component';
+
 
 @NgModule({
   declarations: [
@@ -79,6 +81,7 @@ import { BanerCampaniaComponent } from './pages/baner-campania/baner-campania.co
     PlanesComponent,
     CampaniasComponent,
     BanerCampaniaComponent,
+    FinancierosComponent
 
   ],
   imports: [

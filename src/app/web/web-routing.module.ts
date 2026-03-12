@@ -21,6 +21,7 @@ import { JakuComponent } from './pages/jaku/jaku.component';
 import { JakuDetalleComponent } from './pages/jaku-detalle/jaku-detalle.component';
 import { PlanesComponent } from './pages/planes/planes.component';
 import { CampaniasComponent } from './pages/campanias/campanias.component';
+import { FinancierosComponent } from './pages/financieros/financieros.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'radio', component: RadioComponent },
       { path: 'convocatorias', component: ConvocatoriasComponent },
       { path: 'rendicion-cuentas', component: RendicionCuentasComponent },
+      { path: 'financieros', component: FinancierosComponent },
       { path: 'sugerencias', component: SusgerenciasComponent },
       { path: 'denuncias', component: DenunciasComponent },
       { path: 'mediateka', component: MediatekaComponent },

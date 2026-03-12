@@ -76,6 +76,10 @@
               (click)="setActiveLink('sugerencias')">Sugerencia</a></li>
           <li><a [routerLink]="['/web/rendicion-cuentas']" [ngClass]="{'active': activeLink === 'rendicion'}"
               (click)="setActiveLink('rendicion')">Rendición Pública de Cuentas</a></li>
+
+          <li><a [routerLink]="['/web/financieros']" [ngClass]="{'active': activeLink === 'financieros'}"
+              (click)="setActiveLink('financieros')">Estados Finacieros</a></li>
+
           <li><a [routerLink]="['/web/convocatorias']" [ngClass]="{'active': activeLink === 'convocatorias'}"
               (click)="setActiveLink('convocatorias')">Convocatorias</a></li>
           <li><a [routerLink]="['/web/auditoria']" [ngClass]="{'active': activeLink === 'auditorias'}"
@@ -225,6 +229,10 @@
       <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/rendicion-cuentas']"
         [ngClass]="{'active': activeLink === 'rendicion'}" (click)="setActiveLink('rendicion')">Rendición de
         Cuentas</a>
+
+      <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/financieros']"
+        [ngClass]="{'active': activeLink === 'financiero'}" (click)="setActiveLink('financiero')">Estados finacieros</a>
+
       <a class="dropdown-item texto-universal text-uppercase texto-total" [routerLink]="['/web/convocatorias']"
         [ngClass]="{'active': activeLink === 'convocatorias'}"
         (click)="setActiveLink('convocatorias')">Convocatorias</a>
